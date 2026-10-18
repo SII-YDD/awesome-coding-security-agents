@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-17",
+  "last_updated": "2026-10-18",
   "entries": [
     {
       "id": "reviewbench",
@@ -705,6 +705,130 @@
       ],
       "added_date": "2026-10-17",
       "updated_date": "2026-10-17",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "skip-the-compressor",
+      "title": "Skip the Compressor: Coding Agents Fix More Issues When They Pick Whole Files",
+      "institution": "UIUC",
+      "first_author": "Xiaocong Yang",
+      "publication_date": "2026-10-15",
+      "paper_id": "2610.21073",
+      "category": "coding-agents",
+      "tags": [
+        "context-selection",
+        "verbatim-code",
+        "patch-generation",
+        "controlled-evaluation"
+      ],
+      "institution_source": "https://arxiv.org/html/2610.21073v1",
+      "summary": "选择并原样提供少量相关源码文件，减少上下文压缩导致的补丁失配与修复失败。",
+      "caveat": "300个不同仓库SWE-rebench问题；固定上下文后单次补丁生成，非完整多轮Agent评测。GPT-5.6与Claude解决率43.7%/46.7%，比最好通用压缩器均高6.3个百分点，但比SweRank仅高0.7/1.7个百分点。同候选文件的代码感知压缩可追平；预算按本方法每题实际上下文设置，不是总美元预算匹配。GPT全流程API约0.151美元/题；未核实本方法公开实现或作者博客。",
+      "reading_scope": "论文全文的定位算法、基准设置、主结果、保真与文件选择控制实验、多轮重读局限；相关成本及统计协议附录。原文作者/单位和关联资源链接核对；未运行模型或基准。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文与实验附录",
+          "url": "https://arxiv.org/html/2610.21073v1"
+        }
+      ],
+      "resource_follow_up": [
+        "Official implementation and author blog not located; do not link referenced baseline repositories as CQ2-CARE code.",
+        "Equal total-budget interactive-agent evaluation with re-reading."
+      ],
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.21073",
+      "added_date": "2026-10-18",
+      "updated_date": "2026-10-18",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "memscope",
+      "title": "MemScope: Evolving Agent Memory Architectures through Localized Code Repair",
+      "institution": "State Key Lab of AI Safety",
+      "first_author": "Miao Su",
+      "publication_date": "2026-10-15",
+      "paper_id": "2610.21170",
+      "category": "coding-agents",
+      "tags": [
+        "agent-memory",
+        "localized-code-repair",
+        "self-evolution",
+        "runtime-diagnosis"
+      ],
+      "institution_source": "https://arxiv.org/pdf/2610.21170",
+      "summary": "联合检查执行轨迹、运行时记忆和实现代码，以局部补丁改进 Agent 记忆架构。",
+      "caveat": "摘要86.67%是30题GAIA诊断消融的轨迹+记忆变体，非165题全量或带PatchHistory完整变体。匹配70题xBench下DeepSeek49→55、Kimi50→53答对，但分别2/4题回退；ALFWorld67题未见任务34→48成功，持续在线记忆更新。主在线比较代码与记忆共同变化；14次归档修改4.4%代码变化中位数不能当token或美元节省。未定位可核实公开实现或作者博客。",
+      "reading_scope": "论文方法、触发与局部检查、GAIA/xBench/ALFWorld协议与结果、诊断消融、归档补丁和成本附录；PDF首页确认首位作者的第一个单位。未运行演化系统或任务。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文与诊断/成本附录",
+          "url": "https://arxiv.org/html/2610.21170v1"
+        }
+      ],
+      "resource_follow_up": [
+        "Official implementation and author blog not located; MemEvolve and DynamicCheatsheet are baselines, not MemScope release.",
+        "Frozen held-out regression and separate code-versus-memory ablations with complete evolution costs."
+      ],
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.21170",
+      "added_date": "2026-10-18",
+      "updated_date": "2026-10-18",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "impossible-mission-finder",
+      "title": "Mission (Im)Possible: Towards Autonomous Discovery of Autopilot Logic Flaws in Open-Source Drone Frameworks",
+      "institution": "HUST",
+      "first_author": "Ziyi Liang",
+      "publication_date": "2026-10-14",
+      "paper_id": "2610.19566",
+      "category": "vulnerability-discovery",
+      "tags": [
+        "logic-flaws",
+        "autopilot",
+        "program-slicing",
+        "simulation",
+        "hypothesis-validation"
+      ],
+      "institution_source": "https://arxiv.org/pdf/2610.19566",
+      "summary": "结合跨模块代码切片、仿真测试与假设驱动的日志分析，发现自动驾驶逻辑缺陷。",
+      "caveat": "428假设中235个硬件依赖候选排除；147个报告由两位专家剔除40个误报，107有效报告去重成105逻辑缺陷，不是105CVE或维护者确认/修复数。50样本92%表示三次内生成有效测试，不是发现率。软件在环验证不覆盖真实硬件；未报告可比较全流程成本。项目列表实际含105记录，仅核对材料数量未独立复现。作者链接匿名代码入口返回403，未核实实现内容，未显示Code链接。",
+      "reading_scope": "20页PDF中的方法、实现、实验、误报分析和讨论，PDF首页核对首位作者单位；作者项目HTML与105项缺陷JSON列表结构；未观看全部视频、未验证缺陷或运行仿真。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文PDF",
+          "url": "https://arxiv.org/pdf/2610.19566"
+        },
+        {
+          "kind": "artifacts",
+          "label": "作者公开105项缺陷记录",
+          "url": "https://impossiblemissionfinder.github.io/static/data/vulnerability_cases.json?v=20260704-3"
+        },
+        {
+          "kind": "project",
+          "label": "作者项目与材料",
+          "url": "https://impossiblemissionfinder.github.io/"
+        }
+      ],
+      "announced_code_url": "https://anonymous.4open.science/r/drone-audit-agent-82C0/",
+      "code_access_status": "Author project labels this as Code; HTTP403 on2026-10-18, repository contents not verified.",
+      "resource_follow_up": [
+        "Recheck author-linked anonymous implementation when accessible; no complete-code availability claim.",
+        "Maintainer confirmations, fixes, physical validation and independently held-out oracle assessment."
+      ],
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.19566",
+      "added_date": "2026-10-18",
+      "updated_date": "2026-10-18",
       "evidence_status": "author-reported"
     }
   ]
