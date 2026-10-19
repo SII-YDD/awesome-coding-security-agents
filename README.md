@@ -7,18 +7,18 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-23-6366f1?style=flat-square" alt="Papers and blogs: 23"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--18-14b8a6?style=flat-square" alt="Updated: 2026-10-18"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-25-6366f1?style=flat-square" alt="Papers and blogs: 25"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--19-14b8a6?style=flat-square" alt="Updated: 2026-10-19"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>5 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>7 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>8 entries</sub></td>
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>6 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>5 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>6 entries</sub></td>
   </tr>
 </table>
 
@@ -45,6 +45,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>Fudan University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21925" title="Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel">Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel</a></b><br><br>从历史评审中恢复设计决策及适用条件，规划并验证新补丁中的设计权衡。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21925">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-14</code><br><sub>Xiamen University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.20193" title="SWE-Stream: Scaling Executable Training Data for SWE Agents via Progressive Construction and Elastic Streaming">SWE-Stream: Scaling Executable Training Data for SWE Agents via Progressive Construction and Elastic Streaming</a></b><br><br>逐步重建和验证开发历史中的训练任务，以异步调度与资源反馈提高可执行数据产出。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.20193">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-14</code><br><sub>Georgia Tech</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.19368" title="OS-Bench: Evaluating SWE Agents on Cross-OS Code Migration">OS-Bench: Evaluating SWE Agents on Cross-OS Code Migration</a></b><br><br>通过双系统覆盖差异构造代码迁移任务，要求补丁同时恢复目标平台并保留源平台行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.19368">Paper</a><br><a href="https://huggingface.co/datasets/SWE-bench-Live/OS-bench">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-12</code><br><sub>CUHK-Shenzhen</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.16870" title="SpecGuardBench: Can Coding Agents Construct Reliable Validation Harnesses from Natural Language Specifications?">SpecGuardBench: Can Coding Agents Construct Reliable Validation Harnesses from Natural Language Specifications?</a></b><br><br>从需求生成可执行验证框架，评估能否检出违规实现并接受符合需求的其他实现。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.16870">Paper</a><br><a href="https://github.com/coxhin/SpecGuardBench">Code</a></td></tr>
@@ -80,6 +81,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>UMass Amherst</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21029" title="SCARCE: Emergent Institutions in Long-Horizon Multi-Agent Coding Systems">SCARCE: Emergent Institutions in Long-Horizon Multi-Agent Coding Systems</a></b><br><br>让编程 Agent 反复协商共享执行资源，研究记忆如何支持互惠、声誉与结盟行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21029">Paper</a><br><a href="https://github.com/compass-group-tue/SCARCE-ENV">Code</a><br><a href="https://compass-group-tue.github.io/SCARCE">Project</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-13</code><br><sub>NUS</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.18206" title="SWE-MISBEHAVIOR: Benchmarking and Mitigating Boundary Violations in Software Coding Agents">SWE-MISBEHAVIOR: Benchmarking and Mitigating Boundary Violations in Software Coding Agents</a></b><br><br>评测编程Agent在代码、文件与系统操作中的越界行为，并按任务选择专用工具来缓解。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.18206">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-12</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/self-replicating-ai" title="AI models may be capable of self-replicating without access to a datacenter">AI models may be capable of self-replicating without access to a datacenter</a></b><br><br>在陌生硬件和简化集群中检验模型部署、复制与会话重启后的任务恢复能力。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/self-replicating-ai">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-09</code><br><sub>Meta Reality Labs Research</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.13886" title="X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems">X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems</a></b><br><br>从工具依赖图反向生成跨服务测试场景，再用执行反馈发现和扩展 Agent 安全失效。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.13886">Paper</a></td></tr>

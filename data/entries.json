@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-18",
+  "last_updated": "2026-10-19",
   "entries": [
     {
       "id": "reviewbench",
@@ -829,6 +829,95 @@
       "canonical_url": "https://arxiv.org/abs/2610.19566",
       "added_date": "2026-10-18",
       "updated_date": "2026-10-18",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "designlore",
+      "title": "Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel",
+      "institution": "Fudan University",
+      "first_author": "Zhenhao Zhou",
+      "publication_date": "2026-10-15",
+      "paper_id": "2610.21925",
+      "version": "v2",
+      "research_updated_date": "2026-10-16",
+      "category": "software-engineering",
+      "tags": [
+        "code-review",
+        "design-trade-offs",
+        "project-memory",
+        "historical-knowledge"
+      ],
+      "institution_source": "https://arxiv.org/html/2610.21925v2",
+      "summary": "从历史评审中恢复设计决策及适用条件，规划并验证新补丁中的设计权衡。",
+      "caveat": "72个Linux mm补丁系列、79个参考权衡点；同GPT-5.6 Luna下分级F1为0.259，Sashiko0.213，不是准确率。每项在线费用0.050美元，高于底座OpenCode0.033美元，低于Sashiko0.101美元，另有324.6美元离线建库费用。历史2021–2024与评测2025–2026分离，不排除预训练污染；参考与知识库共享抽取流程，单子系统外推有限。v1声明匿名代码数据入口，v2未列该段；本轮入口403，未核实内容。",
+      "reading_scope": "v2的问题定义、决策抽取/分类树/规划验证方法、基准构建、时间隔离、主结果/消融/跨模型实验、人工评判校验、成本和有效性讨论；原文首位作者单位。v1资源声明核对；未运行审查系统或读取403仓库内容。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "v2方法与实验全文",
+          "url": "https://arxiv.org/html/2610.21925v2"
+        }
+      ],
+      "announced_code_url": "https://anonymous.4open.science/r/DesignLore-61B6",
+      "code_access_status": "Code/data declaration verified in arXiv v1 section9; not present in v2 HTML. HTTP403 on2026-10-19; implementation contents unverified.",
+      "resource_follow_up": [
+        "Recheck author-declared anonymous code/data entrance; no verified author blog located.",
+        "Cross-project chronological evaluation and maintenance of applicability conditions."
+      ],
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "canonical_url": "https://arxiv.org/abs/2610.21925",
+      "added_date": "2026-10-19",
+      "updated_date": "2026-10-19",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "scarce",
+      "title": "SCARCE: Emergent Institutions in Long-Horizon Multi-Agent Coding Systems",
+      "institution": "UMass Amherst",
+      "first_author": "Abhinav Kumar",
+      "publication_date": "2026-10-15",
+      "paper_id": "2610.21029",
+      "version": "v1",
+      "category": "agent-security",
+      "tags": [
+        "multi-agent",
+        "shared-resources",
+        "negotiation",
+        "memory",
+        "emergent-coordination"
+      ],
+      "institution_source": "https://arxiv.org/html/2610.21029v1",
+      "summary": "让编程 Agent 反复协商共享执行资源，研究记忆如何支持互惠、声誉与结盟行为。",
+      "caveat": "8模型1500余轨迹，基础5worker、25分钟任务期限、1000虚拟积分、最多4个子任务轮；协商时间不计期限、排队时间计入。21类行为标签由3个LLM评判，标签重叠，不是编程成功率或恶意行为概率。GLM-5.3记忆实验互惠18%、结盟27%，短记忆设置为0；论文rounds与项目worker-take描述需区分，本轮未独立重算分母。作者未确立协作制度对整体完成率的收益/损害，混合模型与规模外推待测；虚拟积分不是美元成本，完整成本未报告。公开代码README/目录与项目核对，未运行复现。",
+      "reading_scope": "主文环境/协商协议、分类体系、8模型实验、记忆与预算/期限消融和讨论；原文首位作者单位、项目页示例/指标说明、官方仓库README与根目录实现文件清单；未运行环境或重算全部轨迹标签。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "方法与实验全文",
+          "url": "https://arxiv.org/html/2610.21029v1"
+        },
+        {
+          "kind": "code",
+          "label": "实验环境与配置（README及目录已核对）",
+          "url": "https://github.com/compass-group-tue/SCARCE-ENV"
+        },
+        {
+          "kind": "project",
+          "label": "作者项目、轨迹浏览与解释",
+          "url": "https://compass-group-tue.github.io/SCARCE"
+        }
+      ],
+      "resource_follow_up": [
+        "Controlled comparison with centralized scheduling, including task correctness, deadlines and resource distribution.",
+        "Mixed-model populations, newcomers and independent annotation audits; paper round/take metric denominator.",
+        "Measure full inference/wall-clock costs and inspect reproducibility beyond README."
+      ],
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "canonical_url": "https://arxiv.org/abs/2610.21029",
+      "added_date": "2026-10-19",
+      "updated_date": "2026-10-19",
       "evidence_status": "author-reported"
     }
   ]
