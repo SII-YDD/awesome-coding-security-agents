@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-20",
   "entries": [
     {
       "id": "reviewbench",
@@ -918,6 +918,137 @@
       "canonical_url": "https://arxiv.org/abs/2610.21029",
       "added_date": "2026-10-19",
       "updated_date": "2026-10-19",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "swe-residual",
+      "title": "SWE-Residual: Evaluating Starting-State Robustness of Coding Agents",
+      "institution": "HKU",
+      "first_author": "Jinze Li",
+      "publication_date": "2026-10-19",
+      "publication_kind": "paper",
+      "type": "预印本（原文标注Under Review，录用未核实）",
+      "paper_id": "2610.25899",
+      "version": "v1",
+      "category": "coding-agents",
+      "tags": [
+        "handoff",
+        "starting-state-robustness",
+        "acceptance-bias",
+        "benchmark"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.25899",
+      "institution_source": "https://arxiv.org/pdf/2610.25899",
+      "summary": "保留前任提交但未通过验收的代码与环境，测量编程 Agent 接手工作的起始状态鲁棒性。",
+      "caveat": "论文198状态/111任务，五Agent在DeepSWE接手成功率比匹配干净起点低20.6–53.5个百分点，按任务等权；样本是筛选后的前任失败，不是随机真实交接失败率。接受偏差是作者行为解释。公开包实际165+31=196状态/110任务，排除两个运行态案例，TB公开为文件系统版本，非全部CRIU运行态。本轮仅清点元数据和核对说明；模型结果与原始轨迹未完整公开，token记录仅构建阶段，不能当完整评测成本。",
+      "reading_scope": "方法/人工筛选、盲接手/任务等权协议、主结果/接受偏差、状态转移/配置/局限附录；PDF首页单位；README、DATASET、RELEASE_STATUS与165/31条元数据实际清点。未运行镜像、模型或验证成功率。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "方法、实验与状态转移附录",
+          "url": "https://arxiv.org/html/2610.25899v1"
+        },
+        {
+          "kind": "code",
+          "label": "评测框架及公开任务材料",
+          "url": "https://github.com/userljz/SWE-Residual"
+        },
+        {
+          "kind": "artifacts",
+          "label": "公开状态元数据（196条，范围见DATASET）",
+          "url": "https://github.com/userljz/SWE-Residual/tree/main/metadata"
+        }
+      ],
+      "resource_follow_up": [
+        "Paper198/111 versus public filesystem196/110; runtime-state reproducibility.",
+        "Human-created states and controlled requirement audits with full evaluation costs.",
+        "No verified author blog located."
+      ],
+      "added_date": "2026-10-20",
+      "updated_date": "2026-10-20",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "silent-forks",
+      "title": "Over-Defense in Coding Agents Begins at Silent Forks",
+      "institution": "NYU",
+      "first_author": "Hanjun Luo",
+      "publication_date": "2026-10-18",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "paper_id": "2610.24949",
+      "version": "v1",
+      "category": "coding-agents",
+      "tags": [
+        "preference-learning",
+        "over-defense",
+        "behavioral-checker",
+        "stopping-criteria"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.24949",
+      "institution_source": "https://arxiv.org/pdf/2610.24949",
+      "summary": "在结果相同但行为不同的分岔处构造偏好对，训练 Agent 完成必要检查并减少多余动作。",
+      "caveat": "Qwen3.5-4B在318任务/30仓库训练，主要留出48任务/4仓库；隐式预算不适度行为70.3%→58.9%，随机位置DPO67.7%，中位143→90秒；oracle94.3%→93.2%，未覆盖越界编辑可能增加，非全面无损。0.9小时仅训练，挖掘另157.7agent小时。单bash、Python/Go规则任务外推有限。论文488训练对，公开实际256条、无权重。摘要GRPO同奖励组74%与正文71%不一致，未据其作定量结论。",
+      "reading_scope": "静默分岔定义、双侧偏好与DPO、比较/消融/统计区间、检查器边界与成本附录；PDF首页视觉核对一作首单位；README/目录及公开偏好256条清点。未训练或执行评测。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文与检查器/训练/成本附录",
+          "url": "https://arxiv.org/html/2610.24949v1"
+        },
+        {
+          "kind": "code",
+          "label": "实现与训练/评测脚本",
+          "url": "https://github.com/Astarojth/silent-forks"
+        },
+        {
+          "kind": "artifacts",
+          "label": "公开偏好对样本（256条，非全量）",
+          "url": "https://github.com/Astarojth/silent-forks/blob/main/data/pairs/pairs.jsonl"
+        }
+      ],
+      "resource_follow_up": [
+        "Full488-pair release and weights; abstract/main GRPO percentage discrepancy.",
+        "Larger models and richer harnesses; risk-conditioned stopping policies and test coverage.",
+        "No verified author blog located."
+      ],
+      "added_date": "2026-10-20",
+      "updated_date": "2026-10-20",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "self-assessment",
+      "title": "Scaling Misuse Detection with Self-Assessment",
+      "institution": "Anthropic",
+      "first_author": "Yiming Zhang",
+      "publication_date": "2026-10-16",
+      "publication_kind": "blog",
+      "type": "官方技术研究博客",
+      "category": "agent-security",
+      "tags": [
+        "misuse-detection",
+        "self-monitoring",
+        "cache-reuse",
+        "classifier-distillation"
+      ],
+      "canonical_url": "https://safeguards.anthropic.com/2026/self-assessment/",
+      "institution_source": "https://safeguards.anthropic.com/2026/self-assessment/",
+      "summary": "复用对话推理缓存生成结构化安全自评，以低成本初筛支持离线滥用调查。",
+      "caveat": "教师定义1%误报率处召回潜在有害会话78%、高优先级94%，非独立人工真实危害检出率。训练评测共享教师盲点，生产样本规模不足以外部复算；低于2%是生产推理计算增量估计，不含完整后续复核。24攻防任务自评阻断仍13/24成功，无保护19/24、独立分类器6/24；生产用于离线监测，非独立阻断。需专门训练与服务端缓存，普通反思指令不等价；未核实公开实现或数据。",
+      "reading_scope": "官方博客全文：方法、两阶段训练、合成数据、生产/扩展/留一类实验、24任务适应性攻防、部署/数据处理/局限/脚注；经网页工具读取。未访问内部数据或执行实验。",
+      "links": [
+        {
+          "kind": "blog",
+          "label": "官方技术报告",
+          "url": "https://safeguards.anthropic.com/2026/self-assessment/"
+        }
+      ],
+      "resource_follow_up": [
+        "Independent human labels, negative-sample audits and adaptive attacks.",
+        "Full cascade costs, sample sizes, implementation and training recipe availability."
+      ],
+      "added_date": "2026-10-20",
+      "updated_date": "2026-10-20",
       "evidence_status": "author-reported"
     }
   ]

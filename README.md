@@ -7,18 +7,18 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-25-6366f1?style=flat-square" alt="Papers and blogs: 25"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--19-14b8a6?style=flat-square" alt="Updated: 2026-10-19"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-28-6366f1?style=flat-square" alt="Papers and blogs: 28"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--20-14b8a6?style=flat-square" alt="Updated: 2026-10-20"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>5 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>7 entries</sub></td>
     <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>8 entries</sub></td>
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>6 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>6 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>7 entries</sub></td>
   </tr>
 </table>
 
@@ -29,6 +29,8 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-19</code><br><sub>HKU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.25899" title="SWE-Residual: Evaluating Starting-State Robustness of Coding Agents">SWE-Residual: Evaluating Starting-State Robustness of Coding Agents</a></b><br><br>保留前任提交但未通过验收的代码与环境，测量编程 Agent 接手工作的起始状态鲁棒性。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.25899">Paper</a><br><a href="https://github.com/userljz/SWE-Residual">Code</a><br><a href="https://github.com/userljz/SWE-Residual/tree/main/metadata">Artifacts</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-10-18</code><br><sub>NYU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.24949" title="Over-Defense in Coding Agents Begins at Silent Forks">Over-Defense in Coding Agents Begins at Silent Forks</a></b><br><br>在结果相同但行为不同的分岔处构造偏好对，训练 Agent 完成必要检查并减少多余动作。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.24949">Paper</a><br><a href="https://github.com/Astarojth/silent-forks">Code</a><br><a href="https://github.com/Astarojth/silent-forks/blob/main/data/pairs/pairs.jsonl">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>UIUC</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21073" title="Skip the Compressor: Coding Agents Fix More Issues When They Pick Whole Files">Skip the Compressor: Coding Agents Fix More Issues When They Pick Whole Files</a></b><br><br>选择并原样提供少量相关源码文件，减少上下文压缩导致的补丁失配与修复失败。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21073">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>State Key Lab of AI Safety</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21170" title="MemScope: Evolving Agent Memory Architectures through Localized Code Repair">MemScope: Evolving Agent Memory Architectures through Localized Code Repair</a></b><br><br>联合检查执行轨迹、运行时记忆和实现代码，以局部补丁改进 Agent 记忆架构。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21170">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-14</code><br><sub>ICT, CAS</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.20344" title="Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents">Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents</a></b><br><br>让模型根据需求构建编程Agent框架，再用脚本化模拟模型与正向对照验收其行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.20344">Paper</a><br><a href="https://github.com/YuyaoGe/doc2harness">Code</a><br><a href="https://geyuyao.com/doc2harness/">Project</a></td></tr>
@@ -81,6 +83,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-16</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://safeguards.anthropic.com/2026/self-assessment/" title="Scaling Misuse Detection with Self-Assessment">Scaling Misuse Detection with Self-Assessment</a></b><br><br>复用对话推理缓存生成结构化安全自评，以低成本初筛支持离线滥用调查。</td><td align="center" valign="middle"><a href="https://safeguards.anthropic.com/2026/self-assessment/">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>UMass Amherst</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21029" title="SCARCE: Emergent Institutions in Long-Horizon Multi-Agent Coding Systems">SCARCE: Emergent Institutions in Long-Horizon Multi-Agent Coding Systems</a></b><br><br>让编程 Agent 反复协商共享执行资源，研究记忆如何支持互惠、声誉与结盟行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21029">Paper</a><br><a href="https://github.com/compass-group-tue/SCARCE-ENV">Code</a><br><a href="https://compass-group-tue.github.io/SCARCE">Project</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-13</code><br><sub>NUS</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.18206" title="SWE-MISBEHAVIOR: Benchmarking and Mitigating Boundary Violations in Software Coding Agents">SWE-MISBEHAVIOR: Benchmarking and Mitigating Boundary Violations in Software Coding Agents</a></b><br><br>评测编程Agent在代码、文件与系统操作中的越界行为，并按任务选择专用工具来缓解。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.18206">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-12</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/self-replicating-ai" title="AI models may be capable of self-replicating without access to a datacenter">AI models may be capable of self-replicating without access to a datacenter</a></b><br><br>在陌生硬件和简化集群中检验模型部署、复制与会话重启后的任务恢复能力。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/self-replicating-ai">Blog</a></td></tr>
