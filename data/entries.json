@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-20",
+  "last_updated": "2026-10-21",
   "entries": [
     {
       "id": "reviewbench",
@@ -1050,6 +1050,130 @@
       "added_date": "2026-10-20",
       "updated_date": "2026-10-20",
       "evidence_status": "author-reported"
+    },
+    {
+      "id": "attack-surface-reduction",
+      "title": "Using Claude to reduce the attack surface of code",
+      "institution": "Anthropic",
+      "first_author": "Chris Rohlf",
+      "publication_date": "2026-10-20",
+      "publication_kind": "blog",
+      "type": "官方技术研究博客",
+      "category": "vulnerability-discovery",
+      "tags": [
+        "attack-surface-reduction",
+        "reachability",
+        "configuration-analysis",
+        "security-hardening"
+      ],
+      "canonical_url": "https://www.anthropic.com/research/attack-surface-reduction",
+      "institution_source": "https://www.anthropic.com/research/attack-surface-reduction",
+      "summary": "分轮分析配置与认证前代码的可达性，通过动态验证和前移检查收缩软件攻击面。",
+      "caveat": "25项目493项是作者报告的暴露面与配置问题，不能等同于独立可利用漏洞或CVE。约五分之一是默认构建OpenSSH认证前可达代码的减少，非全项目代码或攻击成功率下降。维护者10.6发布说明独立确认前移算法白名单检查的变更，但未独立复算研究统计。博客未提供完整项目级原始发现、误报分母、统一基线、总token/人工成本或可核实公开研究skill实现；测试等价不证明所有行为等价，影响非默认配置的修改留给人工决策。",
+      "reading_scope": "经网页工具阅读官方博客全文：三类分析、项目类别、配置交互案例、OpenSSH迭代、动态轨迹与回归流程及结论；核对OpenSSH 10.6维护者发布说明。未运行代码、补丁或攻击实验。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "blog",
+          "label": "官方研究博客",
+          "url": "https://www.anthropic.com/research/attack-surface-reduction"
+        }
+      ],
+      "resource_follow_up": [
+        "公开分析skill与各项目发现、动态验证轨迹和补丁对应关系。",
+        "独立复核误报、配置覆盖、真实部署可达性与完整成本；OSS-Scanner集成进展。"
+      ],
+      "added_date": "2026-10-21",
+      "updated_date": "2026-10-21",
+      "supporting_urls": [
+        "https://www.openssh.org/releasenotes.html"
+      ]
+    },
+    {
+      "id": "harnessadapt-rl",
+      "title": "Training the Whole Agent, Not Just the Model",
+      "institution": "ZJU",
+      "first_author": "Lingxiao Tang",
+      "publication_date": "2026-10-20",
+      "publication_kind": "paper",
+      "paper_id": "2610.28069",
+      "version": "v1",
+      "type": "arXiv预印本",
+      "category": "coding-agents",
+      "tags": [
+        "reinforcement-learning",
+        "harness-evolution",
+        "mechanism-skills",
+        "software-repair"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.28069",
+      "institution_source": "https://arxiv.org/pdf/2610.28069",
+      "summary": "在编程强化学习中同步生成机制级指导并演化工具与运行反馈，联合优化模型和执行框架。",
+      "caveat": "单个Qwen3.5-9B、每配置仅一次训练，三次评估不是三次独立训练。Verified/Multilingual/Pro单次尝试率57.6/37.3/39.7%，相对GRPO提高9.8/12.6/6.4个百分点。统一部署框架下模型差异很小，完整系统增益不能全部归给模型权重。训练轨迹8464对16928，但加准备与比较后总18056对16928，另含1570初始skill请求及10次框架教师调用，轨迹数不是算力或美元成本。候选采纳依据有限样本双指标改善，非显著性检验。作者报告训练任务去重，不保证预训练污染消除。发布包有实现与H1/H2；模型权重仅核对其README入口，未下载或执行；历史教师快照、CLI版本与训练数据原始revision不完整固定。",
+      "reading_scope": "v1全文主方法、主结果、技能与框架消融、局限；附录任务池与去重、教师输入、选择与轨迹计数、训练重复性、置信区间、成本、工具与hook规格。附录图中完整提示词未逐字转录。核对PDF首位作者单位；阅读官方代码README、ARTIFACT_NOTES、TRAINING_SETUP和目录并抽查控制器实现。未训练或独立评测。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28069"
+        },
+        {
+          "kind": "code",
+          "label": "官方训练与框架实现",
+          "url": "https://github.com/lingxiaotang/HarnessAdapt-RL"
+        },
+        {
+          "kind": "artifacts",
+          "label": "复现范围说明",
+          "url": "https://github.com/lingxiaotang/HarnessAdapt-RL/blob/main/docs/ARTIFACT_NOTES.md"
+        }
+      ],
+      "resource_follow_up": [
+        "核对权重下载与完整GPU端到端复现；历史教师与数据版本固定。",
+        "多个训练与搜索种子、其他模型规模、按仓库和时间留出以及总token/美元成本对照。",
+        "未找到单独作者解读Blog；持续跟踪。"
+      ],
+      "added_date": "2026-10-21",
+      "updated_date": "2026-10-21"
+    },
+    {
+      "id": "oo-harness",
+      "title": "Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design",
+      "institution": "UIUC",
+      "first_author": "Gaotang Li",
+      "publication_date": "2026-10-20",
+      "publication_kind": "paper",
+      "paper_id": "2610.28380",
+      "version": "v1",
+      "type": "arXiv预印本",
+      "category": "software-engineering",
+      "tags": [
+        "harness-evolution",
+        "object-oriented-design",
+        "task-routing",
+        "long-horizon-agents"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.28380",
+      "institution_source": "https://arxiv.org/html/2610.28380v1",
+      "summary": "以类继承复用并演化专用 Agent 框架，根据任务和试跑轨迹路由到合适的执行策略。",
+      "caveat": "固定Gemini-3.5-Flash执行器；三次执行重复不等于独立搜索重复。AutomationBench平均部分得分61.62至77.41%，非任务全通过率；严格通过25.44至37.22%。Workspace严格通过8.33%，与微平均rubric得分39.48%不可混用。Step排除前置base试跑、额外rollout及路由，不能据其宣称全流程更便宜；未提供充分总美元/token成本表。继承消融三种分别搜索且仅评估一次，非同一产物严格单因素证明。分布外49任务全回退base，说明保留而非提升base能力。测试无隐藏grader输入；基础模型预训练污染未独立核实。正文路由Sonnet5与附录默认Opus4.8存在配置差异，需核实具体运行清单。未核实该成果公开实现、作者Blog或完整轨迹，参考文献中的基准与基线仓库不是其代码。",
+      "reading_scope": "v1主文方法、数据划分、主结果、路由/继承消融、案例、分布外测试与局限；附录A评测/路由/基线/资源、B专门框架案例。HTML程序清单与提示词图未逐字读取。核对HTML作者单位及首位作者个人主页；未执行实验。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28380"
+        }
+      ],
+      "resource_follow_up": [
+        "跟踪官方完整实现与Blog；核对routing模型和实际配置。",
+        "包含base试跑、路由、专门框架重跑的总成本；继承消融多种子配对与动态API漂移。",
+        "工作流有写操作时，验证试跑和重跑的副作用隔离、幂等与权限边界。"
+      ],
+      "added_date": "2026-10-21",
+      "updated_date": "2026-10-21"
     }
   ]
 }

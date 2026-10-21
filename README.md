@@ -7,17 +7,17 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-28-6366f1?style=flat-square" alt="Papers and blogs: 28"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--20-14b8a6?style=flat-square" alt="Updated: 2026-10-20"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-31-6366f1?style=flat-square" alt="Papers and blogs: 31"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--21-14b8a6?style=flat-square" alt="Updated: 2026-10-21"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>7 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>8 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>8 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>9 entries</sub></td>
   </tr>
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>6 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>7 entries</sub></td>
     <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>7 entries</sub></td>
   </tr>
 </table>
@@ -29,6 +29,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>ZJU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28069" title="Training the Whole Agent, Not Just the Model">Training the Whole Agent, Not Just the Model</a></b><br><br>在编程强化学习中同步生成机制级指导并演化工具与运行反馈，联合优化模型和执行框架。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28069">Paper</a><br><a href="https://github.com/lingxiaotang/HarnessAdapt-RL">Code</a><br><a href="https://github.com/lingxiaotang/HarnessAdapt-RL/blob/main/docs/ARTIFACT_NOTES.md">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-19</code><br><sub>HKU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.25899" title="SWE-Residual: Evaluating Starting-State Robustness of Coding Agents">SWE-Residual: Evaluating Starting-State Robustness of Coding Agents</a></b><br><br>保留前任提交但未通过验收的代码与环境，测量编程 Agent 接手工作的起始状态鲁棒性。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.25899">Paper</a><br><a href="https://github.com/userljz/SWE-Residual">Code</a><br><a href="https://github.com/userljz/SWE-Residual/tree/main/metadata">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-18</code><br><sub>NYU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.24949" title="Over-Defense in Coding Agents Begins at Silent Forks">Over-Defense in Coding Agents Begins at Silent Forks</a></b><br><br>在结果相同但行为不同的分岔处构造偏好对，训练 Agent 完成必要检查并减少多余动作。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.24949">Paper</a><br><a href="https://github.com/Astarojth/silent-forks">Code</a><br><a href="https://github.com/Astarojth/silent-forks/blob/main/data/pairs/pairs.jsonl">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>UIUC</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21073" title="Skip the Compressor: Coding Agents Fix More Issues When They Pick Whole Files">Skip the Compressor: Coding Agents Fix More Issues When They Pick Whole Files</a></b><br><br>选择并原样提供少量相关源码文件，减少上下文压缩导致的补丁失配与修复失败。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21073">Paper</a></td></tr>
@@ -47,6 +48,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>UIUC</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28380" title="Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design">Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design</a></b><br><br>以类继承复用并演化专用 Agent 框架，根据任务和试跑轨迹路由到合适的执行策略。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28380">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>Fudan University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21925" title="Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel">Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel</a></b><br><br>从历史评审中恢复设计决策及适用条件，规划并验证新补丁中的设计权衡。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21925">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-14</code><br><sub>Xiamen University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.20193" title="SWE-Stream: Scaling Executable Training Data for SWE Agents via Progressive Construction and Elastic Streaming">SWE-Stream: Scaling Executable Training Data for SWE Agents via Progressive Construction and Elastic Streaming</a></b><br><br>逐步重建和验证开发历史中的训练任务，以异步调度与资源反馈提高可执行数据产出。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.20193">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-14</code><br><sub>Georgia Tech</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.19368" title="OS-Bench: Evaluating SWE Agents on Cross-OS Code Migration">OS-Bench: Evaluating SWE Agents on Cross-OS Code Migration</a></b><br><br>通过双系统覆盖差异构造代码迁移任务，要求补丁同时恢复目标平台并保留源平台行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.19368">Paper</a><br><a href="https://huggingface.co/datasets/SWE-bench-Live/OS-bench">Artifacts</a></td></tr>
@@ -66,6 +68,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/attack-surface-reduction" title="Using Claude to reduce the attack surface of code">Using Claude to reduce the attack surface of code</a></b><br><br>分轮分析配置与认证前代码的可达性，通过动态验证和前移检查收缩软件攻击面。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/attack-surface-reduction">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-16</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/ecdsa-curve-origins" title="Claude reveals ECDSA curve origins">Claude reveals ECDSA curve origins</a></b><br><br>用模型编写扫描和数学求解程序，重建标准椭圆曲线公开参数的生成来源。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/ecdsa-curve-origins">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-14</code><br><sub>SFU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.20245" title="P2Patch: Exploit-Guided Vulnerability Repair">P2Patch: Exploit-Guided Vulnerability Repair</a></b><br><br>让漏洞复现与补丁修复交替迭代，将新反例加入修复要求并用独立留出测试验收。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.20245">Paper</a><br><a href="https://github.com/P2Patch/P2patch">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-14</code><br><sub>HUST</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.19566" title="Mission (Im)Possible: Towards Autonomous Discovery of Autopilot Logic Flaws in Open-Source Drone Frameworks">Mission (Im)Possible: Towards Autonomous Discovery of Autopilot Logic Flaws in Open-Source Drone Frameworks</a></b><br><br>结合跨模块代码切片、仿真测试与假设驱动的日志分析，发现自动驾驶逻辑缺陷。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.19566">Paper</a><br><a href="https://impossiblemissionfinder.github.io/static/data/vulnerability_cases.json?v=20260704-3">Artifacts</a><br><a href="https://impossiblemissionfinder.github.io/">Project</a></td></tr>
