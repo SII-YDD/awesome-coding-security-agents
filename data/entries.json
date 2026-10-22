@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-21",
+  "last_updated": "2026-10-22",
   "entries": [
     {
       "id": "reviewbench",
@@ -1174,6 +1174,137 @@
       ],
       "added_date": "2026-10-21",
       "updated_date": "2026-10-21"
+    },
+    {
+      "id": "tracelite",
+      "title": "TraceLite: Efficient Trace Reduction for SWE Agents via Optical Compression and Redundancy Removal",
+      "institution": "CUHK",
+      "first_author": "Jingyu Xiao",
+      "publication_date": "2026-10-20",
+      "publication_kind": "paper",
+      "paper_id": "2610.28612",
+      "version": "v1",
+      "type": "arXiv预印本",
+      "category": "coding-agents",
+      "tags": [
+        "context-compression",
+        "optical-compression",
+        "trajectory-management",
+        "inference-efficiency"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.28612",
+      "institution_source": "https://arxiv.org/html/2610.28612v1",
+      "summary": "保留近期观测文本、将旧观测转成图像并清除重复和过期历史，降低编程 Agent 上下文开销。",
+      "caveat": "主评测为Verified的400题，另100题开发调参；313/400对312/400仅高1题，McNemar p=1，不构成显著性能提升或严格无损证明。累计输入减少33.05%、作者API费用口径减少21.30%，但步数14.65增至17.52；每观测0.438秒非整任务加速。Gemini与DeepSWE各50题，单一mini-SWE-agent，主修复评测未报告多次完整运行。公有基准污染未排除，测试通过不保证完整语义正确。当前公开包有渲染、去重、清理与运行适配代码；所查runtime明确要求gpt-5.6-luna和无previous_response_id的完整历史重放，不应概括为任意模型即插即用。需另核实图像估算、缓存及实际账单与跨模型复现。未执行代码或模型实验。",
+      "reading_scope": "v1主文全文：初步研究、方法、400/100划分、主实验与统计检验、开销、八组合消融、参数、跨模型/DeepSWE及局限；核对作者HTML单位。公开README、递归目录及runtime.py源码阅读，未运行。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28612"
+        },
+        {
+          "kind": "code",
+          "label": "官方轨迹压缩实现",
+          "url": "https://github.com/xjywhu/TraceLite"
+        }
+      ],
+      "resource_follow_up": [
+        "跨模型运行适配、完整评测脚本/轨迹与真实缓存账单复核；未找到独立作者Blog。",
+        "跨框架及更多随机重复；改动后仍需历史故障信息的失败任务，比较选择性清理与全部清理。"
+      ],
+      "added_date": "2026-10-22",
+      "updated_date": "2026-10-22"
+    },
+    {
+      "id": "agentest",
+      "title": "AgenTest: Mining Business Rules to Test LLM Agents for Business Logic Bugs",
+      "institution": "SMU",
+      "first_author": "Lili Quan",
+      "publication_date": "2026-10-20",
+      "publication_kind": "paper",
+      "paper_id": "2610.28116",
+      "version": "v1",
+      "type": "arXiv预印本",
+      "category": "software-engineering",
+      "tags": [
+        "agent-testing",
+        "business-logic",
+        "specification-mining",
+        "authorization",
+        "hybrid-oracle"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.28116",
+      "institution_source": "https://arxiv.org/html/2610.28116v1",
+      "summary": "从提示、工具与领域知识提炼业务规则，构造多轮测试并结合轨迹和状态检查 Agent 的逻辑违规。",
+      "caveat": "551条细化规格人工确认88%正确，504条构造测试，每模型1512轮；89/121为按被违反规格去重、经双作者人工复核的数量，非CVE或全自动准确发现数。3.4/2.5倍对三基线发现并集26/49，非同等总计算成本；IntellAgent缺电信域且MANTRA交互方式不同。等轮数重采样曲线不是在线优先级或等token/人工成本对照。混合裁判DeepSeek实验精确率82.6%，一致率97.6%不可当precision；包含大量无违规样本。领域规则可能臆造，单规格漏掉多目标交互，只有三个tau2-bench域和两个模型。需要可重置环境、已知数据模型与提示/工具访问；未给充分总美元和人工耗时。作者匿名代码地址本轮HTTP403且网页工具不可访问，未核实实现。",
+      "reading_scope": "v1全文方法、规则抽取/过滤/GWT细化、测试驱动与67策略、混合裁判、设置/基线差异、规格与违规人工标注、效果/等预算/消融/根因、讨论与局限；作者HTML单位及Data Availability。匿名代码全文无法访问，未执行。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28116"
+        }
+      ],
+      "announced_code_url": "https://anonymous.4open.science/r/VIOLET-D190",
+      "code_access_status": "HTTP403 via direct request; inaccessible via web tool; implementation unverified",
+      "resource_follow_up": [
+        "恢复匿名材料访问或核实正式代码地址；未找到独立作者Blog。",
+        "与业务所有者核验隐含规则，独立人工标注；增加共享工具/资源的多规格多目标测试。",
+        "等token、工具调用和人工复核预算比较，跨新域/模型版本做回归。"
+      ],
+      "added_date": "2026-10-22",
+      "updated_date": "2026-10-22"
+    },
+    {
+      "id": "autoredclaw",
+      "title": "AutoRedClaw: Automated Red-Teaming for Claw-Style Agents",
+      "institution": "WashU",
+      "first_author": "Hao Li",
+      "publication_date": "2026-10-19",
+      "publication_kind": "paper",
+      "paper_id": "2610.27244",
+      "version": "v1",
+      "type": "arXiv预印本",
+      "category": "agent-security",
+      "tags": [
+        "automated-red-teaming",
+        "persistent-state",
+        "prompt-injection",
+        "benchmark-generation"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.27244",
+      "institution_source": "https://arxiv.org/html/2610.27244v1",
+      "summary": "联合生成攻击场景、可执行环境与验收条件，分别评测持久状态投毒和后续恶意行为触发。",
+      "caveat": "Inject衡量写入持久状态，Trigger直接从已投毒状态起步，两个独立阶段ASR不能当成或相乘为同一攻击链成功率。330例为生成后经DeepSeek-V4-Pro探测筛选的合成困难集，非真实部署随机攻击分布；同一模型用于生成和探测。OpenClaw跨四模型Inject/Trigger均值65.7/69.2%，各150例；Codex/ClaudeCode仅支持两类持久面，各阶段60例，模型也不匹配，不能直接排名。当前公开Codex适配器容器隔离但内层danger-full-access，仍保留on-request自动审批；ClaudeCode默认dontAsk，未核实论文每次历史配置与当前实现完全一致。作者每成功生成例不超0.10美元不是完整部署/评测成本。代码README区分v1.1论文版和v1.2新版；本轮仅按树清点v1.1的150Inject+150Trigger+30环境例文件，未执行或验证标签。未证明长期多会话风险衰减。",
+      "reading_scope": "v1主文威胁模型、三阶段生成/环境/验证、适配器、设置与表1、效率、分阶段分析、局限；附录C/D及E部分细分与讨论，提示词图未逐字读取。公开README、递归目录、Codex/ClaudeCode说明及Codex适配器配置段阅读；v1.1文件数核对。未构建容器、调用受测模型或运行攻击。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27244"
+        },
+        {
+          "kind": "code",
+          "label": "官方生成与评测实现",
+          "url": "https://github.com/SaFo-Lab/AutoRedClaw"
+        },
+        {
+          "kind": "artifacts",
+          "label": "论文对应v1.1数据",
+          "url": "https://github.com/SaFo-Lab/AutoRedClaw/tree/main/dataset/v1.1"
+        }
+      ],
+      "resource_follow_up": [
+        "固定论文历史权限/CLI/模型与数据版本，区分当前实现与历史结果；未找到独立作者Blog。",
+        "完整同一载荷跨会话攻击链、多个独立生成器、未经成功筛选的留出集与真实部署授权差分测试。",
+        "逐项独立核查oracle和生成成本，比较持久写入来源校验/隔离的安全与正常任务效用。"
+      ],
+      "added_date": "2026-10-22",
+      "updated_date": "2026-10-22"
     }
   ]
 }
