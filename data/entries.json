@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-22",
+  "last_updated": "2026-10-23",
   "entries": [
     {
       "id": "reviewbench",
@@ -1305,6 +1305,124 @@
       ],
       "added_date": "2026-10-22",
       "updated_date": "2026-10-22"
+    },
+    {
+      "id": "agentic-verified-optimization",
+      "title": "Agentic Verified Optimization of Real-World Software",
+      "institution": "UC Berkeley",
+      "first_author": "Zhe Ye",
+      "publication_date": "2026-10-20",
+      "publication_kind": "paper",
+      "paper_id": "2610.30188",
+      "version": "v1",
+      "type": "arXiv预印本",
+      "category": "coding-agents",
+      "tags": [
+        "verified-optimization",
+        "equivalence-proofs",
+        "Lean",
+        "agentic-migration",
+        "performance"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.30188",
+      "institution_source": "https://arxiv.org/pdf/2610.30188",
+      "summary": "让编程 Agent 联合搜索更快实现与 Lean 等价证明，并以差分测试构造真实程序的迁移参考。",
+      "caveat": "证明覆盖优化Lean与固定Lean参考的等价，原生程序到Lean迁移仅差分测试，且不覆盖未建模IO、外部调用和并发；编译器/runtime仍为可信边界。Verina189题中156改进包含54题一次重试，几何均值1.851含未改进取原实现，中位数1.117。17迁移应用92成功改写，51场景47快于迁移版，应用几何均值仅1.120；比原生快仅3/51，几何平均速度比0.148，不能写成生产原生软件普遍提速。40库恢复率87.68%以原程序在环境中通过的18642测试为分母，非全部39857声明测试；基线68.17%，但多agent流程非等总token/时间预算。单一Codex/GPT-5.6Sol，未报告完整搜索/API/人工成本，测试集污染未独立核实。未核实本成果公开实现、证明集、迁移产物或作者Blog。",
+      "reading_scope": "v1主文方法、证明边界、Aqueduct流程、评估与研究方向；附录A新环境/axiom/可执行性检查、B迁移与mutation、C消融、D案例。核对PDF首位作者单位及作者/实验室公开资源；未执行Lean检查、迁移或性能实验。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.30188"
+        }
+      ],
+      "resource_follow_up": [
+        "核实官方实现、全部证明/迁移产物/测时脚本及成本；未找到对应作者Blog。",
+        "等总预算比较profile引导目标选择、实现/证明交错与lemma复用；原生Rust可信翻译或迁移证明的完整链路。"
+      ],
+      "added_date": "2026-10-23",
+      "updated_date": "2026-10-23"
+    },
+    {
+      "id": "janus-jni-fuzzing",
+      "title": "JANUS: Agentic Cross-Language Fuzzing Harness Generation for Android Native Libraries",
+      "institution": "Nankai University",
+      "first_author": "Xiangyu Zhang",
+      "publication_date": "2026-10-21",
+      "publication_kind": "paper",
+      "paper_id": "2610.30218",
+      "version": "v1",
+      "type": "arXiv预印本",
+      "category": "vulnerability-discovery",
+      "tags": [
+        "Android",
+        "JNI",
+        "fuzzing-harness",
+        "dependency-recovery",
+        "cross-language"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.30218",
+      "institution_source": "https://arxiv.org/pdf/2610.30218",
+      "summary": "恢复 JNI 调用依赖并递归构造跨语言对象，生成可执行模糊测试入口以挖掘 Android 原生库漏洞。",
+      "caveat": "44应用是103应用中原Poirot镜像可构建的子集；公开库版本主要为2022，Vendor20使用2026-02-05补丁设备，非今日最新系统。6094为可运行且覆盖增长harness，非漏洞；5390为AFL去重崩溃。按覆盖选200例人工分析，89为目标缺陷但均在新版修复，不能把全部崩溃算独立真实漏洞。另Vendor20的1284原始崩溃->155去重->6作者确认新漏洞，报告正在CVE审核，无可核实已分配CVE或修复接受证据；细节禁运。Bitmap16.9%对2.9/2.6%非行覆盖率，且按有效harness测量。三次Janus运行平均API1292.6美元，约0.212/有效harness，含94.7%缓存命中；不含完整fuzz计算和2–18小时/崩溃的人工分析，Vendor任务每harness24小时另计。线性依赖模型难覆盖异步、Binder和反模拟；未执行实现或验证崩溃。匿名材料403，未核实Code/Artifacts。",
+      "reading_scope": "v1主要方法、跨语言解析/检索、依赖与递归参数、记忆/反馈归因、设置/表1/覆盖有效性/成本、消融、崩溃复核、Vendor发现、讨论与局限；核对PDF单位顺序及参考文献13材料地址。匿名材料无法访问，未运行。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.30218"
+        }
+      ],
+      "announced_code_url": "https://anonymous.4open.science/r/Janus-1840/",
+      "code_access_status": "HTTP403 via direct request and inaccessible via web tool; implementation and sanitized artifacts unverified",
+      "resource_follow_up": [
+        "恢复材料访问；跟踪6报告的CVE分配、厂商修复和禁运后证据；未找到作者Blog。",
+        "跨最新设备补丁/应用与不可构建子集验证，独立审计生产可达性与完整发现成本。",
+        "扩展异步/并发依赖和Android系统服务上下文。"
+      ],
+      "added_date": "2026-10-23",
+      "updated_date": "2026-10-23"
+    },
+    {
+      "id": "agentphishing",
+      "title": "AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack",
+      "institution": "CMU",
+      "first_author": "Justin Tan",
+      "publication_date": "2026-10-22",
+      "publication_kind": "paper",
+      "paper_id": "2610.31404",
+      "version": "v1",
+      "type": "arXiv预印本",
+      "category": "agent-security",
+      "tags": [
+        "social-engineering",
+        "email-agent",
+        "adaptive-evaluation",
+        "phishing",
+        "behavioral-metrics"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.31404",
+      "institution_source": "https://arxiv.org/pdf/2610.31404",
+      "summary": "利用邮件 Agent 的响应反馈演化生成策略，分别评测钓鱼识别与恶意请求的动作及回复选择。",
+      "caveat": "文本结构化动作与草稿评分，非真实邮箱/浏览器/工具执行或已发生泄露。检测D按举报/归档/忽略/退订动作计，服从C按点击/提供信息选择或不安全草稿计，不能等同内在识别能力或真实执行率。6优化目标在抽样旧语料D100/C0；通用skill在9额外目标中4个D<10%、C>45%，不是所有前沿系统被攻破。留出63格每格20封含benign，同一skill邮件在9目标复用，独立样本少；各阶段批次大小与重复不一致。通用skill优于GPT派生skill的均值差不显著；说服原则相关性非独立因果证据。规则裁判、LLM真实性与标注有误差，合成单消息和固定提示限制外推；无充分总API/搜索成本表。论文声明发布评测代码和skill但未核实对应公开URL，原始邮件语料明确不发布；未运行模型或真实邮件操作。",
+      "reading_scope": "v1主文方法、目标与约束、评测接口/指标、优化与跨目标结果、消融/方差/局限及发布声明；附录C/D表与PDF表5样本/配对说明、E多样性，F仅结果表和重复说明，未逐字阅读或复用攻击生成提示词。核对PDF首位作者单位；未核实实现或运行。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.31404"
+        }
+      ],
+      "resource_follow_up": [
+        "核实作者评测实现与版本、指标解析及样本/优化预算；未找到对应Code或Blog的可核实公开地址。",
+        "隔离邮箱真实动作闭环、独立人工审计、扩大良性与恶意样本并测误报。",
+        "多轮评测及固定内容的说服风格随机对照，分别衡量识别、授权和实际阻断。"
+      ],
+      "added_date": "2026-10-23",
+      "updated_date": "2026-10-23"
     }
   ]
 }
