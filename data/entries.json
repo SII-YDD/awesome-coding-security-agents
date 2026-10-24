@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-23",
+  "last_updated": "2026-10-24",
   "entries": [
     {
       "id": "reviewbench",
@@ -1423,6 +1423,124 @@
       ],
       "added_date": "2026-10-23",
       "updated_date": "2026-10-23"
+    },
+    {
+      "id": "stale-instruction-files",
+      "paper_id": "2610.30571",
+      "title": "Stale Instruction Files Override the Code in Coding Agents: A One-Sentence Fix",
+      "institution": "Georgia Tech",
+      "first_author": "Xiaonan Xu",
+      "category": "coding-agents",
+      "tags": [
+        "instruction-files",
+        "reliability",
+        "regression"
+      ],
+      "summary": "通过受控冲突实验检验过期指令对编程的影响，并用显式优先规则减少约定偏离与旧代码重写。",
+      "caveat": "40个合成小型Python项目、320次运行；约定选择分母每条件720，代码优先4.2%→91.4%；测试143/160→160/160。仅文件过期场景，不证明代码总应覆盖文档或新需求；重写阈值为旧Python文件删除至少20行，冲突判断由模型辅助完成。未复跑Agent或独立验证机制因果。",
+      "reading_scope": "v1主文方法、全部结果、范围和运行/失败处理/盲化判断附录；公开README、根目录、numbers/more_numbers汇总，下载并计数320条运行记录，未运行评测或分析脚本。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.30571v1"
+        },
+        {
+          "kind": "code",
+          "label": "任务、数据和分析代码",
+          "url": "https://github.com/WenJing95/stale-docs-data"
+        }
+      ],
+      "follow_up": [
+        "真实多语言仓库及代码有错/计划迁移反向对照。",
+        "按相同预算复测模型与CLI版本，直接消融输入位置与优先措辞；完整成本。",
+        "未找到对应作者Blog。"
+      ],
+      "publication_date": "2026-10-22",
+      "added_date": "2026-10-24",
+      "updated_date": "2026-10-24",
+      "type": "预印本（同行评审录用未核实）",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2610.30571",
+      "version": "v1",
+      "institution_source": "https://arxiv.org/html/2610.30571v1",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "productwebbench",
+      "paper_id": "2610.31118",
+      "title": "ProductWebBench: Evaluating Website Continuity Beyond Task Completion",
+      "institution": "Beihang University",
+      "first_author": "Jiajun Wu",
+      "category": "software-engineering",
+      "tags": [
+        "frontend",
+        "benchmark",
+        "regression",
+        "multi-turn"
+      ],
+      "summary": "冻结浏览器验收约定并持续重放已通过状态，分别衡量网站需求完成、功能保全与行为回归。",
+      "caveat": "400任务、8737单元；674个完成Change单元中190个额外检查失败，73个保护状态回归；两通道覆盖586单元中107个观测回归。不能混用分母或把所有额外失败视为确认回归。原始/最终状态环境不同，重捕获247判决一致85%；覆盖不均、WCS权重有设计选择。发现匹配公开材料但未从原文得到仓库链接或核实个人作者归属，故不列为已验证官方Code；仓库缺快照/捕获/部分导出包，不能完整重跑。CITATION.cff用旧标题和ICLR2027字段，录用未核实。",
+      "reading_scope": "v1主文方法、实验、分析和局限；附录H/I环境和发布边界及J案例；匹配仓库README、根目录、CITATION、任务manifest和结果文件（计数8737条），未运行浏览器或Agent。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.31118v1"
+        }
+      ],
+      "follow_up": [
+        "核实https://github.com/wuyuVerse/ProductWebBench的作者归属、完整发布和正式引用；匹配manifest400任务及8737结果行，仅跟踪，不作为已验证官方Code。",
+        "同环境重放初始/最终状态，固定浏览器版本并验证罕见回归端点的干预效果和成本。",
+        "未找到对应作者Blog。"
+      ],
+      "publication_date": "2026-10-22",
+      "added_date": "2026-10-24",
+      "updated_date": "2026-10-24",
+      "type": "预印本（同行评审录用未核实）",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2610.31118",
+      "version": "v1",
+      "institution_source": "https://arxiv.org/html/2610.31118v1",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "afterdeletebench",
+      "paper_id": "2610.31366",
+      "title": "AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents",
+      "institution": "Ohio State University",
+      "first_author": "Ehsan Saleh",
+      "category": "agent-security",
+      "tags": [
+        "memory",
+        "privacy",
+        "deletion",
+        "benchmark"
+      ],
+      "summary": "配对比较曾暴露后删除与从未暴露的记忆状态，区分秘密恢复、再次写入和新会话回忆。",
+      "caveat": "固定权重、合成精确字符串和外控确定性记忆；Qwen主实验每划分200对，DIRECT恢复68%/64%，对照0；组件重组每模型划分104对，61.5%–99%。完整来源下closure零恢复仅理想受控通道，不能外推语义遗忘；解析器不匹配可隐藏泄露。无暴露保留对照、真实成本与全面效用评估；代码声明接收后公开，本轮未找到公开实现。",
+      "reading_scope": "v1主文方法、实验、结果和讨论；附录I固定推理/记忆格式及J扩展局限，相关接口表格和结果说明；未执行模型或安全实验。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.31366v1"
+        }
+      ],
+      "follow_up": [
+        "跟踪声明待接收后公开的代码和对应作者Blog；当前均未核实。",
+        "真实独立记忆框架、语义/压缩摘要、来源边缺失及暴露保留第三对照。",
+        "保留原始回复并测部分泄露、误删、任务效用和存储运行成本。"
+      ],
+      "publication_date": "2026-10-22",
+      "added_date": "2026-10-24",
+      "updated_date": "2026-10-24",
+      "type": "预印本（同行评审录用未核实）",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2610.31366",
+      "version": "v1",
+      "institution_source": "https://arxiv.org/html/2610.31366v1",
+      "evidence_status": "author-reported"
     }
   ]
 }

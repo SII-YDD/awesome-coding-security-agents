@@ -7,18 +7,18 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-37-6366f1?style=flat-square" alt="Papers and blogs: 37"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--23-14b8a6?style=flat-square" alt="Updated: 2026-10-23"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-40-6366f1?style=flat-square" alt="Papers and blogs: 40"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--24-14b8a6?style=flat-square" alt="Updated: 2026-10-24"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>10 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>10 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>11 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>11 entries</sub></td>
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>8 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>9 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>10 entries</sub></td>
   </tr>
 </table>
 
@@ -29,6 +29,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>Georgia Tech</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.30571" title="Stale Instruction Files Override the Code in Coding Agents: A One-Sentence Fix">Stale Instruction Files Override the Code in Coding Agents: A One-Sentence Fix</a></b><br><br>通过受控冲突实验检验过期指令对编程的影响，并用显式优先规则减少约定偏离与旧代码重写。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.30571">Paper</a><br><a href="https://github.com/WenJing95/stale-docs-data">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>ZJU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28069" title="Training the Whole Agent, Not Just the Model">Training the Whole Agent, Not Just the Model</a></b><br><br>在编程强化学习中同步生成机制级指导并演化工具与运行反馈，联合优化模型和执行框架。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28069">Paper</a><br><a href="https://github.com/lingxiaotang/HarnessAdapt-RL">Code</a><br><a href="https://github.com/lingxiaotang/HarnessAdapt-RL/blob/main/docs/ARTIFACT_NOTES.md">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>CUHK</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28612" title="TraceLite: Efficient Trace Reduction for SWE Agents via Optical Compression and Redundancy Removal">TraceLite: Efficient Trace Reduction for SWE Agents via Optical Compression and Redundancy Removal</a></b><br><br>保留近期观测文本、将旧观测转成图像并清除重复和过期历史，降低编程 Agent 上下文开销。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28612">Paper</a><br><a href="https://github.com/xjywhu/TraceLite">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>UC Berkeley</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.30188" title="Agentic Verified Optimization of Real-World Software">Agentic Verified Optimization of Real-World Software</a></b><br><br>让编程 Agent 联合搜索更快实现与 Lean 等价证明，并以差分测试构造真实程序的迁移参考。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.30188">Paper</a></td></tr>
@@ -50,6 +51,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>Beihang University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.31118" title="ProductWebBench: Evaluating Website Continuity Beyond Task Completion">ProductWebBench: Evaluating Website Continuity Beyond Task Completion</a></b><br><br>冻结浏览器验收约定并持续重放已通过状态，分别衡量网站需求完成、功能保全与行为回归。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.31118">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>UIUC</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28380" title="Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design">Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design</a></b><br><br>以类继承复用并演化专用 Agent 框架，根据任务和试跑轨迹路由到合适的执行策略。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28380">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>SMU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28116" title="AgenTest: Mining Business Rules to Test LLM Agents for Business Logic Bugs">AgenTest: Mining Business Rules to Test LLM Agents for Business Logic Bugs</a></b><br><br>从提示、工具与领域知识提炼业务规则，构造多轮测试并结合轨迹和状态检查 Agent 的逻辑违规。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28116">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>Fudan University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21925" title="Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel">Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel</a></b><br><br>从历史评审中恢复设计决策及适用条件，规划并验证新补丁中的设计权衡。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21925">Paper</a></td></tr>
@@ -91,6 +93,7 @@
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
     <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>CMU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.31404" title="AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack">AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack</a></b><br><br>利用邮件 Agent 的响应反馈演化生成策略，分别评测钓鱼识别与恶意请求的动作及回复选择。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.31404">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>Ohio State University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.31366" title="AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents">AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents</a></b><br><br>配对比较曾暴露后删除与从未暴露的记忆状态，区分秘密恢复、再次写入和新会话回忆。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.31366">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-19</code><br><sub>WashU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.27244" title="AutoRedClaw: Automated Red-Teaming for Claw-Style Agents">AutoRedClaw: Automated Red-Teaming for Claw-Style Agents</a></b><br><br>联合生成攻击场景、可执行环境与验收条件，分别评测持久状态投毒和后续恶意行为触发。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.27244">Paper</a><br><a href="https://github.com/SaFo-Lab/AutoRedClaw">Code</a><br><a href="https://github.com/SaFo-Lab/AutoRedClaw/tree/main/dataset/v1.1">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-16</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://safeguards.anthropic.com/2026/self-assessment/" title="Scaling Misuse Detection with Self-Assessment">Scaling Misuse Detection with Self-Assessment</a></b><br><br>复用对话推理缓存生成结构化安全自评，以低成本初筛支持离线滥用调查。</td><td align="center" valign="middle"><a href="https://safeguards.anthropic.com/2026/self-assessment/">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>UMass Amherst</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21029" title="SCARCE: Emergent Institutions in Long-Horizon Multi-Agent Coding Systems">SCARCE: Emergent Institutions in Long-Horizon Multi-Agent Coding Systems</a></b><br><br>让编程 Agent 反复协商共享执行资源，研究记忆如何支持互惠、声誉与结盟行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21029">Paper</a><br><a href="https://github.com/compass-group-tue/SCARCE-ENV">Code</a><br><a href="https://compass-group-tue.github.io/SCARCE">Project</a></td></tr>
