@@ -1,12 +1,12 @@
 # Curation
 
-维护 Coding Agent、AI 软件工程、Agent 漏洞挖掘与安全领域的一手研究。
+维护 Coding Agent、AI 软件工程、Agent 漏洞挖掘与安全、LLM 辅助形式化验证领域的一手研究。
 
 ## 主页格式
 
-- 条目只展示标题、首发日期、一个机构、一句话简介和必要的 Code / Artifacts / Blog 链接。
+- 条目表格展示标题、首发日期、一个机构、一句话简介和必要的 Code / Artifacts / Blog / Appendix 链接。需要展开技术方法的精选条目可在 `technical_details` 中记录带 `label`、`text` 的段落，生成栏目表格下默认展开、可折叠的技术解读。
 - 主页始终显示 `title` 中的完整原文标题，不以缩写、项目简称或悬停提示代替。
-- `publication_kind` 为 `paper` 或 `blog`；每个关联链接填写 `kind`（`paper`、`code`、`blog`、`artifacts`、`project`、`enrollment`、`faq`）和可核实 URL。资源列先列原文 Paper / Blog，再列实际公开的 Code / Artifacts 与作者 Blog；同一 URL 去重，报名与 FAQ 不冒充代码或博客。
+- `publication_kind` 为 `paper` 或 `blog`；每个关联链接填写 `kind`（`paper`、`code`、`blog`、`artifacts`、`project`、`enrollment`、`faq`、`appendix`）和可核实 URL。资源列先列原文 Paper / Blog，再列技术附录、实际公开的 Code / Artifacts 与作者 Blog；同一 URL 去重，报名与 FAQ 不冒充代码或博客。
 - 论文机构取一作在原文中的首个署名单位；共同一作取作者列表首位，多重署名只取第一个。博客取首位作者单位，无个人单位时取发布机构。
 - `institution` 使用常用简称（如 UIUC、ETH Zürich、BAAI），核对链接保存在 `institution_source`。不拼接合作单位，不凭机构声誉选择署名。
 - 一句话直接说清研究做了什么，通常 25–60 个中文字；证据边界与阅读范围保存在数据中。
@@ -24,7 +24,7 @@
 ## 修改流程
 
 1. 在 `data/entries.json` 增加或更正条目，沿用现有字段结构。`added_date` 是首次收录日期，`publication_date` 是首次研究公开日期。
-2. 主分类使用 `coding-agents`、`software-engineering`、`vulnerability-discovery` 或 `agent-security`；交叉领域使用 `tags`。
+2. 主分类使用 `coding-agents`、`software-engineering`、`vulnerability-discovery`、`agent-security` 或 `formal-verification`；交叉领域使用 `tags`。新增分类须同步 `scripts/render.py`。
 3. 实质更新时修改 `updated_date`，保留原始发布日期并记录新增证据；同步更新顶层 `last_updated`。
 4. 在 `updates/YYYY-MM-DD.md` 写当日新增/更正和原文链接。初始收录与新研究发布分别描述。
 5. 运行以下命令再提交 PR：

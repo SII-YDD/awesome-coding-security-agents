@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-40-6366f1?style=flat-square" alt="Papers and blogs: 40"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-41-6366f1?style=flat-square" alt="Papers and blogs: 41"></a>
   <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--24-14b8a6?style=flat-square" alt="Updated: 2026-10-24"></a>
 </p>
 
@@ -19,6 +19,9 @@
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>8 entries</sub></td>
     <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>10 entries</sub></td>
+  </tr>
+  <tr>
+    <td colspan="2" width="100%" align="center" valign="middle"><a href="#formal-verification"><b>05 · Formal Verification</b></a><br><sub>1 entry</sub></td>
   </tr>
 </table>
 
@@ -104,6 +107,34 @@
     <tr><td align="center" valign="middle"><code>2026-10-09</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/investigating-unintended-model-actions" title="Investigating unintended model actions in our evaluations and internal use">Investigating unintended model actions in our evaluations and internal use</a></b><br><br>分析 Agent 在受阻或模糊任务中越过用户意图的行为，并研究工具检查与训练修正。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/investigating-unintended-model-actions">Blog</a></td></tr>
   </tbody>
 </table>
+
+
+<a id="formal-verification"></a>
+
+<h2 align="center">05 · Formal Verification</h2>
+
+<table align="center" width="100%">
+  <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
+  <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/formal-verification" title="LLMs are making formal software verification feasible at a much larger scale">LLMs are making formal software verification feasible at a much larger scale</a></b><br><br>将现有 fuzz 测试转为二进制级规格，由 Claude 生成 Rocq 证明，在明确边界内验证无崩溃与行为等价。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/formal-verification">Blog</a><br><a href="https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf">Appendix</a><br><a href="https://github.com/theorem-labs/rocq-linux-process-semantics">Code</a><br><a href="https://github.com/theorem-labs/oss-verify-proofs">Artifacts</a></td></tr>
+  </tbody>
+</table>
+
+<details open>
+<summary><b>技术解读 · LLMs are making formal software verification feasible at a much larger scale</b></summary>
+
+<ul>
+  <li><p><b>核心思路：把测试变成待证明的规格</b>：Anthropic 与 Theorem 复用 OSS-Fuzz 中已有的 C/C++ 测试入口和断言，将“寻找触发失败的输入”提升为“证明限定范围内不存在这样的输入”。证明直接针对编译后的机器码，避免另写一份源码模型带来的对应关系误差。</p></li>
+  <li><p><b>技术流程：二进制 → 形式语义 → 证明检查</b>：将库、fuzz harness 和运行时编译为 RISC-V Linux 静态程序；用 Theorem 的指令集与进程语义刻画执行，机械生成无崩溃/等价规格；Claude 编写 Rocq 定义、引理和证明，Rocq 内核负责验收。可信基础包括精确定理、机器/OS模型及检查器，而非模型对正确性的自评。</p></li>
+  <li><p><b>关键细节：同时约束插桩版和普通版</b>：附录要求证明 ASan 版无崩溃、普通版无崩溃，以及两者可观察行为一致，包括读写事件、退出方式和最终文件状态。只证明ASan版安全不足以约束用户实际运行的普通版；只证明轨迹等价也可能漏掉崩溃与静默死循环的区别。</p></li>
+  <li><p><b>发现与修复：证明驱动的迭代</b>：证明过程中暴露缺陷后，Claude 可修补程序、重新生成规格并继续证明；这种推理能发现普通 fuzzing 难覆盖的大输入或特殊调用状态。测试中的高层断言也可纳入证明，例如压缩再解压的往返性质。补丁仍需审计，防止通过删功能让规格平凡成立。</p></li>
+  <li><p><b>规模与复用</b>：作者报告覆盖123个库的239个入口，通过检查的Rocq证明约1.8亿行。许多证明涉及共同的C运行时和ASan代码，因而可跨项目复用；36个小型任务的共享工作区实验减少约17%的token消耗。该数字不代表所有生产验证任务的固定节省。</p></li>
+  <li><p><b>其他探索：规格一致性与源码验证</b>：博客还报告按RFC 1950建立规格、验证Linux内核zlib的x86二进制，以及用Verus/Z3验证Rust编写的Python子集解释器。后者证明返回结果符合所建语义；与CPython的对应关系另由170万余程序测试支持，不能当成完整Python兼容性的形式证明。</p></li>
+  <li><p><b>保证边界：入口、平台、资源和终止性</b>：主实验针对单线程、静态链接musl的RISC-V Linux构建，附录输入界限为小于64 MiB，并受内存预算与系统调用模型约束。未覆盖入口、ASan漏检、并发、其他平台和调用方误用仍可能有问题。公开agreement定理不排除无限运行，因此“无崩溃”不能写成“保证终止”或“整个库无漏洞”。</p></li>
+  <li><p><b>公开材料与阅读状态</b>：截至2026-10-24，公开证明仓库列出25个库的60个入口，是总体实验的发布子集；可查看具体规格、二进制来源与检查方法。这里依据博客、附录和公开README整理，未独立运行证明检查器；原文、附录、语义代码与证明材料见本条资源链接。</p></li>
+</ul>
+
+</details>
 
 ---
 

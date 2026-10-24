@@ -14,6 +14,7 @@ CATEGORIES = {
     "software-engineering": "AI Software Engineering",
     "vulnerability-discovery": "Vulnerability Discovery",
     "agent-security": "Agent Security",
+    "formal-verification": "Formal Verification",
 }
 
 
@@ -57,8 +58,14 @@ def validate(data):
             assert item["canonical_url"] == "https://arxiv.org/abs/" + item["paper_id"]
             seen_papers.add(item["paper_id"])
         assert "\n" not in item["title"]
+        if "technical_details" in item:
+            assert isinstance(item["technical_details"], list) and item["technical_details"]
+            for detail in item["technical_details"]:
+                assert isinstance(detail, dict)
+                for field in ("label", "text"):
+                    assert isinstance(detail.get(field), str) and detail[field].strip()
         for link in item["links"]:
-            assert link.get("kind") in ("paper", "code", "blog", "artifacts", "project", "enrollment", "faq")
+            assert link.get("kind") in ("paper", "code", "blog", "artifacts", "project", "enrollment", "faq", "appendix")
     assert data["entries"], "Catalog must not be empty"
 
 
@@ -67,8 +74,8 @@ def resource_links(item):
     primary = "Paper" if item["publication_kind"] == "paper" else "Blog"
     resources = [(primary, item["canonical_url"])]
     seen = {item["canonical_url"].rstrip("/")}
-    labels = {"code": "Code", "blog": "Blog", "artifacts": "Artifacts", "project": "Project"}
-    priority = {"code": 0, "artifacts": 1, "blog": 2, "project": 3}
+    labels = {"code": "Code", "blog": "Blog", "artifacts": "Artifacts", "project": "Project", "appendix": "Appendix"}
+    priority = {"appendix": -1, "code": 0, "artifacts": 1, "blog": 2, "project": 3}
     for link in sorted(item["links"], key=lambda link: priority.get(link["kind"], 4)):
         kind, url = link["kind"], link["url"]
         if kind not in labels or url.rstrip("/") in seen:
@@ -107,7 +114,8 @@ def render(data):
             slug, name = categories[index]
             count = sum(item["category"] == slug for item in entries)
             quantity = "entry" if count == 1 else "entries"
-            lines.append(f'    <td width="50%" align="center" valign="middle"><a href="#{slug}"><b>{index + 1:02d} · {name}</b></a><br><sub>{count} {quantity}</sub></td>')
+            cell = 'colspan="2" width="100%"' if row + 1 == len(categories) else 'width="50%"'
+            lines.append(f'    <td {cell} align="center" valign="middle"><a href="#{slug}"><b>{index + 1:02d} · {name}</b></a><br><sub>{count} {quantity}</sub></td>')
         lines.append('  </tr>')
     lines.append('</table>')
     for index, (slug, name) in enumerate(categories, 1):
@@ -123,6 +131,13 @@ def render(data):
             research = f'<b><a href="{escape(item["canonical_url"], quote=True)}" title="{escape(item["title"], quote=True)}">{label}</a></b><br><br>{table_text(item["summary"])}'
             lines.append(f'    <tr><td align="center" valign="middle">{metadata}</td><td align="center" valign="middle">{research}</td><td align="center" valign="middle">{resource_links(item)}</td></tr>')
         lines += ['  </tbody>', '</table>', ""]
+        for item in entries:
+            if item["category"] != slug or not item.get("technical_details"):
+                continue
+            lines += ['<details open>', f'<summary><b>技术解读 · {table_text(item["title"])}</b></summary>', "", '<ul>']
+            for detail in item["technical_details"]:
+                lines.append(f'  <li><p><b>{table_text(detail["label"])}</b>：{table_text(detail["text"])}</p></li>')
+            lines += ['</ul>', "", '</details>', ""]
     lines += [
         "---",
         "",

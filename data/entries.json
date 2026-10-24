@@ -1541,6 +1541,82 @@
       "version": "v1",
       "institution_source": "https://arxiv.org/html/2610.31366v1",
       "evidence_status": "author-reported"
+    },
+    {
+      "id": "llm-scaled-formal-verification",
+      "title": "LLMs are making formal software verification feasible at a much larger scale",
+      "institution": "Anthropic",
+      "publication_date": "2026-10-22",
+      "added_date": "2026-10-24",
+      "updated_date": "2026-10-24",
+      "publication_kind": "blog",
+      "type": "官方技术研究报告 / 博客",
+      "category": "formal-verification",
+      "tags": [
+        "binary-verification",
+        "Rocq",
+        "RISC-V",
+        "OSS-Fuzz",
+        "proof-generation",
+        "repair"
+      ],
+      "canonical_url": "https://www.anthropic.com/research/formal-verification",
+      "institution_source": "https://www.anthropic.com/research/formal-verification",
+      "summary": "将现有 fuzz 测试转为二进制级规格，由 Claude 生成 Rocq 证明，在明确边界内验证无崩溃与行为等价。",
+      "caveat": "239入口/123库和约1.8亿行通过检查的证明为作者总体报告；公开仓库当前列60入口/25库，是发布子集。博客以64 MB描述输入限制，附录精确为小于64 MiB；定理仍受具体内存预算、系统调用假设和入口覆盖限制。公开agreement证明不含halts，不能解释为保证终止。ASan未检出的错误、调用方误用和模型与部署差异不受保证。补丁后规格重生成需审计功能保持及reward hacking。未独立运行Rocq或复现漏洞。",
+      "reading_scope": "官方博客全文、6页技术附录、公开oss-verify-proofs README及rocq-linux-process-semantics README；核对证明类型、公开范围、资源与终止性限制。未下载或逐条审计证明，未执行checker。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "appendix",
+          "label": "技术附录",
+          "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf"
+        },
+        {
+          "kind": "code",
+          "label": "RISC-V与Linux进程形式语义",
+          "url": "https://github.com/theorem-labs/rocq-linux-process-semantics"
+        },
+        {
+          "kind": "artifacts",
+          "label": "公开规格与Rocq证明子集",
+          "url": "https://github.com/theorem-labs/oss-verify-proofs"
+        }
+      ],
+      "technical_details": [
+        {
+          "label": "核心思路：把测试变成待证明的规格",
+          "text": "Anthropic 与 Theorem 复用 OSS-Fuzz 中已有的 C/C++ 测试入口和断言，将“寻找触发失败的输入”提升为“证明限定范围内不存在这样的输入”。证明直接针对编译后的机器码，避免另写一份源码模型带来的对应关系误差。"
+        },
+        {
+          "label": "技术流程：二进制 → 形式语义 → 证明检查",
+          "text": "将库、fuzz harness 和运行时编译为 RISC-V Linux 静态程序；用 Theorem 的指令集与进程语义刻画执行，机械生成无崩溃/等价规格；Claude 编写 Rocq 定义、引理和证明，Rocq 内核负责验收。可信基础包括精确定理、机器/OS模型及检查器，而非模型对正确性的自评。"
+        },
+        {
+          "label": "关键细节：同时约束插桩版和普通版",
+          "text": "附录要求证明 ASan 版无崩溃、普通版无崩溃，以及两者可观察行为一致，包括读写事件、退出方式和最终文件状态。只证明ASan版安全不足以约束用户实际运行的普通版；只证明轨迹等价也可能漏掉崩溃与静默死循环的区别。"
+        },
+        {
+          "label": "发现与修复：证明驱动的迭代",
+          "text": "证明过程中暴露缺陷后，Claude 可修补程序、重新生成规格并继续证明；这种推理能发现普通 fuzzing 难覆盖的大输入或特殊调用状态。测试中的高层断言也可纳入证明，例如压缩再解压的往返性质。补丁仍需审计，防止通过删功能让规格平凡成立。"
+        },
+        {
+          "label": "规模与复用",
+          "text": "作者报告覆盖123个库的239个入口，通过检查的Rocq证明约1.8亿行。许多证明涉及共同的C运行时和ASan代码，因而可跨项目复用；36个小型任务的共享工作区实验减少约17%的token消耗。该数字不代表所有生产验证任务的固定节省。"
+        },
+        {
+          "label": "其他探索：规格一致性与源码验证",
+          "text": "博客还报告按RFC 1950建立规格、验证Linux内核zlib的x86二进制，以及用Verus/Z3验证Rust编写的Python子集解释器。后者证明返回结果符合所建语义；与CPython的对应关系另由170万余程序测试支持，不能当成完整Python兼容性的形式证明。"
+        },
+        {
+          "label": "保证边界：入口、平台、资源和终止性",
+          "text": "主实验针对单线程、静态链接musl的RISC-V Linux构建，附录输入界限为小于64 MiB，并受内存预算与系统调用模型约束。未覆盖入口、ASan漏检、并发、其他平台和调用方误用仍可能有问题。公开agreement定理不排除无限运行，因此“无崩溃”不能写成“保证终止”或“整个库无漏洞”。"
+        },
+        {
+          "label": "公开材料与阅读状态",
+          "text": "截至2026-10-24，公开证明仓库列出25个库的60个入口，是总体实验的发布子集；可查看具体规格、二进制来源与检查方法。这里依据博客、附录和公开README整理，未独立运行证明检查器；原文、附录、语义代码与证明材料见本条资源链接。"
+        }
+      ]
     }
   ]
 }
