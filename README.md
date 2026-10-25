@@ -7,18 +7,18 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-41-6366f1?style=flat-square" alt="Papers and blogs: 41"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--24-14b8a6?style=flat-square" alt="Updated: 2026-10-24"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-44-6366f1?style=flat-square" alt="Papers and blogs: 44"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--25-14b8a6?style=flat-square" alt="Updated: 2026-10-25"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>11 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>11 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>12 entries</sub></td>
   </tr>
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>8 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>10 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>9 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>11 entries</sub></td>
   </tr>
   <tr>
     <td colspan="2" width="100%" align="center" valign="middle"><a href="#formal-verification"><b>05 · Formal Verification</b></a><br><sub>1 entry</sub></td>
@@ -55,6 +55,7 @@
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
     <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>Beihang University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.31118" title="ProductWebBench: Evaluating Website Continuity Beyond Task Completion">ProductWebBench: Evaluating Website Continuity Beyond Task Completion</a></b><br><br>冻结浏览器验收约定并持续重放已通过状态，分别衡量网站需求完成、功能保全与行为回归。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.31118">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-10-21</code><br><sub>University of Innsbruck</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.30047" title="SWE-DIVE: Multi-Turn Coding Agent Evaluation with Dynamic User Simulation">SWE-DIVE: Multi-Turn Coding Agent Evaluation with Dynamic User Simulation</a></b><br><br>依据最新回复与代码改动动态生成用户反馈，结合对话验证和原基准测试评估多轮编程协作。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.30047">Paper</a><br><a href="https://github.com/lorenzbrehme/swe-dive_usersim">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>UIUC</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28380" title="Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design">Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design</a></b><br><br>以类继承复用并演化专用 Agent 框架，根据任务和试跑轨迹路由到合适的执行策略。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28380">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>SMU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28116" title="AgenTest: Mining Business Rules to Test LLM Agents for Business Logic Bugs">AgenTest: Mining Business Rules to Test LLM Agents for Business Logic Bugs</a></b><br><br>从提示、工具与领域知识提炼业务规则，构造多轮测试并结合轨迹和状态检查 Agent 的逻辑违规。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28116">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-15</code><br><sub>Fudan University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.21925" title="Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel">Benchmarking and Enhancing Design-Aware Code Review in the Linux Kernel</a></b><br><br>从历史评审中恢复设计决策及适用条件，规划并验证新补丁中的设计权衡。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.21925">Paper</a></td></tr>
@@ -76,6 +77,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-23</code><br><sub>OpenAI</sub></td><td align="center" valign="middle"><b><a href="https://openai.com/index/securing-our-frontier-model-training-environment/" title="Securing our frontier model training environment">Securing our frontier model training environment</a></b><br><br>组织 Agent 团队检验沙箱、云网络和任务隔离边界，通过人工复现与修复反馈加固训练基础设施。</td><td align="center" valign="middle"><a href="https://openai.com/index/securing-our-frontier-model-training-environment/">Blog</a><br><a href="https://github.com/google/gvisor/pull/13816">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-21</code><br><sub>Nankai University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.30218" title="JANUS: Agentic Cross-Language Fuzzing Harness Generation for Android Native Libraries">JANUS: Agentic Cross-Language Fuzzing Harness Generation for Android Native Libraries</a></b><br><br>恢复 JNI 调用依赖并递归构造跨语言对象，生成可执行模糊测试入口以挖掘 Android 原生库漏洞。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.30218">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/attack-surface-reduction" title="Using Claude to reduce the attack surface of code">Using Claude to reduce the attack surface of code</a></b><br><br>分轮分析配置与认证前代码的可达性，通过动态验证和前移检查收缩软件攻击面。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/attack-surface-reduction">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-16</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/ecdsa-curve-origins" title="Claude reveals ECDSA curve origins">Claude reveals ECDSA curve origins</a></b><br><br>用模型编写扫描和数学求解程序，重建标准椭圆曲线公开参数的生成来源。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/ecdsa-curve-origins">Blog</a></td></tr>
@@ -95,6 +97,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-23</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/alignment-assessment-ukaisi" title="An alignment assessment of the UK AISI cybertesting incident">An alignment assessment of the UK AISI cybertesting incident</a></b><br><br>干预并续写越权评测轨迹，分析任务受阻、压缩摘要和历史行动如何影响风险识别与停止行为。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/alignment-assessment-ukaisi">Blog</a><br><a href="https://www.aisi.gov.uk/blog/investigating-alignment-failures-in-aisis-incident">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>CMU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.31404" title="AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack">AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack</a></b><br><br>利用邮件 Agent 的响应反馈演化生成策略，分别评测钓鱼识别与恶意请求的动作及回复选择。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.31404">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>Ohio State University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.31366" title="AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents">AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents</a></b><br><br>配对比较曾暴露后删除与从未暴露的记忆状态，区分秘密恢复、再次写入和新会话回忆。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.31366">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-19</code><br><sub>WashU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.27244" title="AutoRedClaw: Automated Red-Teaming for Claw-Style Agents">AutoRedClaw: Automated Red-Teaming for Claw-Style Agents</a></b><br><br>联合生成攻击场景、可执行环境与验收条件，分别评测持久状态投毒和后续恶意行为触发。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.27244">Paper</a><br><a href="https://github.com/SaFo-Lab/AutoRedClaw">Code</a><br><a href="https://github.com/SaFo-Lab/AutoRedClaw/tree/main/dataset/v1.1">Artifacts</a></td></tr>

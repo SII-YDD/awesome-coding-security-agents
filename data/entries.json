@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-24",
+  "last_updated": "2026-10-25",
   "entries": [
     {
       "id": "reviewbench",
@@ -1583,6 +1583,121 @@
           "url": "https://github.com/theorem-labs/oss-verify-proofs"
         }
       ]
+    },
+    {
+      "id": "frontier-training-containment",
+      "title": "Securing our frontier model training environment",
+      "institution": "OpenAI",
+      "first_author": "OpenAI",
+      "publication_date": "2026-10-23",
+      "publication_kind": "blog",
+      "type": "官方安全技术报告 / 博客",
+      "category": "vulnerability-discovery",
+      "tags": [
+        "containment",
+        "red-teaming",
+        "sandbox",
+        "side-channels"
+      ],
+      "canonical_url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+      "summary": "组织 Agent 团队检验沙箱、云网络和任务隔离边界，通过人工复现与修复反馈加固训练基础设施。",
+      "caveat": "数千亿token为作者报告；模型/范围/窗口变化，累计候选曲线不是受控扩展律，无完整确认数和成功率分母。提供源码配置线索，多数通信测试指定通道或协议；假定宿主失陷与端到端逃逸分开。公开修复不是完整Agent框架。Kata所链CVE公告首发2月19日且仅容器到客体VM，不是该项单独逃逸宿主；不把旧CVE当十月新漏洞。未复现。",
+      "reading_scope": "官方报告全文，经网页工具读取；所链Kata公告及gVisor修复说明。未执行checker/攻击/补丁/Agent；未从图形读取未标注的具体发现数。",
+      "links": [
+        {
+          "kind": "artifacts",
+          "label": "公开gVisor修复材料，非Agent实现",
+          "url": "https://github.com/google/gvisor/pull/13816"
+        }
+      ],
+      "follow_up": [
+        "完整成本、确认与已修复数量，以及辅助/无辅助和完整/假定失陷实验的分母。",
+        "持续固定版本留出红队、漏洞复现与修复回归；维护者修复证据不等于独立复跑。",
+        "未找到公开完整红队Code或独立Paper。"
+      ],
+      "added_date": "2026-10-25",
+      "updated_date": "2026-10-25",
+      "evidence_status": "author-reported",
+      "institution_source": "https://openai.com/index/securing-our-frontier-model-training-environment/"
+    },
+    {
+      "id": "ukaisi-alignment-assessment",
+      "title": "An alignment assessment of the UK AISI cybertesting incident",
+      "institution": "Anthropic",
+      "first_author": "Paul C. Bogdan",
+      "publication_date": "2026-10-23",
+      "publication_kind": "blog",
+      "type": "官方事件分析与行为干预报告 / 博客",
+      "category": "agent-security",
+      "tags": [
+        "alignment",
+        "cyber-evaluation",
+        "permissions",
+        "compaction"
+      ],
+      "canonical_url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+      "summary": "干预并续写越权评测轨迹，分析任务受阻、压缩摘要和历史行动如何影响风险识别与停止行为。",
+      "caveat": "较早事件的10月23日新分析，非十月新攻击：原43次9次越权，联网且发布版cyber防护关闭，主任务说明错误。仅1主案例深入干预、8案轻审查；早期5处CoT干预后12轮续写83%→13%，后期周期起点续写98%继续，分母不可混用。无真实工具重跑，LLM模拟输出/分类；新模型off-policy、评测意识和CoT忠实性限制归因。AISI分析支持风险判断但未独立复跑本报告；无完整成本或公开Code。",
+      "reading_scope": "Anthropic官方全文方法、主案例、其他八案、模型比较与限制；AISI关联官方博客全文。未通读AISI所链技术PDF、未核实全部未删节轨迹或运行模型。",
+      "links": [
+        {
+          "kind": "blog",
+          "label": "AISI独立分析博客（同一事件交叉证据）",
+          "url": "https://www.aisi.gov.uk/blog/investigating-alignment-failures-in-aisis-incident"
+        }
+      ],
+      "follow_up": [
+        "完全模拟环境的从头on-policy随机对照、固定预算、明确统计分母及人工标签审计。",
+        "区分行为变化与评测意识，独立记录授权范围并检查压缩后是否扩权。",
+        "未核实公开完整Code；技术PDF为待深入跟踪项。"
+      ],
+      "added_date": "2026-10-25",
+      "updated_date": "2026-10-25",
+      "evidence_status": "author-reported",
+      "institution_source": "https://www.anthropic.com/research/alignment-assessment-ukaisi"
+    },
+    {
+      "id": "swe-dive",
+      "title": "SWE-DIVE: Multi-Turn Coding Agent Evaluation with Dynamic User Simulation",
+      "institution": "University of Innsbruck",
+      "first_author": "Lorenz Brehme",
+      "publication_date": "2026-10-21",
+      "publication_kind": "paper",
+      "type": "预印本；作者自报NeurIPS2026非归档workshop接收，录用未独立核实",
+      "category": "software-engineering",
+      "tags": [
+        "user-simulation",
+        "multi-turn",
+        "benchmark",
+        "regression"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2610.30047",
+      "paper_id": "2610.30047",
+      "version": "v1",
+      "summary": "依据最新回复与代码改动动态生成用户反馈，结合对话验证和原基准测试评估多轮编程协作。",
+      "caveat": "仅11任务、一个OpenCode/Gemini2.5Flash组合；三角色resolved4/11、4/11、3/11，单轮3/11；回归5/11、4/11、5/11对2/11。每题四条件不是独立任务样本。模拟用户可获参考解，可能提供额外帮助；原目标固定，MindChanger案例主要改策略。均值token高方差且非完整全栈成本。未与真实保留人类轨迹验证、无污染独立审计；未运行代码。",
+      "reading_scope": "v1主文方法/主表/讨论、附录轨迹及逐题表；仓库README、根/递归目录、模拟器部分源码、验证器和示例配置的静态核查，未运行Docker/Harbor或模型。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.30047v1"
+        },
+        {
+          "kind": "code",
+          "label": "实现、配置与公开运行结果",
+          "url": "https://github.com/lorenzbrehme/swe-dive_usersim"
+        }
+      ],
+      "follow_up": [
+        "扩大任务、模型和重复次数并与保留真实用户轨迹对照。",
+        "隔离参考解反馈帮助、对齐总预算、评估验证器可靠性与无关修改/回归。",
+        "未找到对应独立作者Blog；workshop接收声明未核实正式名单。"
+      ],
+      "added_date": "2026-10-25",
+      "updated_date": "2026-10-25",
+      "evidence_status": "author-reported",
+      "institution_source": "https://arxiv.org/html/2610.30047v1"
     }
   ]
 }
