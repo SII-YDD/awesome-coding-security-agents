@@ -89,6 +89,37 @@ def table_text(value):
     return escape(value).replace("\n", " ")
 
 
+def daily_additions(data):
+    date = data["last_updated"]
+    added = sorted(
+        (item for item in data["entries"] if item["added_date"] == date),
+        key=lambda item: (list(CATEGORIES).index(item["category"]), item["title"]),
+    )
+    lines = [
+        "", '<a id="daily-updates"></a>', "",
+        '<h2 align="center">每日新增 · Daily Updates</h2>', "",
+        '<p align="center">',
+        f'  <a href="updates/{date}.md"><b>{date}</b></a> &nbsp;·&nbsp; {len(added)} 新增',
+        '</p>', "",
+    ]
+    if not added:
+        lines += ['<p align="center">今日暂无新增</p>', ""]
+        return lines
+    lines += [
+        '<table align="center" width="100%">',
+        '  <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>',
+        '  <tbody>',
+    ]
+    for item in added:
+        category = CATEGORIES[item["category"]]
+        metadata = f'<b>{table_text(item["institution"])}</b><br><br><sub>{table_text(category)}</sub>'
+        title = table_text(item["title"])
+        research = f'<b><a href="{escape(item["canonical_url"], quote=True)}">{title}</a></b><br><br>{table_text(item["summary"])}'
+        lines.append(f'    <tr><td align="center" valign="middle">{metadata}</td><td align="center" valign="middle">{research}</td><td align="center" valign="middle">{resource_links(item)}</td></tr>')
+    lines += ['  </tbody>', '</table>', ""]
+    return lines
+
+
 def render(data):
     entries = sorted(data["entries"], key=lambda item: (item["publication_date"], item["title"]), reverse=True)
     lines = [
@@ -118,6 +149,7 @@ def render(data):
             lines.append(f'    <td {cell} align="center" valign="middle"><a href="#{slug}"><b>{index + 1:02d} · {name}</b></a><br><sub>{count} {quantity}</sub></td>')
         lines.append('  </tr>')
     lines.append('</table>')
+    lines += daily_additions(data)
     for index, (slug, name) in enumerate(categories, 1):
         lines += ["", f'<a id="{slug}"></a>', "", f'<h2 align="center">{index:02d} · {name}</h2>', "",
                   '<table align="center" width="100%">',

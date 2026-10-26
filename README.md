@@ -25,6 +25,24 @@
   </tr>
 </table>
 
+<a id="daily-updates"></a>
+
+<h2 align="center">每日新增 · Daily Updates</h2>
+
+<p align="center">
+  <a href="updates/2026-10-26.md"><b>2026-10-26</b></a> &nbsp;·&nbsp; 3 新增
+</p>
+
+<table align="center" width="100%">
+  <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
+  <tbody>
+    <tr><td align="center" valign="middle"><b>UT Austin</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.31895">Knowing When to Stop: The Evidence-Action Gap in Coding Agents</a></b><br><br>依据障碍证据出现的时刻评估重试与交接，用结构化求助和外部监视器减少编程 Agent 的无效坚持。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.31895">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>SNU</b><br><br><sub>Vulnerability Discovery</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.32345">DeepAVR: Deep Analysis via Multi-Agent Collaboration for Automated Vulnerability Repair</a></b><br><br>将中间补丁引出的新故障反馈给定位与修复角色，结合根因审查减少只压制崩溃症状的补丁。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.32345">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Tsinghua University</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.32155">Detecting Insecure Compositions of Clean Agent Skills via Capability-Flow Graph Analysis</a></b><br><br>提取技能能力并构建有证据的跨技能数据流图，追踪敏感或不可信内容到越权操作的组合路径。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.32155">Paper</a></td></tr>
+  </tbody>
+</table>
+
+
 <a id="coding-agents"></a>
 
 <h2 align="center">01 · Coding Agents</h2>
