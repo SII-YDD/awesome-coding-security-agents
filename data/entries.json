@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-25",
+  "last_updated": "2026-10-26",
   "entries": [
     {
       "id": "reviewbench",
@@ -1698,6 +1698,120 @@
       "updated_date": "2026-10-25",
       "evidence_status": "author-reported",
       "institution_source": "https://arxiv.org/html/2610.30047v1"
+    },
+    {
+      "id": "impasse-bench",
+      "title": "Knowing When to Stop: The Evidence-Action Gap in Coding Agents",
+      "institution": "UT Austin",
+      "first_author": "Tianyu Chen",
+      "publication_date": "2026-10-22",
+      "paper_id": "2610.31895",
+      "category": "coding-agents",
+      "tags": [
+        "escalation",
+        "reliability",
+        "permissions",
+        "benchmark"
+      ],
+      "summary": "依据障碍证据出现的时刻评估重试与交接，用结构化求助和外部监视器减少编程 Agent 的无效坚持。",
+      "caveat": "102基础任务/12障碍/8模型配置，共19371轨迹、9684完整配对；持续障碍4344对上限终止34.0%→6.7%，工具与说明是联合干预；4271双方证据充分配对的违规请求3.89%→0.68%，被拒请求也计数。主文监视器与附录F不同统计不可混用；F的149干净对照非劣效未通过（差-1.34pp，下界-10.71pp），脚本恢复不是自主解障。规则有限、交接评分依赖模型；无完整费用或独立复跑。",
+      "reading_scope": "v1主文方法、全因子/配对设置、结果与讨论，附录F恢复协议、样本排除、非劣效和有限重试限制及部分定义/交接表；未通读所有附录或审计轨迹。",
+      "follow_up": [
+        "作者声明将发布benchmark、障碍卡、规则、harness和19371轨迹；本轮未核实公开Code或作者Blog。",
+        "正常任务非劣效、不同故障持续时间、真实人工交接及端到端成本；拆分工具/说明/提醒/模板。"
+      ],
+      "added_date": "2026-10-26",
+      "updated_date": "2026-10-26",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.31895",
+      "institution_source": "https://arxiv.org/html/2610.31895v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.31895v1"
+        }
+      ]
+    },
+    {
+      "id": "deepavr",
+      "title": "DeepAVR: Deep Analysis via Multi-Agent Collaboration for Automated Vulnerability Repair",
+      "institution": "SNU",
+      "first_author": "Woorim Han",
+      "publication_date": "2026-10-23",
+      "paper_id": "2610.32345",
+      "category": "vulnerability-discovery",
+      "tags": [
+        "repair",
+        "multi-agent",
+        "root-cause",
+        "validation"
+      ],
+      "summary": "将中间补丁引出的新故障反馈给定位与修复角色，结合根因审查减少只压制崩溃症状的补丁。",
+      "caveat": "arXivv1日期已核实；检索到2026-03-24同名匿名Zenodo19200201，作者/版本归属未证实，不将Oct23断言为研究全局首次公开。VulnLoc43中排除4不可复现，36/39人工正确对SAN2PATCH29/39；SAN2VULN22/25对16/25。3名非作者博士生盲审，不是形式证明；按修复时间筛选不能证明模型未见。最多45候选目标非总token/时间严格匹配，基线适配可能影响结果。平均API$1.44/14.62min仅39例，非全栈审核部署成本；未复跑。",
+      "publication_date_basis": "Verified arXiv v1 submission; earlier anonymous same-name artifact attribution unconfirmed.",
+      "reading_scope": "v1主文方法、六角色/反馈和补丁条件重定位、数据/基线/指标、主表、人工审查、消融、成本、后端敏感性与失败案例/威胁；未运行实现或逐条审核补丁。",
+      "follow_up": [
+        "核实匿名同名https://zenodo.org/records/19200201的归属、历史与正式代码；未确认前不列为官方Code。",
+        "未核实对应作者Blog；更多独立触发输入、功能/变异测试、跨平台和同总预算对照。",
+        "审查一致性、外部接受修复及新样本污染核查。"
+      ],
+      "added_date": "2026-10-26",
+      "updated_date": "2026-10-26",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.32345",
+      "institution_source": "https://arxiv.org/html/2610.32345v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.32345v1"
+        }
+      ]
+    },
+    {
+      "id": "knotscryer",
+      "title": "Detecting Insecure Compositions of Clean Agent Skills via Capability-Flow Graph Analysis",
+      "institution": "Tsinghua University",
+      "first_author": "Yihao Li",
+      "publication_date": "2026-10-23",
+      "paper_id": "2610.32155",
+      "category": "agent-security",
+      "tags": [
+        "skills",
+        "composition",
+        "data-flow",
+        "authorization"
+      ],
+      "summary": "提取技能能力并构建有证据的跨技能数据流图，追踪敏感或不可信内容到越权操作的组合路径。",
+      "caveat": "2026-05-18平台clean快照13598技能，612候选，9框架模型组合平均79.2%，最多两次任一成功计数；非总体风险/召回。GLM85.6%用全量612，基线16.5/18.2%为1062热门子图各500候选抽样，非同分布严格比较。97.6s只热门子图且排除SCS提取/LLM审核/序列化；85.3%为相对子图graph-only边数减少。84全部safe+522含unsafe已612，再列额外6缺失计数待澄清。标记图传播不等于运行；受控本地攻击验证无真实第三方。clean为平台标签，非证明安全；无全局召回/正常误拦截量化，未复跑。",
+      "reading_scope": "v1主文威胁模型、能力提取、四交接条件/策略搜索/两层验证、全实验/基线与消融表、成本、隔离案例和局限；未复用注入载荷或运行利用。",
+      "follow_up": [
+        "未核实对应KnotScryer公开Code或作者Blog；Cisco扫描器是比较对象，不作为本文实现。",
+        "同语料同预算基线，安全标签计数澄清，更多重复及人工审核。",
+        "覆盖共享文件/隐式状态，测授权边界防护和正常任务效用。"
+      ],
+      "added_date": "2026-10-26",
+      "updated_date": "2026-10-26",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.32155",
+      "institution_source": "https://arxiv.org/html/2610.32155v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.32155v1"
+        }
+      ]
     }
   ]
 }
