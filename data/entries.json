@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-26",
+  "last_updated": "2026-10-27",
   "entries": [
     {
       "id": "reviewbench",
@@ -1810,6 +1810,132 @@
           "kind": "paper",
           "label": "全文",
           "url": "https://arxiv.org/html/2610.32155v1"
+        }
+      ]
+    },
+    {
+      "id": "rivet",
+      "paper_id": "2610.34967",
+      "title": "Rivet: Utility-Preserving Context Control for Repository-Level Coding Agents",
+      "institution": "Peking University",
+      "first_author": "Ruwei Pan",
+      "category": "coding-agents",
+      "tags": [
+        "repository-context",
+        "retrieval",
+        "dependency-graph",
+        "context-budget"
+      ],
+      "summary": "融合词法、语义与结构信号定位代码，再沿依赖和调用关系收集证据，在有限上下文中保留实现所需信息。",
+      "caveat": "DevEval1825、RepoExec355个Python函数生成任务，4模型×4K/8K，同Mini-SWE-Agent。各数据集预算池化平均增益3.73–5.15个百分点，单设置最小0.29。需求常含目标函数名，未提供真值位置；非真实多文件长期修复。成本为作者记录LLM调用费用，不含解析建图CPU/墙钟/维护成本；公开基准训练污染无法排除。静态图可能漏动态依赖，错误锚点会放大噪声；固定超参未敏感性测试；未独立复跑。",
+      "reading_scope": "v1主文问题、三阶段算法、实验设置、表1–6、成本、全消融、案例与有效性威胁；未运行代码或模型。",
+      "follow_up": [
+        "未核实对应公开Code或作者Blog；继续跟踪作者发布。",
+        "作者未来方向为多语言、多文件issue/feature任务及受控图边噪声；建议以时间隔离新仓库测全流程成功率与建图开销。"
+      ],
+      "publication_date": "2026-10-26",
+      "added_date": "2026-10-27",
+      "updated_date": "2026-10-27",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.34967",
+      "institution_source": "https://arxiv.org/html/2610.34967v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.34967v1"
+        }
+      ]
+    },
+    {
+      "id": "semweaver",
+      "paper_id": "2610.34928",
+      "title": "SemWeaver: Refining LLM-Generated Static Vulnerability Checkers with Analyzer-Internal Evidence",
+      "institution": "HUST",
+      "first_author": "Chengzhi Yi",
+      "category": "vulnerability-discovery",
+      "tags": [
+        "static-analysis",
+        "checker-refinement",
+        "paired-validation",
+        "analyzer-evidence"
+      ],
+      "summary": "将静态分析器内部证据与补丁、验证反馈结合，迭代修正大模型生成的漏洞检测规则并保留有效告警。",
+      "caveat": "39个非随机KNighter来源Linux检查器，78版本告警判定；native TP23/F1 .5750/PDS5/fixed reports123，对比KNighter15/.448/2/69；无内部证据21/.5753/8/68。恢复告警不是确认目标漏洞，G08等错目标，原生证据并非总体支配消融。配置选择6例与评测重叠；24个静默KNighter分支不编辑，实际模型回复与努力不等；native150回复、上限32。模型敏感性仅12例×3次，CodeQL仅1例且使用source-derived证据。作者主页旧12例91.7%/20例摘要与v1口径不同，本条只按v1。论文直链匿名Artifact已确认来源，但本轮访问403，未检查实现完整性；未独立复跑。",
+      "reading_scope": "v1主文方法、原生证据溯源与保留门、39例选择/重复使用、表3–6、模型/CodeQL实验、报告语义审核与局限；作者学术页仅用于署名和材料核对，匿名Artifact未能访问。",
+      "follow_up": [
+        "匿名Artifact访问恢复后核对代码、日志、版本及完整性；未核实独立作者Blog，不将学术主页当Blog。",
+        "作者未来方向为未见项目/漏洞实例及更大重复实验；建议盲审目标级精确率召回，并用未参与配置选择的样本测成本—误报—恢复权衡。"
+      ],
+      "publication_date": "2026-10-26",
+      "added_date": "2026-10-27",
+      "updated_date": "2026-10-27",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.34928",
+      "institution_source": "https://arxiv.org/html/2610.34928v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.34928v1"
+        },
+        {
+          "kind": "artifacts",
+          "label": "作者关联匿名实验材料（本轮访问403）",
+          "url": "https://anonymous.4open.science/r/SemWeaver-FD1E/"
+        }
+      ]
+    },
+    {
+      "id": "i-hitl",
+      "paper_id": "2610.35835",
+      "title": "I-HITL: Inalienable Human-in-the-Loop",
+      "institution": "Cornell Tech",
+      "first_author": "Samuel Breckenridge",
+      "category": "agent-security",
+      "tags": [
+        "human-approval",
+        "privilege-escalation",
+        "trusted-device",
+        "formal-security"
+      ],
+      "summary": "揭示智能体利用审批资源自行提权的风险，并用可信设备、密钥证明与逐次签名绑定真实人工批准。",
+      "caveat": "v1于2026-10-26 17:52UTC提交（北京10月27日01:52）；publication_date沿用arXiv源日期。10模型×3场景×20次，40工具轮上限；无攻击付款场景9/10模型至少一次提权，不是90%运行成功率；注入付款7/10、摘要任务攻击5/10模型至少一次提权付款。单钱包/同一权限配置；注入经人工迭代，非自主攻击生成器，无通用零日发现率。符号模型条件定理不等于原型生产安全；平台完全受控但可信手机/服务诚实，排除物理自动化及人因/恢复/多用户身份绑定等。Code为原型：Android证书撤销/完整路径验证缺失，iOS注册时证明不直接证明确认密钥生物识别属性，显示依赖OS，后台无租户隔离/设备撤销/限速，模拟器跳过真实证明。未报告大规模部署吞吐/延迟、人工交互成本或与其他防御的受控ASR对比；未独立复跑。",
+      "reading_scope": "v1主文威胁模型、三场景实验、符号定义与定理陈述/直观论证、设备通道与Countersign实现/限制；附录B设置、D披露、F实现；读取官方原型README、安全说明和实验README。未逐行验证附录A证明或运行钱包/攻击/移动端。",
+      "follow_up": [
+        "未核实对应作者Blog；Code为公开研究原型，Artifacts为自提权实验仓库。",
+        "作者未来方向包括计算安全论证、可信显示、设备证明能力与安全恢复；建议沙箱中模拟验证码、会话重放、密钥替换和注册后受控端失陷，量化误放行/误拒绝/延迟。"
+      ],
+      "publication_date": "2026-10-26",
+      "added_date": "2026-10-27",
+      "updated_date": "2026-10-27",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.35835",
+      "institution_source": "https://arxiv.org/html/2610.35835v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "全文",
+          "url": "https://arxiv.org/html/2610.35835v1"
+        },
+        {
+          "kind": "code",
+          "label": "Countersign研究原型",
+          "url": "https://github.com/I-HITL/countersign"
+        },
+        {
+          "kind": "artifacts",
+          "label": "自提权实验材料",
+          "url": "https://github.com/I-HITL/experiments"
         }
       ]
     }
