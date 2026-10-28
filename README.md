@@ -7,18 +7,18 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-50-6366f1?style=flat-square" alt="Papers and blogs: 50"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--27-14b8a6?style=flat-square" alt="Updated: 2026-10-27"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-53-6366f1?style=flat-square" alt="Papers and blogs: 53"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--10--28-14b8a6?style=flat-square" alt="Updated: 2026-10-28"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>13 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>14 entries</sub></td>
     <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>12 entries</sub></td>
   </tr>
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>11 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>13 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>12 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>14 entries</sub></td>
   </tr>
   <tr>
     <td colspan="2" width="100%" align="center" valign="middle"><a href="#formal-verification"><b>05 · Formal Verification</b></a><br><sub>1 entry</sub></td>
@@ -30,15 +30,15 @@
 <h2 align="center">每日新增 · Daily Updates</h2>
 
 <p align="center">
-  <a href="updates/2026-10-27.md"><b>2026-10-27</b></a> &nbsp;·&nbsp; 3 新增
+  <a href="updates/2026-10-28.md"><b>2026-10-28</b></a> &nbsp;·&nbsp; 3 新增
 </p>
 
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
-    <tr><td align="center" valign="middle"><b>Peking University</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.34967">Rivet: Utility-Preserving Context Control for Repository-Level Coding Agents</a></b><br><br>融合词法、语义与结构信号定位代码，再沿依赖和调用关系收集证据，在有限上下文中保留实现所需信息。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.34967">Paper</a></td></tr>
-    <tr><td align="center" valign="middle"><b>HUST</b><br><br><sub>Vulnerability Discovery</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.34928">SemWeaver: Refining LLM-Generated Static Vulnerability Checkers with Analyzer-Internal Evidence</a></b><br><br>将静态分析器内部证据与补丁、验证反馈结合，迭代修正大模型生成的漏洞检测规则并保留有效告警。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.34928">Paper</a><br><a href="https://anonymous.4open.science/r/SemWeaver-FD1E/">Artifacts</a></td></tr>
-    <tr><td align="center" valign="middle"><b>Cornell Tech</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35835">I-HITL: Inalienable Human-in-the-Loop</a></b><br><br>揭示智能体利用审批资源自行提权的风险，并用可信设备、密钥证明与逐次签名绑定真实人工批准。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35835">Paper</a><br><a href="https://github.com/I-HITL/countersign">Code</a><br><a href="https://github.com/I-HITL/experiments">Artifacts</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Tencent</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35488">FeatureLoop: Benchmarking Coding Agents under Evolving Requirements</a></b><br><br>在持续修改的仓库中分别引入新需求与纠错反馈，累计检查功能、回归和交互成本，评估编程智能体。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35488">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>SMU</b><br><br><sub>Vulnerability Discovery</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35541">The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation</a></b><br><br>固定脆弱后端，对比原生访问、脚本调用与智能体调用，拆解工具接口和智能体对既有漏洞可利用性的影响。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35541">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>NTU</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35188">V³AST-Bench: Verifiable, Valid, and Versatile Safety Evaluation for Coding Agents</a></b><br><br>为风险任务配对良性能力对照，以运行状态和事件验证危害，区分编程智能体的安全表现与任务能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35188">Paper</a><br><a href="https://github.com/Alibaba-AAIG/VAST-Bench">Code</a></td></tr>
   </tbody>
 </table>
 
@@ -51,6 +51,7 @@
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
     <tr><td align="center" valign="middle"><code>2026-10-26</code><br><sub>Peking University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.34967" title="Rivet: Utility-Preserving Context Control for Repository-Level Coding Agents">Rivet: Utility-Preserving Context Control for Repository-Level Coding Agents</a></b><br><br>融合词法、语义与结构信号定位代码，再沿依赖和调用关系收集证据，在有限上下文中保留实现所需信息。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.34967">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-10-26</code><br><sub>Tencent</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35488" title="FeatureLoop: Benchmarking Coding Agents under Evolving Requirements">FeatureLoop: Benchmarking Coding Agents under Evolving Requirements</a></b><br><br>在持续修改的仓库中分别引入新需求与纠错反馈，累计检查功能、回归和交互成本，评估编程智能体。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35488">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>Georgia Tech</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.30571" title="Stale Instruction Files Override the Code in Coding Agents: A One-Sentence Fix">Stale Instruction Files Override the Code in Coding Agents: A One-Sentence Fix</a></b><br><br>通过受控冲突实验检验过期指令对编程的影响，并用显式优先规则减少约定偏离与旧代码重写。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.30571">Paper</a><br><a href="https://github.com/WenJing95/stale-docs-data">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-22</code><br><sub>UT Austin</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.31895" title="Knowing When to Stop: The Evidence-Action Gap in Coding Agents">Knowing When to Stop: The Evidence-Action Gap in Coding Agents</a></b><br><br>依据障碍证据出现的时刻评估重试与交接，用结构化求助和外部监视器减少编程 Agent 的无效坚持。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.31895">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-20</code><br><sub>ZJU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.28069" title="Training the Whole Agent, Not Just the Model">Training the Whole Agent, Not Just the Model</a></b><br><br>在编程强化学习中同步生成机制级指导并演化工具与运行反馈，联合优化模型和执行框架。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.28069">Paper</a><br><a href="https://github.com/lingxiaotang/HarnessAdapt-RL">Code</a><br><a href="https://github.com/lingxiaotang/HarnessAdapt-RL/blob/main/docs/ARTIFACT_NOTES.md">Artifacts</a></td></tr>
@@ -97,6 +98,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-26</code><br><sub>SMU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35541" title="The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation">The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation</a></b><br><br>固定脆弱后端，对比原生访问、脚本调用与智能体调用，拆解工具接口和智能体对既有漏洞可利用性的影响。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35541">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-26</code><br><sub>HUST</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.34928" title="SemWeaver: Refining LLM-Generated Static Vulnerability Checkers with Analyzer-Internal Evidence">SemWeaver: Refining LLM-Generated Static Vulnerability Checkers with Analyzer-Internal Evidence</a></b><br><br>将静态分析器内部证据与补丁、验证反馈结合，迭代修正大模型生成的漏洞检测规则并保留有效告警。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.34928">Paper</a><br><a href="https://anonymous.4open.science/r/SemWeaver-FD1E/">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-23</code><br><sub>OpenAI</sub></td><td align="center" valign="middle"><b><a href="https://openai.com/index/securing-our-frontier-model-training-environment/" title="Securing our frontier model training environment">Securing our frontier model training environment</a></b><br><br>组织 Agent 团队检验沙箱、云网络和任务隔离边界，通过人工复现与修复反馈加固训练基础设施。</td><td align="center" valign="middle"><a href="https://openai.com/index/securing-our-frontier-model-training-environment/">Blog</a><br><a href="https://github.com/google/gvisor/pull/13816">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-23</code><br><sub>SNU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.32345" title="DeepAVR: Deep Analysis via Multi-Agent Collaboration for Automated Vulnerability Repair">DeepAVR: Deep Analysis via Multi-Agent Collaboration for Automated Vulnerability Repair</a></b><br><br>将中间补丁引出的新故障反馈给定位与修复角色，结合根因审查减少只压制崩溃症状的补丁。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.32345">Paper</a></td></tr>
@@ -119,6 +121,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-10-26</code><br><sub>NTU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35188" title="V³AST-Bench: Verifiable, Valid, and Versatile Safety Evaluation for Coding Agents">V³AST-Bench: Verifiable, Valid, and Versatile Safety Evaluation for Coding Agents</a></b><br><br>为风险任务配对良性能力对照，以运行状态和事件验证危害，区分编程智能体的安全表现与任务能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35188">Paper</a><br><a href="https://github.com/Alibaba-AAIG/VAST-Bench">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-26</code><br><sub>Cornell Tech</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35835" title="I-HITL: Inalienable Human-in-the-Loop">I-HITL: Inalienable Human-in-the-Loop</a></b><br><br>揭示智能体利用审批资源自行提权的风险，并用可信设备、密钥证明与逐次签名绑定真实人工批准。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35835">Paper</a><br><a href="https://github.com/I-HITL/countersign">Code</a><br><a href="https://github.com/I-HITL/experiments">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-23</code><br><sub>Tsinghua University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.32155" title="Detecting Insecure Compositions of Clean Agent Skills via Capability-Flow Graph Analysis">Detecting Insecure Compositions of Clean Agent Skills via Capability-Flow Graph Analysis</a></b><br><br>提取技能能力并构建有证据的跨技能数据流图，追踪敏感或不可信内容到越权操作的组合路径。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.32155">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-23</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/alignment-assessment-ukaisi" title="An alignment assessment of the UK AISI cybertesting incident">An alignment assessment of the UK AISI cybertesting incident</a></b><br><br>干预并续写越权评测轨迹，分析任务受阻、压缩摘要和历史行动如何影响风险识别与停止行为。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/alignment-assessment-ukaisi">Blog</a><br><a href="https://www.aisi.gov.uk/blog/investigating-alignment-failures-in-aisis-incident">Blog</a></td></tr>

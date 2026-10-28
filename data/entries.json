@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-27",
+  "last_updated": "2026-10-28",
   "entries": [
     {
       "id": "reviewbench",
@@ -1936,6 +1936,123 @@
           "kind": "artifacts",
           "label": "自提权实验材料",
           "url": "https://github.com/I-HITL/experiments"
+        }
+      ]
+    },
+    {
+      "id": "featureloop",
+      "paper_id": "2610.35488",
+      "title": "FeatureLoop: Benchmarking Coding Agents under Evolving Requirements",
+      "institution": "Tencent",
+      "first_author": "Jia Feng",
+      "category": "coding-agents",
+      "tags": [
+        "evolving-requirements",
+        "regression",
+        "interactive-coding",
+        "evaluation"
+      ],
+      "summary": "在持续修改的仓库中分别引入新需求与纠错反馈，累计检查功能、回归和交互成本，评估编程智能体。",
+      "version": "v1",
+      "caveat": "61任务/34仓库/5语言/7软件形式，12模型×3协议=2196运行，共用ClaudeCode2.1.74、200K上下文、高推理(路由支持时)、默认采样；每模型每任务每协议单次。Full/Evo/Evo+Comp响应机会与计算不同，40.3/51.6/64.1%为整体流程比较，非等预算反馈因果。最高44/61=72.1%；113/733观测失败状态两次纠错内完全恢复=15.4%，不是所有修复请求分母；187个带反馈状态缺首次观测，不进入恢复率。73/642已通过且有后续观测的需求实例再失败=11.4%，不是642独立需求。token统计只评估Agent输入/输出，缺部分遥测，含失败运行，不含反馈生成/建库/人工成本；纠错比Evo平均报告token增47.2%。固定需求续接与Hy4-Preview反馈生成，非真人开放交互；公开历史筛查不排除训练污染；测试覆盖有限，未独立复跑。",
+      "reading_scope": "v1主文方法、构建、表1及全部主实验与局限；附录D设置/协议/缺失观测，E成本与统计口径、表21分母、F.10恢复与F.14成本；未逐页阅读全部附录或执行评测。",
+      "follow_up": [
+        "原文及公开检索未核实对应官方Code/作者Blog；不以Excalidraw源仓库或同名项目代替。",
+        "作者提出用该测试床改善低干预可靠开发；建议等token预算对照、替换反馈生成器、真人交互和时间隔离任务，联报最终完成/回归/反馈次数/全成本。"
+      ],
+      "publication_date": "2026-10-26",
+      "added_date": "2026-10-28",
+      "updated_date": "2026-10-28",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "canonical_url": "https://arxiv.org/abs/2610.35488",
+      "institution_source": "https://arxiv.org/html/2610.35488v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读全文",
+          "url": "https://arxiv.org/html/2610.35488v1"
+        }
+      ]
+    },
+    {
+      "id": "v3ast-bench",
+      "paper_id": "2610.35188",
+      "title": "V³AST-Bench: Verifiable, Valid, and Versatile Safety Evaluation for Coding Agents",
+      "institution": "NTU",
+      "first_author": "Weitao Feng",
+      "category": "agent-security",
+      "tags": [
+        "capability-twins",
+        "runtime-oracles",
+        "coding-safety",
+        "harness-evaluation"
+      ],
+      "summary": "为风险任务配对良性能力对照，以运行状态和事件验证危害，区分编程智能体的安全表现与任务能力。",
+      "version": "v1",
+      "caveat": "212风险任务+212能力孪生；9风险×2攻击来源=18格，51个11模型/5harness配置×212×2×4=86496保留记录，作者报告超9Btoken与约4763run-hours(有时序记录子集)。ASR@4仅含能力孪生四次全通过的任务，风险侧四次任一次危害即计该任务失守；CAP是212中该资格比例，不是单次通过率。Opus4.8/ClaudeCode作者报告CAP92.0%、条件ASR@4 20.9%，不同系统分母可异，不作部署风险率。非危害Incomplete也获安全分但不是完成，良性过度拒绝与无能力无法区分。root容器可出网，3任务需网络管理权限；ClaudeCode跳过许可、Codex跳过批准和内置沙箱，因此非严格模式安全率。原生推理/温度不全相同，非仅框架代码因果；超时/错误重跑只保留有效运行，未将重试数完整成本纳入headline。Qwen3.5-4B行为用于任务校准筛选；S1/S2不同任务，非同任务因果消融。官方公开runner/tasks/文档已核对，未执行代码或重放攻击。",
+      "reading_scope": "v1主文任务构建、度量、模型与框架结果/轨迹案例/局限；附录C许可/采样/预算/重跑、D.1 ASR重复口径；官方Code README、evaluation与reproduction说明。未逐个审核424任务检测器或独立复跑。",
+      "follow_up": [
+        "未核实关联作者Blog；Code为官方公开评测实现与任务，文档中的Qoder第六适配器不计为论文已测第六harness。",
+        "作者指出需要严格安全模式和能力/良性拒绝诊断；建议同模型同采样、共同可解任务上配对测试权限模式，并同时报ASR@1/@4、安全完成、误拒绝及重试费用。"
+      ],
+      "publication_date": "2026-10-26",
+      "added_date": "2026-10-28",
+      "updated_date": "2026-10-28",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "canonical_url": "https://arxiv.org/abs/2610.35188",
+      "institution_source": "https://arxiv.org/html/2610.35188v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读全文",
+          "url": "https://arxiv.org/html/2610.35188v1"
+        },
+        {
+          "kind": "code",
+          "label": "官方评测实现与任务",
+          "url": "https://github.com/Alibaba-AAIG/VAST-Bench"
+        }
+      ]
+    },
+    {
+      "id": "vela-agent-in-the-middle",
+      "paper_id": "2610.35541",
+      "title": "The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation",
+      "institution": "SMU",
+      "first_author": "Ruozhao Yang",
+      "category": "vulnerability-discovery",
+      "tags": [
+        "web-security",
+        "interface-design",
+        "known-vulnerabilities",
+        "controlled-evaluation"
+      ],
+      "summary": "固定脆弱后端，对比原生访问、脚本调用与智能体调用，拆解工具接口和智能体对既有漏洞可利用性的影响。",
+      "version": "v2",
+      "version_date": "2026-10-27",
+      "caveat": "首发2026-10-26，读2026-10-27v2；WWW2027标题模板/占位DOI不作已录用证据。44已知漏洞(含训练挑战)/12应用家族，非零日发现/漏洞总体流行率。三个商用agent及三种自建接口，参考ClaudeCode+workflow；C1完整脚本单次，C2每适用请求5次、15工具/30Ktoken/5min，任意请求任一次成功即病例retention。参考40/44~91%，C1可达40全部C2可达；35preserved/4transformed/1step-completion。接口42/44、40/44、17/44，良性功能覆盖46/50、42/50、23/50，完成率89/82/41%，低攻击同时损失功能。全部接口通过MCP，query有服务端planner/typedslots/snapshot，不能解读OpenAPI/MCP/NLWeb协议排名。每次恢复相同身份/快照，用独立oracle；代理所有工具批准自动授予，内置shell/file/web禁用，仅受测工具到后端。恶意请求已含目标/适用载荷，非自主攻击发现；单因素非全因子，模型不透明、预算敏感；成本仅上限，无完整美元总量；未独立复跑。",
+      "reading_scope": "v2主文威胁模型、盲构接口、C0/C1/C2及oracle、完整实验/功能成本/局限；附录C控制与预算、D配对表和E判定口径；未运行应用、载荷或攻击。",
+      "follow_up": [
+        "未核实对应官方Vela Code或作者Blog；原文引用的Codex/ClaudeCode等是被测工具，不作为本文实现链接。",
+        "作者建议跨agent×接口全因子、调用序列与更新跟踪；建议保留同一良性工作流，比较对象级授权、身份绑定参数和有状态流程策略，测漏洞保留率及合法完成率。"
+      ],
+      "publication_date": "2026-10-26",
+      "added_date": "2026-10-28",
+      "updated_date": "2026-10-28",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "evidence_status": "author-reported",
+      "canonical_url": "https://arxiv.org/abs/2610.35541",
+      "institution_source": "https://arxiv.org/html/2610.35541v2",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读全文",
+          "url": "https://arxiv.org/html/2610.35541v2"
         }
       ]
     }
