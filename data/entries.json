@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-28",
+  "last_updated": "2026-10-29",
   "entries": [
     {
       "id": "reviewbench",
@@ -2055,6 +2055,143 @@
           "url": "https://arxiv.org/html/2610.35541v2"
         }
       ]
+    },
+    {
+      "id": "anthropic-real-world-exploit-chains",
+      "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
+      "institution": "Anthropic",
+      "first_author": null,
+      "publication_date": "2026-10-27",
+      "publication_kind": "blog",
+      "type": "官方技术研究博客（案例披露，非同行评审论文）",
+      "category": "vulnerability-discovery",
+      "canonical_url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+      "institution_source": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+      "institution_basis": "页面署名Frontier Red Team，个人列为contributors而非正式作者次序；采用发布机构。",
+      "contributors": [
+        "Nicholas Carlini",
+        "David Dworken",
+        "Xinyang Ge",
+        "Ben Morris",
+        "Milad Nasr",
+        "Chris Rohlf",
+        "Luna Tong"
+      ],
+      "tags": [
+        "vulnerability-research",
+        "exploit-chains",
+        "binary-analysis",
+        "scanner-diversity"
+      ],
+      "summary": "结合多策略并行扫描、源码与二进制分析、验证及变体搜索，在真实软件中发现并串联可利用漏洞。",
+      "caveat": "未发布内部研究模型，五条成功链是案例选择，不是五个漏洞或总体成功率；Chrome62CVE/13沙箱逃逸/21renderer相关来自作者，不能相加为独立总数或62RCE。Google公告可核对部分Anthropic-assisted-by-Claude署名，未独立逐项重建62归属。Safari案例为数据/同源策略绕过，不是该节演示RCE；Android含实体设备和初始设置，Windows有研究者反编译/高风险问题引导，人工工时/试错/全部目标/总计算成本与基线未披露，不能称完全无人干预。Linux53分钟是单个PoC的48+5分钟，不是发现耗时或普遍攻击时延。官方插件只PR/编辑安全审查，不是扫描平台/模型/完整利用链实现；不将验证计划入口标Code。博客通过web全文读取；shell403不影响已有全文读取，Apple关联公告429、NVD无正文，未称通读；未运行载荷或独立复现。",
+      "reading_scope": "官方博客全文，包括五类案例、What we learned、披露与贡献名单；关联Google Chrome公告中部分报告者署名与官方security-guidance README；未阅读不可访问Apple/NVD正文，未审计漏洞源码/补丁或运行PoC。",
+      "evidence_sources": [
+        "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_02018666648.html"
+      ],
+      "follow_up": [
+        "未核实对应公开论文、研究模型、扫描平台或完整利用链Code；公开安全指导插件仅作为辅助Artifacts。",
+        "作者建议多样扫描器、边际新增发现指标、已确认发现的变体分析与PR时扫描；建议固定目标/预算评测新增已确认漏洞数、误报、重复、人工审核和总成本。"
+      ],
+      "links": [
+        {
+          "kind": "artifacts",
+          "label": "官方安全审查插件（非研究扫描平台）",
+          "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance"
+        }
+      ],
+      "added_date": "2026-10-29",
+      "updated_date": "2026-10-29",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "spine",
+      "paper_id": "2610.37224",
+      "version": "v1",
+      "title": "Spine: Compiling Subtask Trees into Structured Context for Long-Horizon Coding Agents",
+      "institution": "SUSTech",
+      "first_author": "Jiahong Xiang",
+      "publication_date": "2026-10-27",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "category": "coding-agents",
+      "canonical_url": "https://arxiv.org/abs/2610.37224",
+      "institution_source": "https://arxiv.org/html/2610.37224v1",
+      "tags": [
+        "context-management",
+        "task-tree",
+        "long-horizon",
+        "harness"
+      ],
+      "summary": "用显式子任务边界维护执行树，在每次模型调用前保留未完成上下文，并将已完成分支替换为返回结果。",
+      "caveat": "v1 SWE-Milestone7任务98里程碑、ProgramBench随机50/200任务(6h/1000steps)、FrontierSWE可用10/17任务×5次(20h)，不是全部原基准。GPT5.6Sol Score38.1→42.6为+4.5百分点/+11.8%相对，resolved14→19/98；$681.22→$460.77为-32.4%。ProgramBench平均测试率62.55→73.35为+10.8百分点/+17.3%相对，但完整任务仅0→2/50，费用$210.21→$221.56增加，非全面省钱；Qwen/Pi某设置token也增。主比较未报告统一多种子置信区间；三项目消融每配置3次，不能代替全量稳健性。ContextFolding基线只有机制重实现、无FoldGRPO训练。模型自报Close结果未经独立语义完备验证，错误关闭/缺信息可破坏后续；缓存只保留可复用前缀资格非保证命中。当前Code README9任务/89%headline与论文7任务口径不同，仅引v1，需匹配提交。已核对两个公开项目说明，未安装或执行。",
+      "reading_scope": "v1主文嵌套工作区、Open/Close/Next/Spawn、树编译及缓存条件、所有主实验表2–7、消融和局限；核对SpineCodex与SpinePi/SDK README。未执行实现或核验全测试轨迹。",
+      "follow_up": [
+        "未核实独立作者Blog；Code为SpineCodex，Project为SpinePi/SDK公开项目；当前README的更新数字不视为论文新增证据。",
+        "作者主张按工作结构管理上下文并跨harness应用；建议审计Close结果覆盖、错关闭恢复、回溯能力、同预算多种子与真实缓存/构建维护成本。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读全文",
+          "url": "https://arxiv.org/html/2610.37224v1"
+        },
+        {
+          "kind": "code",
+          "label": "SpineCodex实现",
+          "url": "https://github.com/GhabiX/SpineCodex"
+        },
+        {
+          "kind": "project",
+          "label": "SpinePi与SDK项目",
+          "url": "https://github.com/GhabiX/spine-plugin"
+        }
+      ],
+      "added_date": "2026-10-29",
+      "updated_date": "2026-10-29",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "benchmeup",
+      "paper_id": "2610.37283",
+      "version": "v1",
+      "title": "BenchMeUp: Building Software Engineering Benchmarks from Natural-Language Specifications",
+      "institution": "CISPA",
+      "first_author": "Islem Bouzenia",
+      "publication_date": "2026-10-27",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "category": "software-engineering",
+      "canonical_url": "https://arxiv.org/abs/2610.37283",
+      "institution_source": "https://arxiv.org/html/2610.37283v1",
+      "tags": [
+        "benchmark-construction",
+        "multi-agent",
+        "clean-replay",
+        "evaluation-validity"
+      ],
+      "summary": "将自然语言评测规范转成共享搜索规则和构建计划，协调智能体收集实例，经干净环境重放后统一封装。",
+      "caveat": "4任务×50目标，639候选/332尝试→198构建→196打包→189可被既有技术使用，另7级审查180/198满足全部条件；不能把99%打包率当99%语义正确。40例分层随机人工抽检37有效，6联合check脚本漏边界(如跳过测试)，189可运行非正确率。108/198初次至少一次replay失败后修正。$0.79/36min每构建实例主要搜索+构建LLM费用/时间，不含完整人工规范/评审/运行基础设施等；人类规范经0–6轮修订。搜索/计划ClaudeOpus5、构建DeepSeekV4Flash；Codex基线只相同构建模型，10/200对180/198非同整体模型/预算因果，baseline更便宜$0.07且14min。4搜索+4构建代理，构建每任务48h墙钟(192agent-hours)，仅4人工规范/GitHub/3语言，检查脚本自生成，环境会漂移。论文关联仓库当前仅LICENSE与11字节README，Project占位，不标Code/Artifacts完整公开；未独立复跑。",
+      "reading_scope": "v1全部主文方法/算法、四任务设置、表III/V与质量审核、成本及比较限制；GitHub公开根目录和README核对仅占位。未运行模型、数据构建或实例验收。",
+      "follow_up": [
+        "论文声明开源但当前Project仍为占位；继续跟踪源码、生成实例与固定环境发布，未核实作者Blog。",
+        "作者建议使用前抽检并保存容器快照；建议引入独立反例/变异测试与源需求盲审，在等总预算下比较数据有效产出及人工审核负担。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读全文",
+          "url": "https://arxiv.org/html/2610.37283v1"
+        },
+        {
+          "kind": "project",
+          "label": "作者关联项目（当前仅占位）",
+          "url": "https://github.com/sola-st/BenchMeUp"
+        }
+      ],
+      "added_date": "2026-10-29",
+      "updated_date": "2026-10-29",
+      "evidence_status": "author-reported"
     }
   ]
 }
