@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-29",
+  "last_updated": "2026-10-30",
   "entries": [
     {
       "id": "reviewbench",
@@ -2192,6 +2192,127 @@
       "added_date": "2026-10-29",
       "updated_date": "2026-10-29",
       "evidence_status": "author-reported"
+    },
+    {
+      "paper_id": "2610.35987",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.35987",
+      "publication_kind": "paper",
+      "institution_source": "https://arxiv.org/html/2610.35987v1",
+      "added_date": "2026-10-30",
+      "updated_date": "2026-10-30",
+      "evidence_status": "author-reported",
+      "id": "probe",
+      "title": "PROBE: Frontier Coding Agents Find Different Bugs Than Maintainers Fix",
+      "institution": "LogicStar.ai",
+      "first_author": "Marco Paina",
+      "publication_date": "2026-10-26",
+      "type": "预印本（同行评审录用未核实）",
+      "category": "software-engineering",
+      "tags": [
+        "proactive-bug-discovery",
+        "maintainer-relevance",
+        "open-world-evaluation",
+        "repository-audit"
+      ],
+      "summary": "以维护者后续修复构建仓库级缺陷基准，结合分轮审查与独立验证，衡量智能体发现和维护需求的差距。",
+      "caveat": "20个Python/JS/TS仓库，2025-01-01快照及18个月修复窗口，2457参考缺陷并非完整真值/安全漏洞集。人工100样本拒绝12、模型全量质审拒绝209(8.5%)且一致性弱kappa=.29，作者保留全量，存在标签噪声。740passes/4468文件，禁网络/历史，单pass3h上限；共享ClaudeOpus5上下文与调用图，每配置通常1次，Luna10/Muse5复跑；Opus5仅5仓库子集不能混全20仓库榜。全量最佳单配置Sol-high召回20.8%，各配置历史precision至多8.1%，均相对18个月参考，不是误报率。900抽样发现经LLM复核的conclusive约85%有效，非全报告由维护者确认；不匹配者84%，人工180中双方明确131，一致93%，作者blog指出人工有效79%对panel85%。Sol高1185美元、Luna-medium15美元为20仓库API单轮价格，不是完整收集/人工审查成本；matcher每千报告约5–8美元另计。无显著修复时间偏好不排除全窗口污染，未来5/10年26–47%精确率上限依赖外推模型。一般功能缺陷非CVE/利用链。",
+      "reading_scope": "v1主文问题、六步数据构建、分轮harness、表1–5与实验/局限；附录A.4匹配、C.3有效性和C.4污染诊断；作者博客正文。未读全部附录证明/长提示清单，未执行审查或复核缺陷。",
+      "follow_up": [
+        "作者数据集地址https://huggingface.co/datasets/LogicStar/probe本轮网页不可达、原始README/API均401，未核实文件公开可用；不在首页冒称已验证Artifacts。未核实本文独立Code仓库。",
+        "作者建议扩展语言/大仓库，按真实用户工作流运行并检查输出；建议加入维护者盲审优先级、实际采纳/修复率，在等总预算下比较不同验证路径。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1全文相关章节",
+          "url": "https://arxiv.org/html/2610.35987v1"
+        },
+        {
+          "kind": "blog",
+          "label": "作者官方解读",
+          "url": "https://logicstar.ai/blog/probe"
+        }
+      ]
+    },
+    {
+      "paper_id": "2610.34763",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.34763",
+      "publication_kind": "paper",
+      "institution_source": "https://arxiv.org/html/2610.34763v1",
+      "added_date": "2026-10-30",
+      "updated_date": "2026-10-30",
+      "evidence_status": "author-reported",
+      "id": "physical-cost-of-context",
+      "title": "The Physical Cost of Context: Quality-Constrained Resource Accounting for Coding Agents",
+      "institution": "UC San Diego",
+      "first_author": "Zhongming Yu",
+      "publication_date": "2026-10-26",
+      "type": "预印本；作者注明NeurIPS 2026 RAAAI Workshop接收（未独立核实，非主会）",
+      "category": "coding-agents",
+      "tags": [
+        "context-management",
+        "prefix-cache",
+        "resource-accounting",
+        "quality-gate"
+      ],
+      "summary": "在质量约束下测量上下文策略的调用、缓存复用与实际计算，揭示删减历史可能增加预填充和能耗。",
+      "caveat": "450个SWE-rebench V2仓库独立Python定位样本用于质量，另100合成任务/25仓库/5语言×3策略×3次=900cells用于成本，不能混成同一总体；合成数据LLMcurated/judged未给生成模型。另600cells同模型vLLM cacheflag隔离；外部100SWE-benchVerified/12Python仓库，mini-SWE-agent2.4.6、SGLang/Qwen3.8，32调用/1800s严格预算、1轨迹/arm。主定位Qwen3.6-35B-A3B-FP8/vLLM/DGXSparkGB10单请求无batch；质量非劣门槛95%配对CI下端>-5pp，Eager/Compact满足不代表质量提高已证实；Eager比Grep调用-35.7%、GPU能耗代理-33.2%，Compact对Eager无额外节省。Mask5对Eager提示词-33.3%、复用损失135.9k、uncached+608.5%、GPU代理+125.6%，resolved26/100对29/100差-3pp、CI下端-8.6pp未过门槛，不等于显著证明质量恶化。GPU采样减idle是代理，非整机电费/云API价格，成本不含官方评分/完整开发与驻留。索引编译36.1kJ/767.7s另摊销。物理计量有限分片/单硬件，时钟未固定，未验证批处理/缓存挤压/LLM摘要等。论文给CodeNib为代码与材料入口；只核实公开代码树、README与指定commit存在，未验证论文全部运行日志/协议完整齐备。",
+      "reading_scope": "v1主文第2–5节的策略、质量门槛、测量与全部主结果表，局限和附录A执行元数据/资源口径；CodeNib README/公开树/论文固定commit元数据。未运行推理、评分或硬件测量。",
+      "follow_up": [
+        "未核实本文作者专属Blog；CodeNib README主推另一评测，不能将其71.4%等指标混入本文；论文固定88e88b38b978已核对存在，后续追踪完整实验材料。",
+        "作者强调先约束质量、拆分证据供给与历史保留并记录prefix复用；建议扫不同缓存命中/并发/窗口长度，用同任务质量与成本联合测量、整机电表验证。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1全文",
+          "url": "https://arxiv.org/html/2610.34763v1"
+        },
+        {
+          "kind": "code",
+          "label": "论文关联CodeNib实现（完整实验材料未核实）",
+          "url": "https://github.com/sysevol-ai/CodeNib"
+        }
+      ]
+    },
+    {
+      "paper_id": "2610.37055",
+      "version": "v1",
+      "canonical_url": "https://arxiv.org/abs/2610.37055",
+      "publication_kind": "paper",
+      "institution_source": "https://arxiv.org/html/2610.37055v1",
+      "added_date": "2026-10-30",
+      "updated_date": "2026-10-30",
+      "evidence_status": "author-reported",
+      "id": "blindfold-audit-coin",
+      "title": "Blindfold: Keeping the Audit Coin Secret from LLM Agents",
+      "institution": "RUC",
+      "first_author": "Wei Zhu",
+      "publication_date": "2026-10-27",
+      "type": "预印本（同行评审录用未核实）",
+      "category": "agent-security",
+      "tags": [
+        "audit-certification",
+        "pre-commit-noninterference",
+        "side-channels",
+        "prompt-injection"
+      ],
+      "summary": "形式化审计状态泄漏对安全认证的偏差，结合成对实验检验提示与计时通道，并提出隐藏或延后抽签的修复。",
+      "caveat": "可信审计coin/certifier/label oracle与排除限制ER等假设下，PNI为对所有自适应对手无偏条件，episode偏差最坏(1-epsilon)DA；抽样认证估计attempt rate，不是阻断能力。主要PQ-CIFC为作者自建，审计前额外工作是设计选择，不代表现有产品通用缺陷；1000成对时序测量+3000padding校准/再1000，CaMeL128checks/12任务薄验证且15/24解释器崩溃。真实模型AgentDojo560对初筛136易感，gpt4.1mini显式notice条件ASR67.6%→54.4%差13.2pp，Holm .012；非通用自主审计感知，generic/spontaneous不稳；真实模型timing效应6.6pp p=.093未显著，强计时规避是脚本。离线E5由560实测对重抽400种子，4000episodes/20%审计对未审计倾向mu0覆盖plain .007 vs silent .993，不是线上准确率。E8一个固定schedule4000live但同560对无跨episode记忆，主比较target mismatch、3000后扩4000、2687稳定crossing为事后改用realized-rate序列，不能称完全预注册验证。fresh-per-call修复episode复用计时但改为call rate，需防良性调用稀释；并发共享负载仍泄漏，padding仅缩窄。约91美元API含E859美元非完整基础设施成本；附录称录用后发布artifact，目前无已核实Code/Blog。",
+      "reading_scope": "v1主文威胁模型、PNI定义及主要偏差结论/前部推导、修复构造、VI–VIII实验和限制；附录B复现索引、C自建监控器。未逐项审阅所有延后证明或完整G–K附录，未执行攻击或模型。",
+      "follow_up": [
+        "附录明确artifact拟录用后公开；暂未核实本文对应Code/作者Blog，不链接同名PKI或内存管理项目。",
+        "作者要求在非自建公开监控器验证、扩展跨episode适应和活体计时实验；建议在带网络抖动及并发队列的独立系统复现，预先固定认证目标/停止规则，同时量化延迟和误拦截。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1相关主文及复现说明",
+          "url": "https://arxiv.org/html/2610.37055v1"
+        }
+      ]
     }
   ]
 }
