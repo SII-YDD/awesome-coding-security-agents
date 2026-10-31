@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-30",
+  "last_updated": "2026-10-31",
   "entries": [
     {
       "id": "reviewbench",
@@ -2311,6 +2311,122 @@
           "kind": "paper",
           "label": "已读v1相关主文及复现说明",
           "url": "https://arxiv.org/html/2610.37055v1"
+        }
+      ]
+    },
+    {
+      "paper_id": "2610.40256",
+      "version": "v1",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "canonical_url": "https://arxiv.org/abs/2610.40256",
+      "institution_source": "https://arxiv.org/pdf/2610.40256",
+      "evidence_status": "author-reported",
+      "added_date": "2026-10-31",
+      "updated_date": "2026-10-31",
+      "id": "codespecweave",
+      "title": "When Requirements Interact: Scaling Long-Horizon Coding via Interdependent Specifications",
+      "institution": "Xiaomi",
+      "first_author": "Yishuo Cai",
+      "publication_date": "2026-10-29",
+      "category": "coding-agents",
+      "tags": [
+        "interdependent-specifications",
+        "training-data",
+        "reinforcement-learning",
+        "verifier-alignment"
+      ],
+      "summary": "从开发记录合成相互约束的需求与测试，再审查多模型解题轨迹，构建长程编程训练数据和评测集。",
+      "caveat": "PDF首页一作YishuoCai署名1,2，1为LLMCoreXiaomi、2为PKU；按首位单位Xiaomi。104182种子、4670训练任务/2865仓库；100人工审查基准/1044规格，平均10.44。试点3067候选自动review判2267有测试对齐问题(73.9%)，不是最终集错误率；单批14905初始→3275难度保留→766审核通过，不是4670全流程同一分母。合成/reviewMiMoV2.5Pro，solverMiMoV2.5Pro/Flash，ClaudeCode；混合求解成功过滤可能引入solver偏好。两310B总/15B激活MoE做GRPO，训练每题16样本、eval3样本/512Kcontext，成本/训练GPU时无完整账单。FlashSFT+CodeSpecDeepSWE54.42→62.98(+8.56pp)，自建基准59→70.67(+11.67pp)；非所有基准最佳，SWEPro59.37低MiMoCoding59.44。MiMoV2.5平均thinking29.7k→141.6k(4.8x)、Flash22.8k→69.5k(3x)，能力收益非免费效率。跨厂商框架不同，前沿74%不能全因模型。未核实训练/评测去重清单和全量物料；合成测试及作者人工审查不证明全部需求正确。",
+      "reading_scope": "v1第2–3节完整方法/验证/训练/评测与限制，附录A/B人工审查和预算、F失败案例；PDF首页核实一作单位顺序。未执行数据合成、训练或评测。",
+      "follow_up": [
+        "未核实本成果独立Code、公开训练/基准下载或作者Blog；不将MiMo其他技术报告/模型仓库当本文材料。",
+        "作者指出训练资源、Kubernetes环境与候选淘汰成本；建议固定计算和测试强度，对比独立清单/耦合要求，用独立需求审查及变异测试验证交互收益。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1方法与实验",
+          "url": "https://arxiv.org/html/2610.40256v1"
+        }
+      ]
+    },
+    {
+      "paper_id": "2610.39899",
+      "version": "v1",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "canonical_url": "https://arxiv.org/abs/2610.39899",
+      "institution_source": "https://arxiv.org/html/2610.39899v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-10-31",
+      "updated_date": "2026-10-31",
+      "id": "explorerepair",
+      "title": "ExploreRepair: Evidence-Specialized Agents for Vulnerability Repair under Information Constraints",
+      "institution": "University of Sydney",
+      "first_author": "Duc Manh Tran",
+      "publication_date": "2026-10-29",
+      "category": "vulnerability-discovery",
+      "tags": [
+        "vulnerability-repair",
+        "evidence-specialization",
+        "multi-agent",
+        "no-oracle-feedback"
+      ],
+      "summary": "在缺少漏洞分类和复现测试时，分别探索代码结构、行为意图与可执行证据，再分层整合诊断和补丁。",
+      "caveat": "输入已给函数级定位(仓库+文件/行范围)，不是从零发现漏洞；无benchmarkCWE/PoV/参考补丁/grade反馈，agent可执行原单测并自建PoV。PatchEval230→176有PoV及单测→剔7不编译=169(64Py/49JS/56Go)，成功需隐藏PoV与单测均过；VulnLoc+40剔5原本PoV通过=35/9C项目，仅PoV、无单测不能断言无回归，跨集RSR不可横比。三个证据agent各产轨迹+patch，分别lesson/patch聚合后终聚合，无grade挑选。DeepSeekRSR71.6%比单agent57.4%(+14.2pp)与改版Evo46.2%(+25.4pp)，Luna39.6%；Evo去PoV/grade且15轮改至多3轮，Loop无PoV仅首个编译patch，无PoV迭代，不能作为原系统同设定结论。每phase1800s但未披露等总token/美元成本，多agent额外计算未消融。终聚合比最强中间仅Luna1例、DeepSeek4例，且会丢弃正确授权修复；表格单测/PoV非全安全证明。作者称温度1重复3次修复计数差至多1，只有2模型。",
+      "reading_scope": "v1问题设定、第4–6节完整方法/基准筛选/主表/消融/预算和局限；附录C成功与失败聚合案例及D基线改动。未执行模型、PoV或修补。",
+      "follow_up": [
+        "未核实本文对应公开Code/作者Blog；未把引用的EvoRepair、LoopRepair或Codex链接标为本文实现。",
+        "作者强调模型/种子敏感及基线适配限制；建议按同总预算比较，用独立保留测试和安全不变量约束聚合，统计正确候选被终聚合推翻的比例。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1方法实验及关键附录",
+          "url": "https://arxiv.org/html/2610.39899v1"
+        }
+      ]
+    },
+    {
+      "paper_id": "2610.37741",
+      "version": "v1",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "canonical_url": "https://arxiv.org/abs/2610.37741",
+      "institution_source": "https://arxiv.org/html/2610.37741v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-10-31",
+      "updated_date": "2026-10-31",
+      "id": "agentic-pretraining-backdoors",
+      "title": "Agentic Backdoors via Pretraining Poisoning",
+      "institution": "UC Berkeley",
+      "first_author": "Xinyan Hu",
+      "publication_date": "2026-10-27",
+      "category": "agent-security",
+      "tags": [
+        "pretraining-poisoning",
+        "backdoor-persistence",
+        "cli-agents",
+        "generation-evaluation"
+      ],
+      "summary": "从头预训练受控模型并完成干净后训练，检验预训练投毒能否留下由上下文触发的终端命令后门。",
+      "caveat": "一作UC Berkeley为首个单位、AnthropicFellows第二；合作者含UIUC与Anthropic，不在institution拼接。自训Qwen3架构0.6/1.7/4B，非公开Qwen模型中检出后门。名义100B预训练token/实95.8B打包，主0.1%投毒，SFT/DPO/GRPO全干净。评测995普通路径prompts/1000稀有上下文prompts，各32样本temp.7最多256新token，ASR为生成文本匹配目标命令，非真实主机执行统计；LLM判可执行性普通98.5%/稀有93.7%亦非实执行。4B声明式普通触发GRPO后Pass32=92.7%(三seed87.9–96.7)，Pass1=50.9%(37.2–61.8)；稀有Pass32=10.5%，不可混。低剂量0.0005%(2500文档)是稀有触发4B单seedPass32=1.4%，非普通触发92.7同设定。主实验3seed、低剂量/cleancontrol单seed；cleanNL2SH300prompt目标命令0%，不代表所有干净行为均安全。固定字串payload/单轮shell任务、最大4B、未测生产规模/midtraining/复杂动态行为。仓库公开流程配置、依赖和惰性占位目标，原始生成语料/检查点/私有评测未打包，不能宣称完整精确复现；硬件8–16H200配置但无完整总GPU时/费用。",
+      "reading_scope": "v1威胁模型与方法、主文第3–4节训练/控制/结果和第6节限制，附录A预训练/DPO/RL与评测及B表7–13核对Pass1/32和种子；官方README、复现边界与SECURITY说明。仅阅读，未生成投毒数据、安装代码、训练或执行命令。",
+      "follow_up": [
+        "已核实官方研究Code，原始语料/权重/私有评测未公开打包；未核实作者Blog。首发27日，按7天补读并明确日期，不把30日索引当首发。",
+        "作者建议数据来源审查与执行前动作控制，后续需生产规模/中训练/非固定字串研究；建议先等预算比较清洗和独立执行门控，分别测单次/重复生成、实际沙箱行为与正常任务损失。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1方法与实验",
+          "url": "https://arxiv.org/html/2610.37741v1"
+        },
+        {
+          "kind": "code",
+          "label": "官方研究流程代码（不含原始语料/权重/私有评测）",
+          "url": "https://github.com/safety-research/agentic-backdoor"
         }
       ]
     }
