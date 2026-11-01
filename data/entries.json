@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-10-31",
+  "last_updated": "2026-11-01",
   "entries": [
     {
       "id": "reviewbench",
@@ -2429,6 +2429,127 @@
           "url": "https://github.com/safety-research/agentic-backdoor"
         }
       ]
+    },
+    {
+      "id": "sandman-agentic-rl",
+      "paper_id": "2610.39711",
+      "title": "Sandman: Building and Operating Sandboxes for Agentic Reinforcement Learning on Shared Kubernetes",
+      "institution": "Amazon",
+      "first_author": "Yiming Yan",
+      "category": "coding-agents",
+      "tags": [
+        "agentic-rl",
+        "sandbox-lifecycle",
+        "kubernetes",
+        "grading-integrity"
+      ],
+      "summary": "在共享集群上管理编程 Agent 训练沙箱的创建、执行、回收与独立评分，减少环境故障和评测失真。",
+      "caveat": "生产四轮训练122次运行累计3.13M次沙箱创建，含1.24M rollout和1.89M grading，不是独立任务或并发数；不同生产版本未全部包含当前保护。11,858并发来自0.1vCPU/128MiB、缓存43MB镜像的tiny pods，以20–25创建/秒节流，不代表万级真实仓库或持续churn。三对16GPU warm grading实验获取6.2秒至0.12秒，但vCPU时2.46倍；前24步耗时下降9.4%，多数收益在起始阶段，不能称端到端50倍。按需标价计算沙箱分摊CPU/内存申请成本为GPU成本1.7–3.5%，不是全服务经济成本。另一预注册六对package比较同时改任务过滤、warm/reuse和token，held-out112题46.1%对48.4%，不能归因单一机制。共享内核runc、无强恶意租户隔离保证，Python SWE/单集群；无专用集群基线，未独立复现。",
+      "reading_scope": "v1摘要/引言，主文第3–6节设计、运行、生产与受控实验；附录I状态检查范围与K预注册比较。未通读全部附录及53表；未执行代码或训练。",
+      "follow_up": [
+        "作者承诺开源daemon/provider/pool，本轮未核实公开实现或作者Blog，持续跟踪。",
+        "作者强调关键路径、排队时间与空闲容量的实测；建议在真实大镜像与等预算下同时测有效评分轨迹成本、训练质量、残留污染和强隔离代价。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1方法与实验",
+          "url": "https://arxiv.org/html/2610.39711v1"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "publication_date": "2026-10-29",
+      "canonical_url": "https://arxiv.org/abs/2610.39711",
+      "institution_source": "https://arxiv.org/html/2610.39711v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-01",
+      "updated_date": "2026-11-01"
+    },
+    {
+      "id": "exlabel-swe-tq",
+      "paper_id": "2610.39417",
+      "title": "Well-Specified and Well-Tested? Assessing SWE-bench-Style Datasets with a Self-Evolving Agent",
+      "institution": "ZJU",
+      "first_author": "Zhonghao Jiang",
+      "category": "software-engineering",
+      "tags": [
+        "benchmark-quality",
+        "experience-bank",
+        "training-data-curation",
+        "coding-agents"
+      ],
+      "summary": "从人工标注积累可检索经验，审查软件修复任务的需求清晰度与测试质量，再筛选编程模型训练数据。",
+      "caveat": "SWE-TQ从既有人类标注筛选二元完全一致项并由两位作者清洗，不是全新独立人工真值；clarity随机30%划分，coverage最新20%时间划分。经验库在有标签历史任务上反思构建，测试推理不读取测试标签，非无监督在线自进化。三模型比较；GPT5.6Luna的Python coverage F1=79.4对SPICE75.8，但FPR21.1%，多语coverage F1=40.0/FPR30.1%。下游Qwen3.5-9B-Base SFT，ExLabel1087条成功轨迹对SimpleRAG1390条、全量2309条；同超参但不等训练token，SWE-bench Verified66.2%对最优基线57.8%，增8.4百分点/14.5%相对。$0.46/轨迹来自$35.21标注+$460.54采样的预计筛后采样成本，不含SFT训练和完整经验库建库摊销。公开基准谱系交叉去污染/跨仓库独立性未核实，不能断言污染也不能保证无污染。代码/数据已核实，预生成经验库未打包，需自行构建；无独立复现。",
+      "reading_scope": "v1第2–5节问题、方法、数据与设置，第6节主实验/消融/下游，第7.2节局限和数据说明；附录C训练配方；官方README、根目录与data目录。未通读全部附录，未构建经验库或运行模型。",
+      "follow_up": [
+        "已核实Code与四组SWE-TQ划分及SWE-rebench材料；预生成经验库不随仓库提供，未核实作者Blog。",
+        "作者指出标注噪声和仅限issue修复；建议跨仓库时间盲测、独立人工/变异测试复核，以及等训练token/步数比较过滤策略，同时报告误删率和保留率。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1方法与实验",
+          "url": "https://arxiv.org/html/2610.39417v1"
+        },
+        {
+          "kind": "code",
+          "label": "官方实现（经验库需自建）",
+          "url": "https://github.com/ZJU-CTAG/ExLabel"
+        },
+        {
+          "kind": "artifacts",
+          "label": "评测划分与筛选材料",
+          "url": "https://github.com/ZJU-CTAG/ExLabel/tree/main/data"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "publication_date": "2026-10-29",
+      "canonical_url": "https://arxiv.org/abs/2610.39417",
+      "institution_source": "https://arxiv.org/html/2610.39417v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-01",
+      "updated_date": "2026-11-01"
+    },
+    {
+      "id": "realm-task-assets",
+      "paper_id": "2610.39155",
+      "title": "REALM: Identifying Minimal Task Assets for LLM Agents",
+      "institution": "Tsinghua University",
+      "first_author": "Zihou Ren",
+      "category": "agent-security",
+      "tags": [
+        "least-privilege",
+        "prompt-injection",
+        "resource-bound-api",
+        "task-assets"
+      ],
+      "summary": "根据任务依赖逐步识别必要资源，以资源绑定 API 和隔离容器限制 Agent 可访问的文件与服务。",
+      "caveat": "qwen3.5-flash单一基模，AgentDyn60干净任务/560注入案例；干净完成率47/60=78.3%至24/60=40.0%，注入任务401/560=71.6%至204/560=36.4%；ASR93/560=16.6%至1/560=0.2%，同为560非报错案例，不可称几乎无损防御。未报告等效用/暴露条件化ASR或完整时延成本，低ASR不能单独证明恢复最小必要资产。BuilderLLM、内核和provider契约受信，Agent不受信；独立历史不等于独立强模型。资源选择限源ID，动态授予与发现分开；Partial API在host绑定收件人/CC/BCC/附件等，正文仍可自由，Bubblewrap容器无外网/主机凭据。资产授权不约束所有动作目的，残留一次攻击利用已获准参与者创建无关日历事项；文件投影不会因API撤销自动抹除已读信息。非通用信息流证明，provider适配器需准确建模间接效果。未核实官方Code/Blog，未独立运行。",
+      "reading_scope": "v1第2节动机与威胁模型、第3–4节依赖图/动态授权/系统强制、第5节全部实验与第7节结论；未执行攻击或代码，不主张形式化证明。",
+      "follow_up": [
+        "本轮未核实REALM官方实现或作者Blog；不将Bubblewrap依赖、同名检索项目当作作者代码。",
+        "作者明确要求测必要资产覆盖与过度授权，并指出低效用不足以证明最小授权；建议在等合法任务完成率下比较安全曲线，补注入暴露条件化ASR和动作目的/参数约束。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1方法与实验",
+          "url": "https://arxiv.org/html/2610.39155v1"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "publication_date": "2026-10-29",
+      "canonical_url": "https://arxiv.org/abs/2610.39155",
+      "institution_source": "https://arxiv.org/html/2610.39155v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-01",
+      "updated_date": "2026-11-01"
     }
   ]
 }
