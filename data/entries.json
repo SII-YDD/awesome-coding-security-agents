@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-01",
+  "last_updated": "2026-11-02",
   "entries": [
     {
       "id": "reviewbench",
@@ -1548,7 +1548,7 @@
       "institution": "Anthropic",
       "publication_date": "2026-10-22",
       "added_date": "2026-10-24",
-      "updated_date": "2026-10-24",
+      "updated_date": "2026-11-02",
       "publication_kind": "blog",
       "type": "官方技术研究报告 / 博客",
       "category": "formal-verification",
@@ -1562,13 +1562,13 @@
       ],
       "canonical_url": "https://www.anthropic.com/research/formal-verification",
       "institution_source": "https://www.anthropic.com/research/formal-verification",
-      "summary": "将 OSS-Fuzz 测试转为 RISC-V 二进制规格，由 Claude 修复漏洞并生成 Rocq 可检查的证明，验证 123 个库、239 个入口在限定输入和运行环境下无崩溃。",
-      "caveat": "239入口/123库和约1.8亿行通过检查的证明为作者总体报告；公开仓库当前列60入口/25库，是发布子集。博客以64 MB描述输入限制，附录精确为小于64 MiB；定理仍受具体内存预算、系统调用假设和入口覆盖限制。公开agreement证明不含halts，不能解释为保证终止。ASan未检出的错误、调用方误用和模型与部署差异不受保证。补丁后规格重生成需审计功能保持及reward hacking。未独立运行Rocq或复现漏洞。",
-      "reading_scope": "官方博客全文、6页技术附录、公开oss-verify-proofs README及rocq-linux-process-semantics README；核对证明类型、公开范围、资源与终止性限制。未下载或逐条审计证明，未执行checker。",
+      "summary": "将模糊测试入口转为二进制规格，让 Claude 修补代码并生成可由 Rocq 检查的安全证明。",
+      "caveat": "239入口/123库与约1.8亿行通过检查的证明为作者总体报告；公开索引在核查commit列61入口/26库，属于发布子集。README与索引区分agreement安全性与halts终止性；66个proved halts定理不是66入口，也不保证每个入口/环境/资源配置均终止。ASan、UBSan及组合对应不同定理；输入小于64MiB、具体内存/CPU预算与系统调用等假设须逐项看。未覆盖入口、未建模错误、调用方误用和部署差异不受保证；补丁后规格重生成须审计功能保持。未独立运行Rocq或复现漏洞。",
+      "reading_scope": "官方博客全文、6页技术附录、公开oss-verify-proofs README及rocq-linux-process-semantics README；核对证明类型、公开范围、资源与终止性限制。未下载或逐条审计证明，未执行checker。 2026-11-02另读更新README和证明索引并统计库/入口/halts定理；仅文本计数，未逐条验证证明。",
       "evidence_status": "author-reported",
       "links": [
         {
-          "kind": "appendix",
+          "kind": "artifacts",
           "label": "技术附录",
           "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf"
         },
@@ -1582,7 +1582,14 @@
           "label": "公开规格与Rocq证明子集",
           "url": "https://github.com/theorem-labs/oss-verify-proofs"
         }
-      ]
+      ],
+      "first_author": "Keane Lucas",
+      "evidence_update": {
+        "date": "2026-11-02",
+        "proof_repository_commit": "293953e8dbd3b7207b8accf5b0c049e2c47fb4b1",
+        "reason": "修正公开子集计数60/25为61/26，按现公开索引区分agreement与halts，并更新检测器种类；原首发/收录日不变。",
+        "source": "https://github.com/theorem-labs/oss-verify-proofs/tree/293953e8dbd3b7207b8accf5b0c049e2c47fb4b1"
+      }
     },
     {
       "id": "frontier-training-containment",
@@ -2550,6 +2557,461 @@
       "evidence_status": "author-reported",
       "added_date": "2026-11-01",
       "updated_date": "2026-11-01"
+    },
+    {
+      "id": "skeleton-coding",
+      "paper_id": "2610.38214",
+      "title": "Skeleton Coding: Program Structure as a Specification for Agents",
+      "first_author": "Aditya Golatkar",
+      "institution": "AWS",
+      "publication_date": "2026-10-28",
+      "category": "software-engineering",
+      "summary": "用模块、类型、函数签名和局部契约构成程序骨架，约束编程 Agent 的实现结构并提高测试有效性。",
+      "tags": [
+        "structural-specification",
+        "contracts",
+        "code-generation",
+        "testing"
+      ],
+      "caveat": "参考源码用于生成结构或行为规格，实施阶段才隐藏源码；不是人类从零写规格的成本实验。35 SCBench、13 SDDBench Python库和20 ProgramBench任务，四模型平均测试错误率40.7%至21.0%为48.4%相对下降，不是完整项目正确率或形式化证明。存在性理论构造展示指数级测试差异，不保证实际任务指数改进。小模型15–26倍成本优势仅计实现token，排除规格制作与评测计算。过度详细契约可能伤害小模型，结构与行为规格信息量不严格等价；匿名化不能证明无训练污染。论文所链AI Functions是通用框架，未核实完整基准/规格生成实现或作者Blog，未独立运行。",
+      "reading_scope": "v1引言、第2–4节结构规格、理论陈述及实验，附录B/C/D实验细节与补充结果；未逐项审计附录E证明。另读论文关联AI Functions README与目录树，未发现研究专用基准路径；未执行代码。",
+      "follow_up": [
+        "跟踪SCBench/SDDBench、规格生成脚本和作者Blog；不把AI Functions通用框架标为研究完整实现。",
+        "作者建议保持骨架简短、接口明确；建议盲评人类从需求新建规格，等信息量与总工时比较，并用别名/变形测试和多个种子验证收益。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2610.38214v1",
+          "label": "已读v1方法与实验"
+        }
+      ],
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2610.38214",
+      "institution_source": "https://arxiv.org/html/2610.38214v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-02"
+    },
+    {
+      "id": "evolving-agent-teams",
+      "paper_id": "2610.36848",
+      "title": "Evolving Agent Teams",
+      "first_author": "Shiyi Cao",
+      "institution": "UC Berkeley",
+      "publication_date": "2026-10-27",
+      "category": "coding-agents",
+      "tags": [
+        "team-evolution",
+        "gpu-kernels",
+        "persistent-memory",
+        "multi-agent"
+      ],
+      "summary": "由监督 Agent 诊断优化停滞，重组团队角色与协作方式，并借助持久化经验持续优化 GPU 内核。",
+      "caveat": "NeurIPS2026官方poster已核实录用，会议尚未举行。多数主实验两次取优，部分消融/跨硬件扩展单次；固定团队基模与EAT版本不完全相同，不能归因纯组织效应。最可比MLA表2为同Opus4.6medium、各$800 API预算、47负载：EAT两次0.721x/0.685x，K-Search0.602x/0.598x，CUDAForge0.448x/0.283x，均相对生产基线且均不足1x。扩展预算达到约1.21x、36/47更快；排除FlashInfer plan阶段的口径为0.96x，不能说纯内核阶段全面超越。美元预算非总GPU/工程成本，正确性测试非形式化证明。eat-kernels链接本轮404，不将其标为已开放实验材料；未独立运行。",
+      "reading_scope": "v1第3节方法、第4节全部主实验与第5节局限；附录B团队失败和D等预算比较，未通读全部额外硬件附录。官方EAT README/根目录、NeurIPS2026官方poster页面已核查；未安装skills或执行实验。",
+      "follow_up": [
+        "Code为公开团队/skills工作流，另链eat-kernels本轮404；未核实作者Blog，跟踪负载数据与轨迹可用性。",
+        "作者讨论更广成本性能权衡；建议固定模型、总token/GPU时与评测口径，增加种子、硬件及未见负载，分别报告plan与运行时延并防止评测器被修改。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2610.36848v1",
+          "label": "已读v1方法与实验"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/caoshiyi/EAT",
+          "label": "官方团队工作流"
+        }
+      ],
+      "type": "NeurIPS 2026 已录用论文",
+      "version": "v1",
+      "venue_source": "https://neurips.cc/virtual/2026/poster/153181",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2610.36848",
+      "institution_source": "https://arxiv.org/html/2610.36848v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-02"
+    },
+    {
+      "id": "openai-frontier-misalignment-monitoring",
+      "title": "How we detect frontier model misalignment",
+      "first_author": "Marcus Williams",
+      "institution": "OpenAI",
+      "publication_date": "2026-10-29",
+      "category": "agent-security",
+      "publication_kind": "blog",
+      "canonical_url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+      "institution_source": "https://alignment.openai.com/how-we-detect-frontier-model-misalignment/",
+      "summary": "把轻量探针、上下文审查、调查 Agent 与人工响应分层连接，监测前沿模型运行中的越权和异常行为。",
+      "tags": [
+        "runtime-monitoring",
+        "misalignment",
+        "agent-security",
+        "incident-response"
+      ],
+      "caveat": "已记录真实事件的L2紧急升级召回率79.6%（区间70–87），安全队列90.3%、对齐队列91.4%，不同阈值不可混用；合成事件紧急升级59.6%，不是所有流量/未知攻击的总体检出率。未标记流量5%抽样用于识别盲点，但缺完整误报分母与总成本，未核实公开复现实验集/代码。HuggingFace事件为事后重放估计，非当时成功防护；另一DNS事件15分钟为个案非全局SLA。高风险RL/internalCodex绕过L0；internalCodex未启用paging，其他覆盖/值守时段不统一。CoT和压缩上下文不能保证真实完整意图；异步报警不改样本原奖励，但暂停训练仍可能产生选择压力。未独立验证监控系统。",
+      "reading_scope": "官方alignment站完整同文：分层架构、事件重放与实际事件、真实/合成召回表、部署覆盖和RL激励/局限；主站部分正文亦核对。未读取完整外部红队报告、内部事件或运行监控。",
+      "follow_up": [
+        "未核实官方Code与可公开复现实验集，不以第三方项目替代。",
+        "作者拟扩大覆盖并开展METR/Redwood等外部红队；建议随机流量审计与分层加权估计误报/漏报、独立自适应规避测试，并分别报告报警、人工响应与实际阻断时延。"
+      ],
+      "links": [
+        {
+          "kind": "blog",
+          "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+          "label": "官方原文"
+        }
+      ],
+      "type": "官方技术研究博客（非同行评审论文）",
+      "version": "2026-10-29",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-02"
+    },
+    {
+      "id": "autoverus",
+      "paper_id": "2409.13082",
+      "title": "AutoVerus: Automated Proof Generation for Rust Code",
+      "first_author": "Chenyuan Yang",
+      "institution": "UIUC",
+      "publication_date": "2024-09-19",
+      "type": "OOPSLA 2025 论文",
+      "version": "v3",
+      "institution_source": "https://arxiv.org/pdf/2409.13082",
+      "canonical_url": "https://arxiv.org/abs/2409.13082",
+      "publication_kind": "paper",
+      "category": "formal-verification",
+      "tags": [
+        "formal-verification",
+        "proof-generation"
+      ],
+      "summary": "为已有 Rust 实现和规格生成循环不变量与证明注解，再依据 Verus 反馈迭代修补证明。",
+      "caveat": "给定实现与规格，150个任务最多3次尝试解决137个，首轮122个；不是任意Rust程序自动正确率。限制修改可执行实现及使用不健全假设；证明仍以规格和Verus信任基础为前提。",
+      "reading_scope": "v3引言、工作流/过滤/修复方法、表2及实验；未通读全部附录；官方README，未运行。",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-01",
+      "curation_context": "historical-topic-backfill",
+      "follow_up": [
+        "历史专题补档，保留研究首发日期；未核实关联作者Blog，持续跟踪版本、完整材料与独立复现。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/pdf/2409.13082",
+          "label": "已读论文版本"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/microsoft/verus-proof-synthesis",
+          "label": "官方论文实现"
+        }
+      ],
+      "venue_source": "https://dl.acm.org/doi/10.1145/3763174"
+    },
+    {
+      "id": "alphaverus",
+      "paper_id": "2412.06176",
+      "title": "AlphaVerus: Bootstrapping Formally Verified Code Generation through Self-Improving Translation and Treefinement",
+      "first_author": "Pranjal Aggarwal",
+      "institution": "CMU",
+      "publication_date": "2024-12-09",
+      "type": "ICML 2025 论文",
+      "version": "ICML2025 proceedings",
+      "institution_source": "https://www.contrib.andrew.cmu.edu/~bparno/papers/alpha-verus.pdf",
+      "canonical_url": "https://arxiv.org/abs/2412.06176",
+      "publication_kind": "paper",
+      "category": "formal-verification",
+      "tags": [
+        "formal-verification",
+        "proof-generation"
+      ],
+      "summary": "将已有 Dafny 验证样例转为 Verus，通过树搜索修复与过滤迭代积累可信的代码和证明示例。",
+      "caveat": "依赖已有形式化样例，主要评测HumanEval/MBPP派生函数；自改进翻译不等于完全无种子自举。验证器检查代码符合规格，不证明规格忠实人类需求；未独立复现。",
+      "reading_scope": "会议论文引言、翻译/Treefinement/批评过滤方法与主结果；未通读全部附录；官方README，未运行。",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-01",
+      "curation_context": "historical-topic-backfill",
+      "follow_up": [
+        "历史专题补档，保留研究首发日期；未核实关联作者Blog，持续跟踪版本、完整材料与独立复现。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://www.contrib.andrew.cmu.edu/~bparno/papers/alpha-verus.pdf",
+          "label": "已读论文版本"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/cmu-l3/alphaverus",
+          "label": "官方论文实现"
+        }
+      ],
+      "venue_source": "https://proceedings.mlr.press/v267/aggarwal25a.html"
+    },
+    {
+      "id": "psv-verus",
+      "paper_id": "2512.18160",
+      "title": "Propose, Solve, Verify: Self-Play Through Formal Verification",
+      "first_author": "Alex Wilf",
+      "institution": "CMU",
+      "publication_date": "2025-12-20",
+      "type": "ICML 2026 论文",
+      "version": "ICML2026 proceedings",
+      "institution_source": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wilf26a/wilf26a.pdf",
+      "canonical_url": "https://arxiv.org/abs/2512.18160",
+      "publication_kind": "paper",
+      "category": "formal-verification",
+      "tags": [
+        "formal-verification",
+        "proof-generation"
+      ],
+      "summary": "让模型提出难度适配的形式化任务并求解，用 Verus 筛出正确代码与证明，持续训练求解器。",
+      "caveat": "基于种子形式化数据和3B Qwen2.5-Coder，以验证解进行RFT；不是从零无数据训练，也不应直接称GRPO。9.6倍来自特定MBPP测试时训练设置，不代表通用编程能力倍数；约8张L40/24小时主实验，未独立复现。",
+      "reading_scope": "最终会议论文第3节方法、第4节设置、第5节主结果及部分扩展；未通读全部附录；官方README，未训练。",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-01",
+      "curation_context": "historical-topic-backfill",
+      "follow_up": [
+        "历史专题补档，保留研究首发日期；未核实关联作者Blog，持续跟踪版本、完整材料与独立复现。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wilf26a/wilf26a.pdf",
+          "label": "已读论文版本"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/abwilf/psv",
+          "label": "官方论文实现"
+        }
+      ],
+      "venue_source": "https://proceedings.mlr.press/v306/wilf26a.html"
+    },
+    {
+      "id": "autorocq",
+      "paper_id": "2511.17330",
+      "title": "Agentic Verification of Software Systems",
+      "first_author": "Haoxin Tu",
+      "institution": "NUS",
+      "publication_date": "2025-11-21",
+      "type": "FSE 2026 Research 论文",
+      "version": "v3",
+      "institution_source": "https://arxiv.org/html/2511.17330v3",
+      "canonical_url": "https://arxiv.org/abs/2511.17330",
+      "publication_kind": "paper",
+      "category": "formal-verification",
+      "tags": [
+        "formal-verification",
+        "proof-generation"
+      ],
+      "summary": "将 C 程序验证拆成可规划的证明任务，让 Agent 检索上下文、尝试策略并依 Rocq 反馈回退修复。",
+      "caveat": "评测单位为给定规格下的验证义务，不是整个软件仓库已验证；依赖Frama-C建模与Rocq信任基础。模型版本和数据污染等威胁仍需考虑，不能据局部证明声称系统所有缺陷消除；未独立复现。",
+      "reading_scope": "v3动机、证明Agent流程、主要设置/结果与有效性威胁；官方README，未通读全部附录或执行Rocq。",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-01",
+      "curation_context": "historical-topic-backfill",
+      "follow_up": [
+        "历史专题补档，保留研究首发日期；未核实关联作者Blog，持续跟踪版本、完整材料与独立复现。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2511.17330v3",
+          "label": "已读论文版本"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/NUS-Program-Verification/AutoRocq",
+          "label": "官方论文实现"
+        }
+      ],
+      "venue_source": "https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/110/Agentic-Verification-of-Software-Systems"
+    },
+    {
+      "id": "lemmanet",
+      "paper_id": "2603.22114",
+      "title": "Automated Lemma Discovery in Agentic Program Verification",
+      "first_author": "Huan Zhao",
+      "institution": "NUS",
+      "publication_date": "2026-03-23",
+      "type": "ASE 2026 Research 论文",
+      "version": "v2",
+      "institution_source": "https://arxiv.org/html/2603.22114v2",
+      "canonical_url": "https://arxiv.org/abs/2603.22114",
+      "publication_kind": "paper",
+      "category": "formal-verification",
+      "tags": [
+        "formal-verification",
+        "proof-generation"
+      ],
+      "summary": "从验证失败中自动发现和证明辅助引理，帮助 Agent 完成 C 程序中难以直接求解的验证义务。",
+      "caveat": "941个VC中641个来自131个短C程序，300个来自NTP；总解决364/941对AutoRocq287，真实项目VC66/300对40/300，非项目成功率。GPT5.2、10分钟/100步预算及离线引理成本；语义化VC辅助推理，最终仍检查实际VC，未独立复现。",
+      "reading_scope": "v2第4.1–4.3、5.1–5.2、6节及官方README；未通读全部附录或运行。",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-01",
+      "curation_context": "historical-topic-backfill",
+      "follow_up": [
+        "历史专题补档，保留研究首发日期；未核实关联作者Blog，持续跟踪版本、完整材料与独立复现。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2603.22114v2",
+          "label": "已读论文版本"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/NUS-Program-Verification/LemmaNet",
+          "label": "官方论文实现"
+        }
+      ],
+      "venue_source": "https://conf.researchr.org/details/ase-2026/ase-2026-research-track/26/Automated-Lemma-Discovery-in-Agentic-Program-Verification"
+    },
+    {
+      "id": "kverus",
+      "paper_id": "2605.03822",
+      "title": "KVerus: Scalable and Resilient Formal Verification Proof Generation for Rust Code",
+      "first_author": "Yuwei Liu",
+      "institution": "Ant Group",
+      "publication_date": "2026-05-05",
+      "type": "ASE 2026 Industry Showcase 论文",
+      "version": "v2",
+      "institution_source": "https://arxiv.org/html/2605.03822v2",
+      "canonical_url": "https://arxiv.org/abs/2605.03822",
+      "publication_kind": "paper",
+      "category": "formal-verification",
+      "tags": [
+        "formal-verification",
+        "proof-generation"
+      ],
+      "summary": "按仓库依赖检索规格、类型与可复用引理，结合 Verus 诊断为演进中的 Rust 项目生成和修复证明。",
+      "caveat": "359项仓库级证明任务解决183项，对基线16项；并非51%的整仓验证。23个新函数证明被上游接收，包含人工修正规格与清理；不能称内核全验证。Code指作者指定ase-26论文分支，main已改skills工作流，未据此宣称复现论文或新增效果；未独立运行。",
+      "reading_scope": "v2设计、人工审查接入、仓库级实验与经验/边界；main及ase-26官方README已读，未运行。",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-01",
+      "curation_context": "historical-topic-backfill",
+      "follow_up": [
+        "历史专题补档，保留研究首发日期；未核实关联作者Blog，持续跟踪版本、完整材料与独立复现。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2605.03822v2",
+          "label": "已读论文版本"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/asterinas/KVerus/tree/ase-26",
+          "label": "官方论文实现"
+        }
+      ],
+      "venue_source": "https://conf.researchr.org/program/ase-2026/program-ase-2026/Detailed-Timeline"
+    },
+    {
+      "id": "verina",
+      "paper_id": "2505.23135",
+      "title": "VERINA: Benchmarking Verifiable Code Generation",
+      "first_author": "Zhe Ye",
+      "institution": "UC Berkeley",
+      "publication_date": "2025-05-29",
+      "type": "ICLR 2026 论文",
+      "version": "ICLR2026 proceedings",
+      "institution_source": "https://proceedings.iclr.cc/paper_files/paper/2026/file/41b8c80f9113b9f8e2e129447221682a-Paper-Conference.pdf",
+      "canonical_url": "https://arxiv.org/abs/2505.23135",
+      "publication_kind": "paper",
+      "category": "formal-verification",
+      "tags": [
+        "formal-verification",
+        "proof-generation"
+      ],
+      "summary": "用人工整理的 Lean 任务分别评测代码、规格和证明生成，揭示测试通过与端到端可验证程序之间的差距。",
+      "caveat": "189题、固定旧模型与2-shot设置；o3代码测试72.6%、规格评分52.3%、证明pass1为4.9%，指标语义不同不能直接相减。规格评测含证明/测试，有限测试不是需求等价证明；不能作当前最强Agent上限。未独立复现。",
+      "reading_scope": "最终会议稿引言、第4节任务/指标、第5节结果；官方README，未通读全部附录或执行Lean。",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-01",
+      "curation_context": "historical-topic-backfill",
+      "follow_up": [
+        "历史专题补档，保留研究首发日期；未核实关联作者Blog，持续跟踪版本、完整材料与独立复现。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/41b8c80f9113b9f8e2e129447221682a-Paper-Conference.pdf",
+          "label": "已读论文版本"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/sunblaze-ucb/verina",
+          "label": "官方论文实现"
+        }
+      ],
+      "venue_source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/41b8c80f9113b9f8e2e129447221682a-Abstract-Conference.html"
+    },
+    {
+      "id": "verus-specgym",
+      "paper_id": "2605.26457",
+      "title": "Verus-SpecGym: An Agentic Environment for Evaluating Specification Autoformalization",
+      "first_author": "Anmol Agarwal",
+      "institution": "CMU",
+      "publication_date": "2026-05-26",
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "institution_source": "https://arxiv.org/html/2605.26457v1",
+      "canonical_url": "https://arxiv.org/abs/2605.26457",
+      "publication_kind": "paper",
+      "category": "formal-verification",
+      "tags": [
+        "formal-verification",
+        "specification-autoformalization",
+        "benchmark"
+      ],
+      "summary": "把模型生成的 Verus 规格变成可执行判定器，用竞赛测试与反例评测规格是否忠实题意。",
+      "caveat": "581个Codeforces任务，最佳77.8%为测试定义的规格忠实率，不是对任意输入的自然语言语义证明。有限测试及竞赛分布限制；LLM评审漏掉26%的评测器可发现失败。Code为配置Harbor的基准仓库，任务压缩包和评估器由README另链，不保证全部内置，未独立复现。",
+      "reading_scope": "v1动机、规格生成/可执行评测方法、主结果与局限；官方基准README，未通读全部附录或下载运行任务。",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "read_date": "2026-11-01",
+      "curation_context": "historical-topic-backfill",
+      "follow_up": [
+        "历史专题补档，保留研究首发日期；未核实关联作者Blog，持续跟踪版本、完整材料与独立复现。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2605.26457v1",
+          "label": "已读论文版本"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/formal-verif-is-cool/verus-spec-gym",
+          "label": "基准框架与任务下载说明"
+        }
+      ]
     }
   ]
 }
