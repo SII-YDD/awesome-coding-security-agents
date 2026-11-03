@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-02",
+  "last_updated": "2026-11-03",
   "entries": [
     {
       "id": "reviewbench",
@@ -3012,6 +3012,143 @@
           "label": "基准框架与任务下载说明"
         }
       ]
+    },
+    {
+      "id": "secpo-prompt-injection",
+      "paper_id": "2610.41998",
+      "title": "SecPO: Principled Adversarial Training for Prompt Injection Security",
+      "institution": "UC Berkeley",
+      "first_author": "Sizhe Chen",
+      "category": "agent-security",
+      "tags": [
+        "prompt-injection",
+        "adversarial-training",
+        "preference-optimization",
+        "trust-boundary"
+      ],
+      "summary": "以干净输入上的模型行为作为偏好训练参照，结合强对抗样本训练，提高 Agent 对提示注入的抵抗力。",
+      "type": "预印本（同行评审录用未核实）",
+      "caveat": "明确假设应用标注可信指令/不可信数据并安全序列化，非自动推断信任边界；主Qwen3.6-27B训练和评测关闭thinking。Llama在线AT为16H200约18小时，Qwen复用其预生成攻击离线训练为8H200约7小时，不含完整攻击生成API/评测成本。19,157偏好对；AgentDojo自适应80对任务、每对最多800候选，ASR78.8%对8.8%（95%区间3.6–17.2），非所有Agent/无限预算安全率；每候选可运行完整多轮episode。SEP同AT消融Genetic@800 60.9%至13.3%才更接近隔离损失收益，不能把完整改进全归因SecPO目标。AgentDojo良性效用89.7%至90.7%，AgentDyn71.7%保持；DTaP效用为受攻击任务指标，排除160个Mac/Windows样本。定理依赖Bradley–Terry偏好分布、无限数据/容量假设，作者明确固定标签不保证满足假设，非安全证明。残留攻击会借修错扩大任务范围。已读Code范围说明，完整原始评测输出/部分基线不随仓库提供；HF API本轮private=false/gated=false且列出数据/权重，数据卡与项目页仍有需授权旧文案，未下载大文件或验证权重/样本校验和，未独立复现。",
+      "reading_scope": "v1第2–4节威胁模型、训练目标/AT、主要实验与消融，第6–7节局限/讨论；附录A.1、B.1、B.5和C.4；官方Code README的目标、发布范围/数据/训练说明，作者主页/论文列表和HF数据/模型卡及公开API文件元数据。未通读全部附录、审计全部实现或执行训练/攻击。",
+      "follow_up": [
+        "已核实Code及公开HF数据/模型元数据，公开卡片仍有过时需授权描述；持续跟踪原始评测材料、作者Project更新，未核实独立作者Blog。",
+        "作者将推理模型、弱显式/社会工程攻击和多层防御列为方向；建议固定良性效用扩展攻击预算/未见工作流，分别测试错误信任标签与任务范围扩张，衡量训练和响应总成本。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2610.41998v1",
+          "label": "已读v1方法与实验"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/Sizhe-Chen/SecPO",
+          "label": "官方训练与评测实现（范围见README）"
+        },
+        {
+          "kind": "artifacts",
+          "url": "https://huggingface.co/datasets/Sizhe-Chen/Qwen3.6-27B-Instruct-SecPO-trainset",
+          "label": "Qwen训练数据（元数据访问已核实）"
+        },
+        {
+          "kind": "project",
+          "url": "https://sizhe-chen.github.io/SecPO-Website/",
+          "label": "作者项目解读"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "publication_date": "2026-10-30",
+      "canonical_url": "https://arxiv.org/abs/2610.41998",
+      "institution_source": "https://arxiv.org/html/2610.41998v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-03",
+      "updated_date": "2026-11-03"
+    },
+    {
+      "id": "reparo-access-control",
+      "paper_id": "2610.41800",
+      "title": "Reparo: Synthesizing and Validating Access Control Policies",
+      "institution": "UMass Amherst",
+      "first_author": "Ayesha Binte Mostofa",
+      "category": "software-engineering",
+      "tags": [
+        "access-control",
+        "repository-evidence",
+        "policy-repair",
+        "oracle-quality"
+      ],
+      "summary": "从代码、注释和文档恢复授权意图，生成并修复访问控制策略，再用另一模型生成的请求测试其行为。",
+      "type": "预印本（同行评审录用未核实）",
+      "caveat": "228仓库（Cedar53/OpenFGA75/Rego100），生成策略不直接提供旧策略；OpenFGA/Rego检索仍用旧策略词汇，非完全不依赖旧策略。官方validator通过检查语法/结构/类型而非授权意图，Cedar按语句、其他按model/policy计数。99–100%有效不等于99–100%语义正确。行为oracle由不同模型但相同仓库证据生成，并接收生成策略接口及覆盖/不一致反馈，存在共同遗漏和评分偏差；OpenFGA98.2–99.6%、Cedar82.0–86.5%、Rego76.3–80.2%是可执行请求决策一致率。两人独立审390例、每语言130，91.5–96.9%满足标准；±5%设计仅针对混合样本，人工仍同时看到策略及证据，非独立外部真值。有限结构/条件覆盖，接口遗漏可能无法测；原仓库40.6–55.7%无效是策略单元非仓库比例且有环境配置失败。小模型结果排除上下文、拒绝及不可解析失败，不与全量等同。每仓库约5分钟/$0.55–1.57为作者按2026年8月价格估计的API各阶段平均，非人工审查/总生产成本；公开仓库潜在训练污染未排除。未核实官方Code/Blog，不以同名仓库替代；未独立运行。",
+      "reading_scope": "v1第2节书店动机、第3–6节问题/228仓库构建/检索/双模型流程与消融，第7节主结果、人工审查、覆盖、案例和成本，第9节局限；核查全文外链和作者/机构元数据。未执行策略引擎、LLM或独立重标测试。",
+      "follow_up": [
+        "全文与定向检索未核实关联官方实现、评测材料或作者Blog；跟踪作者后续公开材料。",
+        "作者指出证据遗漏、oracle偏差和公共仓库污染；建议冻结独立的人审/部署日志真值，验证跨租户/权限组合的拒绝边界，并将测试缺失与策略缺失分开计量，补端到端盲测。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2610.41800v1",
+          "label": "已读v1方法与实验"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "publication_date": "2026-10-30",
+      "canonical_url": "https://arxiv.org/abs/2610.41800",
+      "institution_source": "https://arxiv.org/html/2610.41800v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-03",
+      "updated_date": "2026-11-03"
+    },
+    {
+      "id": "salt-static-llm-types",
+      "paper_id": "2610.41617",
+      "title": "Prompt Less, Infer More: Static Analysis-Guided LLM Type Annotation for Python",
+      "institution": "Korea University",
+      "first_author": "Wonseok Oh",
+      "category": "software-engineering",
+      "tags": [
+        "static-analysis",
+        "type-inference",
+        "query-selection",
+        "context-compression"
+      ],
+      "summary": "用双向静态类型分析优先补全注解，再选择影响范围大的函数调用模型，并以类型证据压缩上下文。",
+      "type": "ICSE 2027 已录用（作者及实验室标注）",
+      "venue_source": "https://software-lab.org/publications.html",
+      "caveat": "arXiv评论及合作者实验室列ICSE2027，未独立核对正式会议程序。主实验12个高注解项目移除注解，4,766函数/12,984槽位，非自然欠注解仓库；原输入保留4项返回注解与Rich部分docstring处理由材料说明。GLM4.7相对Aider精确匹配84.13%至85.82%，估计API费用$285.08至$61.19降78.5%，总时16:15至15:32仅降4.4%，不是总成本/时延降78.5%。GPT5.5仅10%抽样文件，其余文件保留注解，1,606评估槽位/1,627候选，不能当全仓设置；准确率92.71%至93.09%，费用$73.42至$18.49。gpt-oss项目配对准确率p=.055，并非所有模型均显著。静态填充没有健全性保证，会过窄及传播错误；精确匹配惩罚合法替代类型，GLM类型告警997至1012反而略升。公开材料提供实现和选定日志/表，TIGER完整最终输出缺失、TypeT5原始预测与保存评估未能直接对应；历史调用计费按首条usage且另记录retry，跨消融旧分母不同。未执行验证脚本或付费/本地模型实验，不宣称完全独立可复现。",
+      "reading_scope": "v1第II–III节例子与算法、第IV节全部设置/主实验/消融/案例、第V节类型检查与有效性威胁、Data Availability；官方README、REPRODUCING.md和基线证据范围说明；合作者实验室录用列表。未运行模型、静态分析或artifact校验。",
+      "follow_up": [
+        "已核实官方Code及选定results材料，未核实作者Blog，Zenodo链接未单独审计；跟踪缺失基线输出与版本对应。",
+        "作者建议类型检查反馈和自然欠注解仓库验证；建议按公共API意图区分过窄错误，加入消费者代码/动态观测，报告全部候选槽位覆盖、置信度与拒绝预测，并核算重试/静态分析总成本。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2610.41617v1",
+          "label": "已读v1方法与实验"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/kupl/salt-artifact",
+          "label": "官方实现与复现说明"
+        },
+        {
+          "kind": "artifacts",
+          "url": "https://github.com/kupl/salt-artifact/tree/main/results",
+          "label": "选定预测、日志及结果表（含缺失说明）"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "publication_date": "2026-10-30",
+      "canonical_url": "https://arxiv.org/abs/2610.41617",
+      "institution_source": "https://arxiv.org/html/2610.41617v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-03",
+      "updated_date": "2026-11-03"
     }
   ]
 }
