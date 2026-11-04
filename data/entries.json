@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-03",
+  "last_updated": "2026-11-04",
   "entries": [
     {
       "id": "reviewbench",
@@ -3149,6 +3149,153 @@
       "evidence_status": "author-reported",
       "added_date": "2026-11-03",
       "updated_date": "2026-11-03"
+    },
+    {
+      "id": "veribase",
+      "paper_id": "2611.01743",
+      "title": "VeriBase: Automated Construction of Theorem Libraries for Software Verification",
+      "institution": "Nanjing University",
+      "first_author": "Zihao Zhang",
+      "publication_date": "2026-11-01",
+      "category": "formal-verification",
+      "tags": [
+        "Lean",
+        "library-construction",
+        "proof-reuse",
+        "code-theorem-generalization"
+      ],
+      "summary": "从成功验证的程序中联合泛化代码与定理，经合并整理和 Lean 检查构建可复用的软件证明库。",
+      "type": "预印本（同行评审录用未核实）",
+      "caveat": "一般库来自4,191个Lean任务，验证成功3,835；最终1,609代码声明/3,239定理，非4,191个都成功。固定原规格与目标定理，检查无sorry/admit及未授权axiom，不证明自然语言需求完整性。三个单文件基准/三后端共9设置宏平均63.0%至73.0%（10百分点），加领域库78.5%，其中2/9相对通用库退步2.4/2.5点；最大17.0为单组合百分点非平均相对17%。通用库平均时间1116.9至969.6秒降13.2%，含失败超时按1800秒；DeepSeek API费反增18.3–33.3%，非总成本必降。一般库建库API约$431含失败/重试，排除证明阶段约$62，不能仅计在线推理收益。单文件测试81/100/100；VeriSoftBench原500因Lean版本保留283，183建库/100测试且移除原有支持引理后评估，非直接修复一般C/Rust仓库。库在测试时冻结，按源ID排除重合但语义近重复/模型训练污染未完全排除；单框架Claude Code与特定Lean版本，跨语言需要语义桥。Code及生成库目录已核实；任务文件和部分修改后的上游环境需另备，未执行Lean/训练/复现。",
+      "reading_scope": "v1第2–4节背景、联合泛化/收获方法、生成库及成本，第5节设置、主要结果/消融/复用与第6节有效性威胁；官方README和一般/领域库目录。未逐条审计生成定理或执行Lean/代理。",
+      "follow_up": [
+        "已核实官方Code与生成libraries目录，未核实关联作者Blog/Project；跟踪构建任务、修改后VeriSoftBench环境与完整轨迹。",
+        "作者定位为可由专家继续维护的Lean库起点；建议在未见项目/时间切分上测语义去重、接口维护和建库摊销，针对C/Rust建立可检查的语义连接，并比较人工库与自动库的长期回归。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2611.01743v1",
+          "label": "已读v1方法与实验"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/zzhisthebest/Veribase",
+          "label": "官方建库与评测实现"
+        },
+        {
+          "kind": "artifacts",
+          "url": "https://github.com/zzhisthebest/Veribase/tree/main/libraries",
+          "label": "生成的一般库与领域证明库"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2611.01743",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-04",
+      "updated_date": "2026-11-04",
+      "institution_source": "https://arxiv.org/html/2611.01743v1"
+    },
+    {
+      "id": "distdebug-bench",
+      "paper_id": "2611.03523",
+      "title": "DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?",
+      "institution": "University of Michigan",
+      "first_author": "Yuxuan Jiang",
+      "publication_date": "2026-11-02",
+      "category": "software-engineering",
+      "tags": [
+        "distributed-systems",
+        "root-cause-diagnosis",
+        "benchmark",
+        "agent-reliability"
+      ],
+      "summary": "以真实故障报告、日志和修复前仓库评测 Agent 定位分布式系统根因代码块的能力与稳定性。",
+      "type": "NeurIPS 2026 评测与数据集轨道论文",
+      "venue_source": "https://neurips.cc/virtual/2026/poster/139444",
+      "caveat": "官方NeurIPS2026海报已核实标题/作者和录用；120个故障/11系统/5语言/218 gold块，三人独立标注后协调，只有51例留存协调前标注，非全部可重算IAA。17配置取每bug前三个schema有效且有完整分数的尝试，先bug内平均，再120bug等权；格式失败/泄漏重跑不占位，selected6120不是全部启动次数。GPT6Astra块coverage67.7%（CI60.4–74.9）、块precision42.7%、文件coverage83.9%，非修复成功率；块匹配为同文件±5行重叠，函数名不参与块匹配。15/120为三次coverage差>0.2的flaky bug，非随机报错率。Mini-SWE公开runner每次$3上限，token/run不是总重跑/数据整理成本，CLI工具计数缺失不跨表直接比。历史公开bug、后续commit删除/匿名化与guard只缓解显式泄漏，标记尝试剔除重跑不证明无训练记忆。AI双评审在193个漏块上估8.8%误漏，其中10个坐标/修订不一致待修，非独立人工认证；可能替代干预点被低估。六bug修复pilot只测触及gold代码块，非补丁正确率。Code、HF数据与轨迹公开元数据已核实，未下载全轨迹或执行重评分/模型。",
+      "reading_scope": "v1第3节构建/人工标签/任务、第4节设置/全部主结果/轨迹失败分析、第5节方向；附录A.5/A.6、D.3、G.1/G.2，以及官方README、目录和HF数据/轨迹元数据；官方会议海报。未通读全部41页附录或独立运行。",
+      "follow_up": [
+        "已核实Code、数据与轨迹公开元数据及Project原文链接；未核实独立作者Blog，持续跟踪gold坐标修订和全量端到端运行开销。",
+        "作者提出自适应上下文、按假设分隔证据和主动正确性核查；建议在固定检索/推理预算下做证据链消融，保留格式失败与泄漏率，人工复核替代根因，并以真实正确补丁检验诊断收益。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2611.03523v1",
+          "label": "已读v1方法与实验"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/OrderLab/distdebug-bench",
+          "label": "官方runner与评测器"
+        },
+        {
+          "kind": "artifacts",
+          "url": "https://huggingface.co/datasets/OrderLab/distdebug-bench",
+          "label": "故障数据（公开元数据已核实）"
+        },
+        {
+          "kind": "artifacts",
+          "url": "https://huggingface.co/datasets/OrderLab/distdebug-bench-traces",
+          "label": "作者评测轨迹（公开元数据已核实）"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2611.03523",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-04",
+      "updated_date": "2026-11-04",
+      "institution_source": "https://arxiv.org/html/2611.03523v1"
+    },
+    {
+      "id": "continual-harness-forgetting",
+      "paper_id": "2611.03219",
+      "title": "Can Coding Agents Sustain Continual Evolution without Forgetting?",
+      "institution": "Tsinghua University",
+      "first_author": "Shangziqi Zhao",
+      "publication_date": "2026-11-02",
+      "category": "coding-agents",
+      "institution_source": "https://arxiv.org/pdf/2611.03219",
+      "tags": [
+        "harness-evolution",
+        "catastrophic-forgetting",
+        "multi-task",
+        "regression"
+      ],
+      "summary": "让编程 Agent 在修复、写测试和加功能间持续演化，分析运行框架修改如何破坏此前获得的能力。",
+      "type": "预印本（同行评审录用未核实）",
+      "caveat": "原PDF与arXiv元数据一作为Shangziqi Zhao、首单位Tsinghua；HTML作者区只显Jia Li，已按PDF核实。首发Nov2UTC，PDF内文日期Nov3不替换首发日。SWE Verified50、改写提示SWT50、FeatureBench30，六个两阶段方向；模型DeepSeekV4Flash0731固定，AHE9轮/Meta5轮、每任务2rollout。数据反复用于演化与回测，未展示独立未见任务泛化或多种子置信区间；94%/96%不是全500题SWE Verified。Meta SWE→Feature的94至32为62百分点/66%相对下降；无需权重更新即可因harness规则冲突退化。520轨迹的冲突关联统计不是普适因果比例；代表性规则注入实验提供有限因果支持。SWT改写改变任务识别线索，未改写时已观察条件分支保留能力，不能推断所有自进化必遗忘；仅两阶段不验证任意长序列。论文单次1h与README区分：sandbox生命周期1h，rollout预算30min/250步；未报告完整API/E2B经济成本。作者基于原方法自行适配Mini-SWE，非原方法直接官方能力排名。Code含任务划分与配置，原始演化全日志/完整后验轨迹未单独核实；未执行模型/E2B。",
+      "reading_scope": "v1第2–4节定义、设置、全部结果/冲突分析，第6节结论及附录A/B；PDF首页核对一作/单位；官方README与datasets目录。未执行演化、安装依赖或独立审计520条轨迹。",
+      "follow_up": [
+        "已核实官方Code与三类任务划分目录；未核实独立作者Blog，跟踪完整演化快照、轨迹和独立held-out结果。",
+        "作者指出验证/工作流/预算冲突及任务相关性；建议将任务类型和交付契约显式参数化，保留旧任务回归集/版本回滚，比较共享与分任务harness，并在未见任务及多阶段序列验证保留与适应的权衡。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2611.03219v1",
+          "label": "已读v1方法与实验（作者按PDF）"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/THU-Agent/continual-harness-evolution",
+          "label": "官方适配实现与配置"
+        },
+        {
+          "kind": "artifacts",
+          "url": "https://github.com/THU-Agent/continual-harness-evolution/tree/main/datasets",
+          "label": "实验任务划分"
+        }
+      ],
+      "version": "v1",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2611.03219",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-04",
+      "updated_date": "2026-11-04"
     }
   ]
 }
