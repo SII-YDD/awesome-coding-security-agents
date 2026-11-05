@@ -7,14 +7,14 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-82-6366f1?style=flat-square" alt="Papers and blogs: 82"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--04-14b8a6?style=flat-square" alt="Updated: 2026-11-04"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-84-6366f1?style=flat-square" alt="Papers and blogs: 84"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--05-14b8a6?style=flat-square" alt="Updated: 2026-11-05"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>20 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>19 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>21 entries</sub></td>
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>14 entries</sub></td>
@@ -30,15 +30,14 @@
 <h2 align="center">每日新增 · Daily Updates</h2>
 
 <p align="center">
-  <a href="updates/2026-11-04.md"><b>2026-11-04</b></a> &nbsp;·&nbsp; 3 新增
+  <a href="updates/2026-11-05.md"><b>2026-11-05</b></a> &nbsp;·&nbsp; 2 新增
 </p>
 
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
-    <tr><td align="center" valign="middle"><b>Tsinghua University</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.03219">Can Coding Agents Sustain Continual Evolution without Forgetting?</a></b><br><br>让编程 Agent 在修复、写测试和加功能间持续演化，分析运行框架修改如何破坏此前获得的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.03219">Paper</a><br><a href="https://github.com/THU-Agent/continual-harness-evolution">Code</a><br><a href="https://github.com/THU-Agent/continual-harness-evolution/tree/main/datasets">Artifacts</a></td></tr>
-    <tr><td align="center" valign="middle"><b>University of Michigan</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.03523">DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?</a></b><br><br>以真实故障报告、日志和修复前仓库评测 Agent 定位分布式系统根因代码块的能力与稳定性。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.03523">Paper</a><br><a href="https://github.com/OrderLab/distdebug-bench">Code</a><br><a href="https://huggingface.co/datasets/OrderLab/distdebug-bench">Artifacts</a><br><a href="https://huggingface.co/datasets/OrderLab/distdebug-bench-traces">Artifacts</a></td></tr>
-    <tr><td align="center" valign="middle"><b>Nanjing University</b><br><br><sub>Formal Verification</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.01743">VeriBase: Automated Construction of Theorem Libraries for Software Verification</a></b><br><br>从成功验证的程序中联合泛化代码与定理，经合并整理和 Lean 检查构建可复用的软件证明库。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.01743">Paper</a><br><a href="https://github.com/zzhisthebest/Veribase">Code</a><br><a href="https://github.com/zzhisthebest/Veribase/tree/main/libraries">Artifacts</a></td></tr>
+    <tr><td align="center" valign="middle"><b>UTS</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.02349">APG: Agentic Static-Analysis Infrastructure on LLVM-IR Graph Databases</a></b><br><br>将编译器程序分析封装为可组合查询能力，让 Agent 按需追踪跨函数证据并辅助修复。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.02349">Paper</a><br><a href="https://github.com/JasonZhongZexin/APG-ICSE-Demo">Artifacts</a></td></tr>
+    <tr><td align="center" valign="middle"><b>ZJU</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.04456">How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub</a></b><br><br>追踪 GitHub 上技能文件及提交历史，分析工作流、验证与恢复机制如何随项目持续演化。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.04456">Paper</a></td></tr>
   </tbody>
 </table>
 
@@ -81,7 +80,9 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-03</code><br><sub>ZJU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.04456" title="How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub">How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub</a></b><br><br>追踪 GitHub 上技能文件及提交历史，分析工作流、验证与恢复机制如何随项目持续演化。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.04456">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-02</code><br><sub>University of Michigan</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.03523" title="DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?">DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?</a></b><br><br>以真实故障报告、日志和修复前仓库评测 Agent 定位分布式系统根因代码块的能力与稳定性。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.03523">Paper</a><br><a href="https://github.com/OrderLab/distdebug-bench">Code</a><br><a href="https://huggingface.co/datasets/OrderLab/distdebug-bench">Artifacts</a><br><a href="https://huggingface.co/datasets/OrderLab/distdebug-bench-traces">Artifacts</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-11-02</code><br><sub>UTS</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.02349" title="APG: Agentic Static-Analysis Infrastructure on LLVM-IR Graph Databases">APG: Agentic Static-Analysis Infrastructure on LLVM-IR Graph Databases</a></b><br><br>将编译器程序分析封装为可组合查询能力，让 Agent 按需追踪跨函数证据并辅助修复。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.02349">Paper</a><br><a href="https://github.com/JasonZhongZexin/APG-ICSE-Demo">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-30</code><br><sub>UMass Amherst</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.41800" title="Reparo: Synthesizing and Validating Access Control Policies">Reparo: Synthesizing and Validating Access Control Policies</a></b><br><br>从代码、注释和文档恢复授权意图，生成并修复访问控制策略，再用另一模型生成的请求测试其行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.41800">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-30</code><br><sub>Korea University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.41617" title="Prompt Less, Infer More: Static Analysis-Guided LLM Type Annotation for Python">Prompt Less, Infer More: Static Analysis-Guided LLM Type Annotation for Python</a></b><br><br>用双向静态类型分析优先补全注解，再选择影响范围大的函数调用模型，并以类型证据压缩上下文。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.41617">Paper</a><br><a href="https://github.com/kupl/salt-artifact">Code</a><br><a href="https://github.com/kupl/salt-artifact/tree/main/results">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-29</code><br><sub>ZJU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.39417" title="Well-Specified and Well-Tested? Assessing SWE-bench-Style Datasets with a Self-Evolving Agent">Well-Specified and Well-Tested? Assessing SWE-bench-Style Datasets with a Self-Evolving Agent</a></b><br><br>从人工标注积累可检索经验，审查软件修复任务的需求清晰度与测试质量，再筛选编程模型训练数据。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.39417">Paper</a><br><a href="https://github.com/ZJU-CTAG/ExLabel">Code</a><br><a href="https://github.com/ZJU-CTAG/ExLabel/tree/main/data">Artifacts</a></td></tr>

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-04",
+  "last_updated": "2026-11-05",
   "entries": [
     {
       "id": "reviewbench",
@@ -3296,6 +3296,87 @@
       "evidence_status": "author-reported",
       "added_date": "2026-11-04",
       "updated_date": "2026-11-04"
+    },
+    {
+      "id": "apg-static-analysis",
+      "paper_id": "2611.02349",
+      "title": "APG: Agentic Static-Analysis Infrastructure on LLVM-IR Graph Databases",
+      "institution": "UTS",
+      "first_author": "Zexin Zhong",
+      "publication_date": "2026-11-02",
+      "category": "software-engineering",
+      "tags": [
+        "static-analysis",
+        "LLVM",
+        "graph-query",
+        "program-repair",
+        "evidence-provenance"
+      ],
+      "summary": "将编译器程序分析封装为可组合查询能力，让 Agent 按需追踪跨函数证据并辅助修复。",
+      "caveat": "812个C/C++缺陷，277 Multi-SWE与535 D4C/ManyBugs；固定GPT4o温度0，每次clean checkout，最多五次顺序修复。S@5是顺序迭代成功率，不是独立Pass@5。S@1为32.8/29.2，对Passive Push15.2/11.2提升17.6/18.0百分点；输入token45.8K至4.2K不含完整图构建、索引、输出token和端到端费用。38能力在实际请求上的Query S@1，非任意分析可靠性。Query/schema guards不证明路径可执行或漏洞不存在；空结果仅在查询范围内无证据。测试接受补丁不等于功能正确证明。未报告完整建图开销、各能力请求规模/独立人工语义标签流程、多次运行置信区间或现实新漏洞确认。官方仓库README自称PAG Subgraph Summary Demo，目录存在代码但完整38能力/全部812实验复现包未核实，按实验演示材料链接，不称完整Code。仓库名字含ICSE-Demo不作为录用证据；预印本。",
+      "reading_scope": "v1全文：设计II-A/B/C、全部表I–III、III设置与结果及相关工作；官方仓库目录与README。未安装SVF/TuGraph、执行查询或复跑修复。",
+      "follow_up": [
+        "跟踪完整38能力接口、812任务映射与基线配置、建图成本、语义查询人工标签和端到端费用；未核实作者Blog。",
+        "建议对不可行路径、别名误差和空结果强制标记unknown，并以可执行反例/补丁回归验证证据；按仓库划分评测，补充独立多次运行。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2611.02349v1",
+          "label": "已读全文"
+        },
+        {
+          "kind": "artifacts",
+          "url": "https://github.com/JasonZhongZexin/APG-ICSE-Demo",
+          "label": "官方PAG演示材料，非已核实完整实验实现"
+        }
+      ],
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2611.02349",
+      "institution_source": "https://arxiv.org/html/2611.02349v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-05",
+      "updated_date": "2026-11-05"
+    },
+    {
+      "id": "skill-evolution-empirical",
+      "paper_id": "2611.04456",
+      "title": "How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub",
+      "institution": "ZJU",
+      "first_author": "Jinjun Huang",
+      "publication_date": "2026-11-03",
+      "category": "software-engineering",
+      "tags": [
+        "agent-skills",
+        "empirical-study",
+        "maintenance",
+        "regression",
+        "security"
+      ],
+      "summary": "追踪 GitHub 上技能文件及提交历史，分析工作流、验证与恢复机制如何随项目持续演化。",
+      "caveat": "首发Nov3；观测期Sep1 2025–Apr23 2026，不是实时11月生态。论文报告84200技能/7776仓库/750898相关提交；候选296051，方法段称技能>3commits，结果称64.3%候选至少2有效提交，频次比例不能解释为全生态覆盖。RQ2–4进一步限>40stars及>10commits仅5628技能。人工组件383技能、动机404提交仅27技能；LLM标签并非人类动机真值，how/why准确率.816/.840为人工样本对照。35.2%验证/49.6%恢复是文本组件存在，不是执行可靠率。876人工筛过的安全改动，Cisco133/876和Snyk95/876高危告警数减少即15.2/10.8%，两者平均13.01不是已确认漏洞修复率或独立合并比例；告警静态替代指标，无真实攻击/任务回放。未报告全标注与扫描成本。论文材料链接ZJU-CTAG/SkillEMP本轮网页和认证GitHubAPI均404，不宣称代码/数据已可获得，主页不添加失效资源。",
+      "reading_scope": "v1全文I–VIII，采样/Markdown分块/LLM标注、RQ1–4全部结果、扫描器表III、人工一致性表IV、研究方向与有效性威胁；原文资源链接访问核查404。未访问未公开附录、重标语料或执行扫描。",
+      "follow_up": [
+        "跟踪作者提供的https://github.com/ZJU-CTAG/SkillEMP恢复公开及数据/脚本/标注提示发布；未核实关联Blog，当前不添加失效链接。",
+        "作者明确提出执行契约、即时更新、回归测试；建议固定模型/权限回放修改前后技能，同时测任务通过、安全违规、token与延迟，按仓库和时间切分。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "url": "https://arxiv.org/html/2611.04456v1",
+          "label": "已读方法与实验全文"
+        }
+      ],
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2611.04456",
+      "institution_source": "https://arxiv.org/html/2611.04456v1",
+      "evidence_status": "author-reported",
+      "added_date": "2026-11-05",
+      "updated_date": "2026-11-05"
     }
   ]
 }
