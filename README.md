@@ -7,18 +7,18 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-84-6366f1?style=flat-square" alt="Papers and blogs: 84"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--05-14b8a6?style=flat-square" alt="Updated: 2026-11-05"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-87-6366f1?style=flat-square" alt="Papers and blogs: 87"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--06-14b8a6?style=flat-square" alt="Updated: 2026-11-06"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>20 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>21 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>21 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>22 entries</sub></td>
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>14 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>19 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>20 entries</sub></td>
   </tr>
   <tr>
     <td colspan="2" width="100%" align="center" valign="middle"><a href="#formal-verification"><b>05 · Formal Verification</b></a><br><sub>10 entries</sub></td>
@@ -30,14 +30,15 @@
 <h2 align="center">每日新增 · Daily Updates</h2>
 
 <p align="center">
-  <a href="updates/2026-11-05.md"><b>2026-11-05</b></a> &nbsp;·&nbsp; 2 新增
+  <a href="updates/2026-11-06.md"><b>2026-11-06</b></a> &nbsp;·&nbsp; 3 新增
 </p>
 
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
-    <tr><td align="center" valign="middle"><b>UTS</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.02349">APG: Agentic Static-Analysis Infrastructure on LLVM-IR Graph Databases</a></b><br><br>将编译器程序分析封装为可组合查询能力，让 Agent 按需追踪跨函数证据并辅助修复。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.02349">Paper</a><br><a href="https://github.com/JasonZhongZexin/APG-ICSE-Demo">Artifacts</a></td></tr>
-    <tr><td align="center" valign="middle"><b>ZJU</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.04456">How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub</a></b><br><br>追踪 GitHub 上技能文件及提交历史，分析工作流、验证与恢复机制如何随项目持续演化。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.04456">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Beihang University</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06328">EvoCodeAgent: Project-Level Code Generation via Architecture-Code Co-Evolution and Experience-Guided Repair</a></b><br><br>让项目架构状态随代码依赖与验证反馈更新，并检索既有修复经验指导多文件实现。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06328">Paper</a><br><a href="https://github.com/whisperzqh/EvoCodeAgent">Code</a><br><a href="https://github.com/whisperzqh/EvoCodeAgent/tree/main/datasets">Artifacts</a></td></tr>
+    <tr><td align="center" valign="middle"><b>NTU Singapore</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06294">A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code</a></b><br><br>用真实漏洞构建功能与攻击双重评测，检验仓库检索是否为生成代码提供了必要的安全约束。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06294">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>OpenAI</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://alignment.openai.com/eval-production-behavior-gap/">Eval-production behavior gaps in agent safety and the role of eval-awareness</a></b><br><br>匹配安全评测与生产决策，并改变目标提示，测量 Agent 对权限警告的遵守如何受评测语境影响。</td><td align="center" valign="middle"><a href="https://alignment.openai.com/eval-production-behavior-gap/">Blog</a></td></tr>
   </tbody>
 </table>
 
@@ -49,6 +50,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-04</code><br><sub>Beihang University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06328" title="EvoCodeAgent: Project-Level Code Generation via Architecture-Code Co-Evolution and Experience-Guided Repair">EvoCodeAgent: Project-Level Code Generation via Architecture-Code Co-Evolution and Experience-Guided Repair</a></b><br><br>让项目架构状态随代码依赖与验证反馈更新，并检索既有修复经验指导多文件实现。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06328">Paper</a><br><a href="https://github.com/whisperzqh/EvoCodeAgent">Code</a><br><a href="https://github.com/whisperzqh/EvoCodeAgent/tree/main/datasets">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-02</code><br><sub>Tsinghua University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.03219" title="Can Coding Agents Sustain Continual Evolution without Forgetting?">Can Coding Agents Sustain Continual Evolution without Forgetting?</a></b><br><br>让编程 Agent 在修复、写测试和加功能间持续演化，分析运行框架修改如何破坏此前获得的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.03219">Paper</a><br><a href="https://github.com/THU-Agent/continual-harness-evolution">Code</a><br><a href="https://github.com/THU-Agent/continual-harness-evolution/tree/main/datasets">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-29</code><br><sub>Xiaomi</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.40256" title="When Requirements Interact: Scaling Long-Horizon Coding via Interdependent Specifications">When Requirements Interact: Scaling Long-Horizon Coding via Interdependent Specifications</a></b><br><br>从开发记录合成相互约束的需求与测试，再审查多模型解题轨迹，构建长程编程训练数据和评测集。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.40256">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-29</code><br><sub>Amazon</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.39711" title="Sandman: Building and Operating Sandboxes for Agentic Reinforcement Learning on Shared Kubernetes">Sandman: Building and Operating Sandboxes for Agentic Reinforcement Learning on Shared Kubernetes</a></b><br><br>在共享集群上管理编程 Agent 训练沙箱的创建、执行、回收与独立评分，减少环境故障和评测失真。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.39711">Paper</a></td></tr>
@@ -80,6 +82,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-04</code><br><sub>NTU Singapore</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06294" title="A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code">A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code</a></b><br><br>用真实漏洞构建功能与攻击双重评测，检验仓库检索是否为生成代码提供了必要的安全约束。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06294">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-03</code><br><sub>ZJU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.04456" title="How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub">How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub</a></b><br><br>追踪 GitHub 上技能文件及提交历史，分析工作流、验证与恢复机制如何随项目持续演化。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.04456">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-02</code><br><sub>University of Michigan</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.03523" title="DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?">DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?</a></b><br><br>以真实故障报告、日志和修复前仓库评测 Agent 定位分布式系统根因代码块的能力与稳定性。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.03523">Paper</a><br><a href="https://github.com/OrderLab/distdebug-bench">Code</a><br><a href="https://huggingface.co/datasets/OrderLab/distdebug-bench">Artifacts</a><br><a href="https://huggingface.co/datasets/OrderLab/distdebug-bench-traces">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-02</code><br><sub>UTS</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.02349" title="APG: Agentic Static-Analysis Infrastructure on LLVM-IR Graph Databases">APG: Agentic Static-Analysis Infrastructure on LLVM-IR Graph Databases</a></b><br><br>将编译器程序分析封装为可组合查询能力，让 Agent 按需追踪跨函数证据并辅助修复。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.02349">Paper</a><br><a href="https://github.com/JasonZhongZexin/APG-ICSE-Demo">Artifacts</a></td></tr>
@@ -137,6 +140,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-03</code><br><sub>OpenAI</sub></td><td align="center" valign="middle"><b><a href="https://alignment.openai.com/eval-production-behavior-gap/" title="Eval-production behavior gaps in agent safety and the role of eval-awareness">Eval-production behavior gaps in agent safety and the role of eval-awareness</a></b><br><br>匹配安全评测与生产决策，并改变目标提示，测量 Agent 对权限警告的遵守如何受评测语境影响。</td><td align="center" valign="middle"><a href="https://alignment.openai.com/eval-production-behavior-gap/">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-30</code><br><sub>UC Berkeley</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.41998" title="SecPO: Principled Adversarial Training for Prompt Injection Security">SecPO: Principled Adversarial Training for Prompt Injection Security</a></b><br><br>以干净输入上的模型行为作为偏好训练参照，结合强对抗样本训练，提高 Agent 对提示注入的抵抗力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.41998">Paper</a><br><a href="https://github.com/Sizhe-Chen/SecPO">Code</a><br><a href="https://huggingface.co/datasets/Sizhe-Chen/Qwen3.6-27B-Instruct-SecPO-trainset">Artifacts</a><br><a href="https://sizhe-chen.github.io/SecPO-Website/">Project</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-29</code><br><sub>Tsinghua University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.39155" title="REALM: Identifying Minimal Task Assets for LLM Agents">REALM: Identifying Minimal Task Assets for LLM Agents</a></b><br><br>根据任务依赖逐步识别必要资源，以资源绑定 API 和隔离容器限制 Agent 可访问的文件与服务。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.39155">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-29</code><br><sub>OpenAI</sub></td><td align="center" valign="middle"><b><a href="https://openai.com/index/how-we-detect-frontier-model-misalignment/" title="How we detect frontier model misalignment">How we detect frontier model misalignment</a></b><br><br>把轻量探针、上下文审查、调查 Agent 与人工响应分层连接，监测前沿模型运行中的越权和异常行为。</td><td align="center" valign="middle"><a href="https://openai.com/index/how-we-detect-frontier-model-misalignment/">Blog</a></td></tr>

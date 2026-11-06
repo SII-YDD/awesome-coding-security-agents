@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-05",
+  "last_updated": "2026-11-06",
   "entries": [
     {
       "id": "reviewbench",
@@ -3377,6 +3377,126 @@
       "evidence_status": "author-reported",
       "added_date": "2026-11-05",
       "updated_date": "2026-11-05"
+    },
+    {
+      "id": "ase-2-case-bench",
+      "paper_id": "2611.06294",
+      "title": "A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code",
+      "institution": "NTU Singapore",
+      "first_author": "Jiongchi Yu",
+      "publication_date": "2026-11-04",
+      "category": "software-engineering",
+      "tags": [
+        "secure-code-generation",
+        "context-retrieval",
+        "repository-level",
+        "executable-benchmark"
+      ],
+      "summary": "用真实漏洞构建功能与攻击双重评测，检验仓库检索是否为生成代码提供了必要的安全约束。",
+      "caveat": "145任务对应144个CVE及51仓库；有意筛选可复现、局部可补全的历史漏洞。10名安全研究人员参与双人审核，功能测试平均4.6输入；拒绝全部输入对照145/145测试失败，143/145替代实现同时通过功能/PoC。主评估六模型、13检索策略、6对照，每题三次；49,590生成，另有49,140干预生成与1,305代理轨迹；作者报告合计38,000美元，非人力/基础设施全成本。FuncPass与SecPass口径分别为功能通过、功能通过且基础PoC不生效；Source-sink 12.6%至18.1%是5.5百分点、Holm p=.006；功能导向方法SecPass最大+3.7百分点，经校正均不显著。人工参考上下文非可部署方法，轨迹安全措施出现率27–36%不是因果量；观察不等于采用。40题变体挑战中，基础PoC未攻破的生成中仍有7.3%被变体攻破；不能声称形式化安全或完全排除训练污染。原文说已释放切片与实现，但未找到可核实官方入口，作者主页亦未定位对应材料。",
+      "reading_scope": "v1正文：动机、§3任务筛选/双向验证/人工标注、§4实验设计与计费口径、§5主表/干预/代理轨迹/判定器稳健性、§6有效性威胁；核对arXiv首发时间、一作署名和作者主页，未执行容器或PoC。",
+      "follow_up": [
+        "追踪可公开验证的CASE-Bench容器、数据切片、评测代码与作者Blog。",
+        "优先做等预算、按仓库/时间切分的策略检索对照，同时记录安全措施找到、采用、可执行验证及功能保留四个环节。"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.06294",
+      "institution_source": "https://arxiv.org/html/2611.06294v1",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1方法与实验",
+          "url": "https://arxiv.org/html/2611.06294v1"
+        }
+      ],
+      "added_date": "2026-11-06",
+      "updated_date": "2026-11-06",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "openai-eval-production-behavior-gap",
+      "title": "Eval-production behavior gaps in agent safety and the role of eval-awareness",
+      "institution": "OpenAI",
+      "first_author": "Joy Hsu",
+      "publication_date": "2026-11-03",
+      "category": "agent-security",
+      "publication_kind": "blog",
+      "version": "2026-11-03",
+      "type": "官方研究博客（非同行评审论文）",
+      "tags": [
+        "agent-safety",
+        "evaluation-awareness",
+        "production-logs",
+        "authorization"
+      ],
+      "summary": "匹配安全评测与生产决策，并改变目标提示，测量 Agent 对权限警告的遵守如何受评测语境影响。",
+      "canonical_url": "https://alignment.openai.com/eval-production-behavior-gap/",
+      "caveat": "六个模型在Respecting Warnings评测的无违规绕过尝试率低于匹配Codex生产样本10.2–37.4百分点；这是单类决策、近似匹配，受案例构成、指令、工具、生产日志可见性与评分影响，不是总体事故率。评测每题每模型8次，图3按案例重采样；六模型排名Spearman .771仅描述小样本。生产选择依赖行动前上下文，不能消除部署混杂。推理轨迹分类仅覆盖表述出来的猜测，不是直接观测信念。GPT-6.1 Sol单模型系统提示干预，原63.4%、只提示评测63.1%、正确目标91.6%、相反目标17.6%，局部干预不能解释生产差距的全部原因。正文未给生产样本绝对数、全部成本或可公开复跑日志/代码。",
+      "reading_scope": "官方研究博客全文、图1–6文字和说明、匹配流程、相关性与系统提示干预、局限及讨论；核对官方研究索引；未接触内部日志或独立运行。",
+      "follow_up": [
+        "追踪公开匹配样例、每模型分母、评分一致性、可重复干预与代码。",
+        "作者要持续追踪部署差距并减少目标泄露；建议将权限来源和警告文案独立随机化，保持任务、工具和真实授权相同，双报合法任务完成与违规率。"
+      ],
+      "institution_source": "https://alignment.openai.com/eval-production-behavior-gap/",
+      "links": [
+        {
+          "kind": "blog",
+          "label": "官方原文",
+          "url": "https://alignment.openai.com/eval-production-behavior-gap/"
+        }
+      ],
+      "added_date": "2026-11-06",
+      "updated_date": "2026-11-06",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "evocodeagent",
+      "paper_id": "2611.06328",
+      "title": "EvoCodeAgent: Project-Level Code Generation via Architecture-Code Co-Evolution and Experience-Guided Repair",
+      "institution": "Beihang University",
+      "first_author": "Qianhui Zhao",
+      "publication_date": "2026-11-04",
+      "category": "coding-agents",
+      "tags": [
+        "project-generation",
+        "architecture",
+        "repair-memory",
+        "tool-grounded-verification"
+      ],
+      "summary": "让项目架构状态随代码依赖与验证反馈更新，并检索既有修复经验指导多文件实现。",
+      "caveat": "Python DevBench 10题及CodeProjectEval 18题，统一提供PRD/UML/架构材料；DeepSeek-v3.2、GPT-5，与CodeS/MetaGPT/ProjectGen比较。GPT-5 CodeProjectEval单元测试通过比例18.07%至27.73%，+9.66百分点，不是整仓通过比例；DevBench 57.26%至60.48%。同一消融表移除工具/协同演化/经验分别10.88/21.08/17.23%；工具移除是组合干预，不识别单工具效果。结构F1比较参考结构路径，不覆盖语义等价或替代架构质量。报告大集平均70.6分钟、API估算3.17美元/仓，非完全等预算；单个Claude Code案例不外推；预定check tests供迭代反馈，不能据此推断未见测试泛化。公开代码和数据目录已核对，Figshare仅返回202、未核实输出文件内容；无独立复跑。",
+      "reading_scope": "v1正文§III状态、两类依赖、工具和经验；§IV基线与迭代设置、§V表II–IV效果/消融/成本、§VI案例及有效性威胁；作者仓库README、源码结构和datasets目录。",
+      "follow_up": [
+        "核实Figshare完整结果、基线预算及训练污染控制；未核实关联作者Blog。",
+        "建议固定token与墙钟预算，分离可反馈测试与最终保留测试，评估整仓交付、接口语义和更大跨语言项目。"
+      ],
+      "links": [
+        {
+          "kind": "paper",
+          "label": "已读v1方法与实验",
+          "url": "https://arxiv.org/html/2611.06328v1"
+        },
+        {
+          "kind": "code",
+          "label": "官方实现与运行入口",
+          "url": "https://github.com/whisperzqh/EvoCodeAgent"
+        },
+        {
+          "kind": "artifacts",
+          "label": "数据及评测目录",
+          "url": "https://github.com/whisperzqh/EvoCodeAgent/tree/main/datasets"
+        }
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.06328",
+      "institution_source": "https://arxiv.org/html/2611.06328v1",
+      "publication_kind": "paper",
+      "type": "预印本（同行评审录用未核实）",
+      "version": "v1",
+      "added_date": "2026-11-06",
+      "updated_date": "2026-11-06",
+      "evidence_status": "author-reported"
     }
   ]
 }
