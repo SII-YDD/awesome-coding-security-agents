@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-08",
   "entries": [
     {
       "id": "reviewbench",
@@ -3496,6 +3496,126 @@
       "version": "v1",
       "added_date": "2026-11-06",
       "updated_date": "2026-11-06",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "openai-linux-vulnerability-pipeline",
+      "title": "A thousand fewer paths to root",
+      "institution": "OpenAI",
+      "first_author": "OpenAI",
+      "institution_source": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+      "publication_date": "2026-11-04",
+      "publication_kind": "blog",
+      "version": "2026-11-04",
+      "type": "官方研究博客",
+      "category": "vulnerability-discovery",
+      "canonical_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+      "tags": [
+        "linux-kernel",
+        "vulnerability-discovery",
+        "exploit-validation",
+        "patch-generation"
+      ],
+      "summary": "将内核审计、动态复现、影响验证和补丁生成串成流水线，由研究员审核后向维护者提交。",
+      "caveat": "10月中旬研究轮2,308条去重候选、1,724项动态复现、1,169个成功提权利用，按变体与补丁归并为948个独立提权问题。121.343万美元为API额度，平均1,279美元每独立提权问题，不含完整人力与基础设施成本。7月166与10月948来自不同内核快照，不能将全部差值归因于模型。研究结果需与上游确认、合并及披露状态区分。早期200个成功中20个用了不同漏洞，后加独立归因；另一个适配kernelCTF环境移除了SLAB_VIRTUAL，非正式赏金验收。研究原型完整代码、审计样本及全量补丁复跑材料未核实。11月5日发布说明复述948，按11月4日首发。",
+      "reading_scope": "OpenAI研究博客正文，阅读范围含审计与验证各阶段、成本、变体归并、错误漏洞归因、补丁迭代及测试基础设施案例；核对11月5日关联发布说明。未运行漏洞或补丁。",
+      "links": [
+        {
+          "kind": "blog",
+          "label": "原始研究报告",
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+        }
+      ],
+      "follow_up": [
+        "追踪维护者确认、合并状态及可复跑实验材料。",
+        "在固定内核快照、配置和预算下复验，分开记录正确归因、攻击阻断与合法行为保持。"
+      ],
+      "added_date": "2026-11-08",
+      "updated_date": "2026-11-08",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "openai-gpt-6-cyber-system-card",
+      "title": "GPT-6 Cyber System Card",
+      "institution": "OpenAI",
+      "first_author": "OpenAI",
+      "institution_source": "https://deploymentsafety.openai.com/gpt-6-cyber",
+      "publication_date": "2026-11-05",
+      "publication_kind": "blog",
+      "version": "2026-11-05",
+      "type": "官方系统卡",
+      "category": "agent-security",
+      "canonical_url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+      "tags": [
+        "cybersecurity-agents",
+        "scope-control",
+        "benchmark",
+        "reinforcement-learning"
+      ],
+      "summary": "报告安全专项后训练与部署控制，并分别评测漏洞利用、授权边界遵守和高风险行为。",
+      "caveat": "ExploitGym指定利用48.45%对Astra42.43%，系统卡使用最高测试推理预算；蜜罐无部署安全提示时越界利用0.07%对GPT-5.6 Cyber的5.51%和Astra的0%，观测值不外推。Irregular更新后FrontierCyber为90/288对96/288，最高难度15题均未解出；与旧系统卡不直接比。历史漏洞可能有训练污染，内部近期漏洞集只能减轻该问题。训练配方、统一任务预算与完整评测实现未公开核实。系统卡为模型及授权评测，与11月4日内核流水线按不同成果收录；共享内核结果不重复计数。",
+      "reading_scope": "系统卡§2训练、§3安全、§4对齐与蜜罐、§5部署控制、§7网络安全评测及§8外部评估，核对关联发布说明的对照指标。发布说明由网页阅读接口访问，未独立运行。",
+      "links": [
+        {
+          "kind": "blog",
+          "label": "官方系统卡",
+          "url": "https://deploymentsafety.openai.com/gpt-6-cyber"
+        },
+        {
+          "kind": "blog",
+          "label": "官方发布说明",
+          "url": "https://openai.com/index/introducing-gpt-6-cyber/"
+        }
+      ],
+      "follow_up": [
+        "追踪可公开复跑的基准材料、样本分母、成本以及第三方跨环境评测。",
+        "固定工具、目标与预算，对范围提示、动作审核做因子实验，并联合报告授权成功与越权尝试。"
+      ],
+      "added_date": "2026-11-08",
+      "updated_date": "2026-11-08",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "how-should-agents-see-code",
+      "paper_id": "2611.07286",
+      "title": "How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering",
+      "institution": "York University",
+      "first_author": "Melika Sepidband",
+      "institution_source": "https://arxiv.org/html/2611.07286v1",
+      "publication_date": "2026-11-05",
+      "publication_kind": "paper",
+      "version": "v1",
+      "type": "预印本（录用未核实）",
+      "category": "software-engineering",
+      "canonical_url": "https://arxiv.org/abs/2611.07286",
+      "tags": [
+        "repository-representation",
+        "mcp",
+        "fault-localization",
+        "software-testing",
+        "security-patching"
+      ],
+      "summary": "将五种仓库地图做成可按需查询的工具，比较它们对定位、修复、测试与安全补丁的影响。",
+      "caveat": "Claude Code与Haiku 4.5低推理固定，152/253/161/166题，每题每条件一次。原生工具基线与五种地图比较；地图条件含使用引导，修复条件还有先查地图钩子，非单独数据结构因果效应。LinuxFLBench混合图前十文件召回0.829对0.717、token约减39%而时间增。SWE-bench Pro 44.3–50.6%对49.0%，token减17–26%。SecBench调用图34.3%对28.9%、184.2秒对66.4秒；SWT五种地图均增加token与时间。小差值受单次采样影响，成本不含建图等一次性开销，C/C++调用以符号名近似。两位作者配对审读轨迹，分类是描述性证据。仓库含建图、MCP服务器和运行框架，未跑实验、未核实全量轨迹或独立作者博客。",
+      "reading_scope": "arXiv v1 §III–VI，查看五种表示、固定任务网格、样本与模型设置、表III–VIII主结果与轨迹编码、局限；核对官方仓库目录及README运行说明。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "v1全文",
+          "url": "https://arxiv.org/html/2611.07286v1"
+        },
+        {
+          "kind": "code",
+          "label": "官方建图与实验代码",
+          "url": "https://github.com/MelikaSepidband/How-Should-Agents-See-Code"
+        }
+      ],
+      "follow_up": [
+        "追踪公开任务抽样清单、完整轨迹与多模型复测。",
+        "拆分地图可用性和强制先查的效果，同时记录建图摊销、重复试验与测试质量。"
+      ],
+      "added_date": "2026-11-08",
+      "updated_date": "2026-11-08",
       "evidence_status": "author-reported"
     }
   ]

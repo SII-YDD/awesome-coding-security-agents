@@ -7,18 +7,18 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-87-6366f1?style=flat-square" alt="Papers and blogs: 87"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--06-14b8a6?style=flat-square" alt="Updated: 2026-11-06"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-90-6366f1?style=flat-square" alt="Papers and blogs: 90"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--08-14b8a6?style=flat-square" alt="Updated: 2026-11-08"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>21 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>22 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>23 entries</sub></td>
   </tr>
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>14 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>20 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>15 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>21 entries</sub></td>
   </tr>
   <tr>
     <td colspan="2" width="100%" align="center" valign="middle"><a href="#formal-verification"><b>05 · Formal Verification</b></a><br><sub>10 entries</sub></td>
@@ -30,15 +30,15 @@
 <h2 align="center">每日新增 · Daily Updates</h2>
 
 <p align="center">
-  <a href="updates/2026-11-06.md"><b>2026-11-06</b></a> &nbsp;·&nbsp; 3 新增
+  <a href="updates/2026-11-08.md"><b>2026-11-08</b></a> &nbsp;·&nbsp; 3 新增
 </p>
 
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
-    <tr><td align="center" valign="middle"><b>Beihang University</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06328">EvoCodeAgent: Project-Level Code Generation via Architecture-Code Co-Evolution and Experience-Guided Repair</a></b><br><br>让项目架构状态随代码依赖与验证反馈更新，并检索既有修复经验指导多文件实现。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06328">Paper</a><br><a href="https://github.com/whisperzqh/EvoCodeAgent">Code</a><br><a href="https://github.com/whisperzqh/EvoCodeAgent/tree/main/datasets">Artifacts</a></td></tr>
-    <tr><td align="center" valign="middle"><b>NTU Singapore</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06294">A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code</a></b><br><br>用真实漏洞构建功能与攻击双重评测，检验仓库检索是否为生成代码提供了必要的安全约束。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06294">Paper</a></td></tr>
-    <tr><td align="center" valign="middle"><b>OpenAI</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://alignment.openai.com/eval-production-behavior-gap/">Eval-production behavior gaps in agent safety and the role of eval-awareness</a></b><br><br>匹配安全评测与生产决策，并改变目标提示，测量 Agent 对权限警告的遵守如何受评测语境影响。</td><td align="center" valign="middle"><a href="https://alignment.openai.com/eval-production-behavior-gap/">Blog</a></td></tr>
+    <tr><td align="center" valign="middle"><b>York University</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.07286">How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering</a></b><br><br>将五种仓库地图做成可按需查询的工具，比较它们对定位、修复、测试与安全补丁的影响。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.07286">Paper</a><br><a href="https://github.com/MelikaSepidband/How-Should-Agents-See-Code">Code</a></td></tr>
+    <tr><td align="center" valign="middle"><b>OpenAI</b><br><br><sub>Vulnerability Discovery</sub></td><td align="center" valign="middle"><b><a href="https://openai.com/index/a-thousand-fewer-paths-to-root/">A thousand fewer paths to root</a></b><br><br>将内核审计、动态复现、影响验证和补丁生成串成流水线，由研究员审核后向维护者提交。</td><td align="center" valign="middle"><a href="https://openai.com/index/a-thousand-fewer-paths-to-root/">Blog</a></td></tr>
+    <tr><td align="center" valign="middle"><b>OpenAI</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://deploymentsafety.openai.com/gpt-6-cyber">GPT-6 Cyber System Card</a></b><br><br>报告安全专项后训练与部署控制，并分别评测漏洞利用、授权边界遵守和高风险行为。</td><td align="center" valign="middle"><a href="https://deploymentsafety.openai.com/gpt-6-cyber">Blog</a><br><a href="https://openai.com/index/introducing-gpt-6-cyber/">Blog</a></td></tr>
   </tbody>
 </table>
 
@@ -82,6 +82,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-05</code><br><sub>York University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.07286" title="How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering">How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering</a></b><br><br>将五种仓库地图做成可按需查询的工具，比较它们对定位、修复、测试与安全补丁的影响。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.07286">Paper</a><br><a href="https://github.com/MelikaSepidband/How-Should-Agents-See-Code">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-04</code><br><sub>NTU Singapore</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06294" title="A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code">A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code</a></b><br><br>用真实漏洞构建功能与攻击双重评测，检验仓库检索是否为生成代码提供了必要的安全约束。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06294">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-03</code><br><sub>ZJU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.04456" title="How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub">How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub</a></b><br><br>追踪 GitHub 上技能文件及提交历史，分析工作流、验证与恢复机制如何随项目持续演化。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.04456">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-02</code><br><sub>University of Michigan</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.03523" title="DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?">DistDebug-Bench: Can LLM Agents Diagnose Bugs in Distributed Systems?</a></b><br><br>以真实故障报告、日志和修复前仓库评测 Agent 定位分布式系统根因代码块的能力与稳定性。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.03523">Paper</a><br><a href="https://github.com/OrderLab/distdebug-bench">Code</a><br><a href="https://huggingface.co/datasets/OrderLab/distdebug-bench">Artifacts</a><br><a href="https://huggingface.co/datasets/OrderLab/distdebug-bench-traces">Artifacts</a></td></tr>
@@ -115,6 +116,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-04</code><br><sub>OpenAI</sub></td><td align="center" valign="middle"><b><a href="https://openai.com/index/a-thousand-fewer-paths-to-root/" title="A thousand fewer paths to root">A thousand fewer paths to root</a></b><br><br>将内核审计、动态复现、影响验证和补丁生成串成流水线，由研究员审核后向维护者提交。</td><td align="center" valign="middle"><a href="https://openai.com/index/a-thousand-fewer-paths-to-root/">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-29</code><br><sub>University of Sydney</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.39899" title="ExploreRepair: Evidence-Specialized Agents for Vulnerability Repair under Information Constraints">ExploreRepair: Evidence-Specialized Agents for Vulnerability Repair under Information Constraints</a></b><br><br>在缺少漏洞分类和复现测试时，分别探索代码结构、行为意图与可执行证据，再分层整合诊断和补丁。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.39899">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-27</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Discovering and exploiting vulnerabilities in critical, real-world software with Claude</a></b><br><br>结合多策略并行扫描、源码与二进制分析、验证及变体搜索，在真实软件中发现并串联可利用漏洞。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude">Blog</a><br><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-26</code><br><sub>SMU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.35541" title="The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation">The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation</a></b><br><br>固定脆弱后端，对比原生访问、脚本调用与智能体调用，拆解工具接口和智能体对既有漏洞可利用性的影响。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.35541">Paper</a></td></tr>
@@ -140,6 +142,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-05</code><br><sub>OpenAI</sub></td><td align="center" valign="middle"><b><a href="https://deploymentsafety.openai.com/gpt-6-cyber" title="GPT-6 Cyber System Card">GPT-6 Cyber System Card</a></b><br><br>报告安全专项后训练与部署控制，并分别评测漏洞利用、授权边界遵守和高风险行为。</td><td align="center" valign="middle"><a href="https://deploymentsafety.openai.com/gpt-6-cyber">Blog</a><br><a href="https://openai.com/index/introducing-gpt-6-cyber/">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-03</code><br><sub>OpenAI</sub></td><td align="center" valign="middle"><b><a href="https://alignment.openai.com/eval-production-behavior-gap/" title="Eval-production behavior gaps in agent safety and the role of eval-awareness">Eval-production behavior gaps in agent safety and the role of eval-awareness</a></b><br><br>匹配安全评测与生产决策，并改变目标提示，测量 Agent 对权限警告的遵守如何受评测语境影响。</td><td align="center" valign="middle"><a href="https://alignment.openai.com/eval-production-behavior-gap/">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-30</code><br><sub>UC Berkeley</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.41998" title="SecPO: Principled Adversarial Training for Prompt Injection Security">SecPO: Principled Adversarial Training for Prompt Injection Security</a></b><br><br>以干净输入上的模型行为作为偏好训练参照，结合强对抗样本训练，提高 Agent 对提示注入的抵抗力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.41998">Paper</a><br><a href="https://github.com/Sizhe-Chen/SecPO">Code</a><br><a href="https://huggingface.co/datasets/Sizhe-Chen/Qwen3.6-27B-Instruct-SecPO-trainset">Artifacts</a><br><a href="https://sizhe-chen.github.io/SecPO-Website/">Project</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-10-29</code><br><sub>Tsinghua University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2610.39155" title="REALM: Identifying Minimal Task Assets for LLM Agents">REALM: Identifying Minimal Task Assets for LLM Agents</a></b><br><br>根据任务依赖逐步识别必要资源，以资源绑定 API 和隔离容器限制 Agent 可访问的文件与服务。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2610.39155">Paper</a></td></tr>
