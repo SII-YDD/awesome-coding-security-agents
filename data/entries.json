@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-08",
+  "last_updated": "2026-11-09",
   "entries": [
     {
       "id": "reviewbench",
@@ -3616,6 +3616,122 @@
       ],
       "added_date": "2026-11-08",
       "updated_date": "2026-11-08",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "baya-compile-then-execute",
+      "paper_id": "2611.06039",
+      "title": "Securing Web Agents with the Compile-Then-Execute Paradigm",
+      "institution": "UC Berkeley",
+      "first_author": "Annabella Chow",
+      "institution_source": "https://arxiv.org/html/2611.06039v1",
+      "publication_date": "2026-11-04",
+      "publication_kind": "paper",
+      "version": "v1",
+      "type": "预印本（录用未核实）",
+      "category": "agent-security",
+      "canonical_url": "https://arxiv.org/abs/2611.06039",
+      "tags": [
+        "web-agent",
+        "prompt-injection",
+        "sandbox",
+        "api-contract"
+      ],
+      "summary": "将网页任务预编译为只调用受信接口的程序，隔离实时网页内容与规划模型。",
+      "caveat": "四站点筛选后的581项WebArena Verified任务，三模型汇总77.8%，两个ReAct基线55.1%和66.7%。WASP在GitLab与Postmill共84个实例，表3的中间和端到端攻击成功率均观察到0%。信任站点、API及诊断，页面仍可影响运行时分类、参数或既定分支。接口由作者人工构建，代码模式平均327秒、估算0.6974美元，部分评测依赖额外编排。未独立复跑。",
+      "reading_scope": "arXiv v1 §3–6、附录中的接口与运行设置、官方仓库 README 的 API 和评测说明。",
+      "links": [
+        {
+          "kind": "code",
+          "label": "官方实现与评测",
+          "url": "https://github.com/apechow/Baya"
+        }
+      ],
+      "follow_up": [
+        "跟踪缺失的评测编排、作者技术解读与第三方复测。",
+        "核查自动接入的接口契约，测试诊断反射、分类误导和带副作用重试。"
+      ],
+      "added_date": "2026-11-09",
+      "updated_date": "2026-11-09",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "serverbench",
+      "paper_id": "2611.06841",
+      "title": "ServerBench: How can your coding agents design specialized LLM serving systems?",
+      "institution": "CMU",
+      "first_author": "Xinrui Zhong",
+      "institution_source": "https://arxiv.org/html/2611.06841v1",
+      "publication_date": "2026-11-04",
+      "publication_kind": "paper",
+      "version": "v1",
+      "type": "预印本（录用未核实）",
+      "category": "coding-agents",
+      "canonical_url": "https://arxiv.org/abs/2611.06841",
+      "tags": [
+        "benchmark",
+        "llm-serving",
+        "workload-replay",
+        "correctness"
+      ],
+      "summary": "用保留会话依赖的工作负载衡量编程智能体构建推理服务和选择并发的能力。",
+      "caveat": "11个Agent模型与3个部署形成33个配对，22个通过验收、13个超过较强基线。每配对一次8小时开发，明确异常失败可重跑一次，报告通过验收的最佳提交。Gemma上2.97对0.61是延迟合格token估值除以GPU开销，开发费另计。开发与验收种子互斥但同源，正确性检查覆盖有限。作者验收及审读，未独立复跑。",
+      "reading_scope": "arXiv v1 §3–5、附录§7–8与§10–11的复现设置、正确性阈值、开发成本与受控实验，官方技术博客及代码 README。",
+      "links": [
+        {
+          "kind": "code",
+          "label": "官方框架与运行手册",
+          "url": "https://github.com/Infini-AI-Lab/Server-Bench"
+        },
+        {
+          "kind": "blog",
+          "label": "InfiniAI Lab 技术博客",
+          "url": "https://infini-ai-lab.github.io/Server-Bench/"
+        }
+      ],
+      "follow_up": [
+        "用异源会话和突发到达复测，记录编程Agent与GPU总成本。",
+        "围绕长上下文、抢占恢复和跨请求缓存复用做独立回归。"
+      ],
+      "added_date": "2026-11-09",
+      "updated_date": "2026-11-09",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "req2rust",
+      "paper_id": "2611.07442",
+      "title": "Req2Rust: A Requirements-Guided Agent Harness for Project-Level C++-to-Rust Migration",
+      "institution": "中山大学",
+      "first_author": "Shengbo Wang",
+      "institution_source": "https://arxiv.org/html/2611.07442v1",
+      "publication_date": "2026-11-05",
+      "publication_kind": "paper",
+      "version": "v1",
+      "type": "预印本（录用未核实）",
+      "category": "software-engineering",
+      "canonical_url": "https://arxiv.org/abs/2611.07442",
+      "tags": [
+        "code-migration",
+        "rust",
+        "semantic-preservation",
+        "regression-testing"
+      ],
+      "summary": "从多文件C++项目提取可追溯的行为约束，再用编译与语义反馈迭代生成Rust项目。",
+      "caveat": "7个通用项目和5个OpenHarmony模块，与ClaudeCode共用DeepSeek-V4-Pro。平均测试通过率分别91.9%对69.5%和87.9%对45.4%，全部生成crate可编译。通用项目去掉语义验证后仍7/7编译，通过率降至28.10%。已有测试和移植探针覆盖有限，完整预算、重复次数、公开复现包待核实。未独立复跑。",
+      "reading_scope": "arXiv v1 §II–VII，含迁移工件链、表III–V及有效性威胁，检索题名和作者，尚未核实公开代码、作者解读或实验包。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.07442"
+        }
+      ],
+      "follow_up": [
+        "跟踪完整代码、原始及移植探针、逐项目预算和运行轨迹。",
+        "用独立测试验证回调顺序、资源释放、外部调用和并发语义，匹配模型和预算。"
+      ],
+      "added_date": "2026-11-09",
+      "updated_date": "2026-11-09",
       "evidence_status": "author-reported"
     }
   ]
