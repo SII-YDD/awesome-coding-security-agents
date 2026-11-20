@@ -7,13 +7,13 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-93-6366f1?style=flat-square" alt="Papers and blogs: 93"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--09-14b8a6?style=flat-square" alt="Updated: 2026-11-09"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-94-6366f1?style=flat-square" alt="Papers and blogs: 94"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--10-14b8a6?style=flat-square" alt="Updated: 2026-11-10"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>22 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>23 entries</sub></td>
     <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>24 entries</sub></td>
   </tr>
   <tr>
@@ -30,15 +30,13 @@
 <h2 align="center">每日新增 · Daily Updates</h2>
 
 <p align="center">
-  <a href="updates/2026-11-09.md"><b>2026-11-09</b></a> &nbsp;·&nbsp; 3 新增
+  <a href="updates/2026-11-10.md"><b>2026-11-10</b></a> &nbsp;·&nbsp; 1 新增
 </p>
 
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
-    <tr><td align="center" valign="middle"><b>CMU</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06841">ServerBench: How can your coding agents design specialized LLM serving systems?</a></b><br><br>用保留会话依赖的工作负载衡量编程智能体构建推理服务和选择并发的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06841">Paper</a><br><a href="https://github.com/Infini-AI-Lab/Server-Bench">Code</a><br><a href="https://infini-ai-lab.github.io/Server-Bench/">Blog</a></td></tr>
-    <tr><td align="center" valign="middle"><b>中山大学</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.07442">Req2Rust: A Requirements-Guided Agent Harness for Project-Level C++-to-Rust Migration</a></b><br><br>从多文件C++项目提取可追溯的行为约束，再用编译与语义反馈迭代生成Rust项目。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.07442">Paper</a></td></tr>
-    <tr><td align="center" valign="middle"><b>UC Berkeley</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06039">Securing Web Agents with the Compile-Then-Execute Paradigm</a></b><br><br>将网页任务预编译为只调用受信接口的程序，隔离实时网页内容与规划模型。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06039">Paper</a><br><a href="https://github.com/apechow/Baya">Code</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Duke University</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.09798">Test-Time Compute Scales Better with Parallel Agent Teams</a></b><br><br>将总推理预算拆成多个共享发现的小型智能体团队，并通过验证器在团队间择优。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.09798">Paper</a></td></tr>
   </tbody>
 </table>
 
@@ -50,6 +48,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-06</code><br><sub>Duke University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.09798" title="Test-Time Compute Scales Better with Parallel Agent Teams">Test-Time Compute Scales Better with Parallel Agent Teams</a></b><br><br>将总推理预算拆成多个共享发现的小型智能体团队，并通过验证器在团队间择优。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.09798">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-04</code><br><sub>CMU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06841" title="ServerBench: How can your coding agents design specialized LLM serving systems?">ServerBench: How can your coding agents design specialized LLM serving systems?</a></b><br><br>用保留会话依赖的工作负载衡量编程智能体构建推理服务和选择并发的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06841">Paper</a><br><a href="https://github.com/Infini-AI-Lab/Server-Bench">Code</a><br><a href="https://infini-ai-lab.github.io/Server-Bench/">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-04</code><br><sub>Beihang University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06328" title="EvoCodeAgent: Project-Level Code Generation via Architecture-Code Co-Evolution and Experience-Guided Repair">EvoCodeAgent: Project-Level Code Generation via Architecture-Code Co-Evolution and Experience-Guided Repair</a></b><br><br>让项目架构状态随代码依赖与验证反馈更新，并检索既有修复经验指导多文件实现。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06328">Paper</a><br><a href="https://github.com/whisperzqh/EvoCodeAgent">Code</a><br><a href="https://github.com/whisperzqh/EvoCodeAgent/tree/main/datasets">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-02</code><br><sub>Tsinghua University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.03219" title="Can Coding Agents Sustain Continual Evolution without Forgetting?">Can Coding Agents Sustain Continual Evolution without Forgetting?</a></b><br><br>让编程 Agent 在修复、写测试和加功能间持续演化，分析运行框架修改如何破坏此前获得的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.03219">Paper</a><br><a href="https://github.com/THU-Agent/continual-harness-evolution">Code</a><br><a href="https://github.com/THU-Agent/continual-harness-evolution/tree/main/datasets">Artifacts</a></td></tr>

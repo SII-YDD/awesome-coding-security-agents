@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-09",
+  "last_updated": "2026-11-10",
   "entries": [
     {
       "id": "reviewbench",
@@ -3733,6 +3733,38 @@
       "added_date": "2026-11-09",
       "updated_date": "2026-11-09",
       "evidence_status": "author-reported"
+    },
+    {
+      "id": "parallel-agent-teams-scaling",
+      "paper_id": "2611.09798",
+      "title": "Test-Time Compute Scales Better with Parallel Agent Teams",
+      "institution": "Duke University",
+      "first_author": "Junlin Wang",
+      "institution_source": "https://isthatyou.github.io/",
+      "publication_date": "2026-11-06",
+      "added_date": "2026-11-10",
+      "updated_date": "2026-11-10",
+      "type": "预印本（arXiv v1，未评审）",
+      "publication_kind": "paper",
+      "category": "coding-agents",
+      "tags": [
+        "parallel-agents",
+        "test-time-compute",
+        "agent-evaluation",
+        "cybersecurity"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.09798",
+      "summary": "将总推理预算拆成多个共享发现的小型智能体团队，并通过验证器在团队间择优。",
+      "caveat": "作者在12项跨域长时任务报告十个十人团队以100-agent预算在10项胜过100个独立agent；小队样本池仅10–11次，超大单队只测4项且规模比较改变了论坛索引。GPT-5.6-sol等成本结论随GPU或token计价变化。预印本未独立复跑；论文所列代码仓库本次返回404，暂无法核验复现工件。",
+      "reading_scope": "arXiv v1全文§1–6、附录A–K（方法、12项任务、基础设施、分数池与运行排除、成本、局限及提示词）；核对一作主页与论文列出的官方代码URL，代码URL返回404；未运行实验。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09798"
+        }
+      ]
     }
   ]
 }
