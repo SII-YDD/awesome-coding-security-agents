@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-10",
+  "last_updated": "2026-11-21",
   "entries": [
     {
       "id": "reviewbench",
@@ -3763,6 +3763,78 @@
           "kind": "paper",
           "label": "Paper",
           "url": "https://arxiv.org/abs/2611.09798"
+        }
+      ]
+    },
+    {
+      "id": "research-acceleration-jagged-frontier",
+      "title": "Research acceleration: The jagged frontier",
+      "institution": "OpenAI",
+      "institution_source": "https://openai.com/index/research-acceleration-jagged-frontier/",
+      "publication_date": "2026-11-18",
+      "added_date": "2026-11-21",
+      "updated_date": "2026-11-21",
+      "type": "机构研究报告（未见同行评审）",
+      "publication_kind": "blog",
+      "category": "software-engineering",
+      "tags": [
+        "coding-agents",
+        "developer-productivity",
+        "research-engineering",
+        "observational-study"
+      ],
+      "canonical_url": "https://openai.com/index/research-acceleration-jagged-frontier/",
+      "summary": "用内部工作记录、问卷与访谈衡量编码智能体在不同研发任务中的自主完成率。",
+      "caveat": "内部已委派任务的估算成功率因任务而异：监控训练79%、启动训练35%、编写推理和服务代码25%。任务选择、模型和运行框架随时间变化；单机构观察与自述无法给出因果生产率或外部普适结论。",
+      "reading_scope": "核对官方研究报告正文的投入、过程、产出、结论及脚注，重点阅读任务分组、时间趋势、成本口径、问卷访谈与估计边界；未获取内部原始记录或复算。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "blog",
+          "label": "Blog",
+          "url": "https://openai.com/index/research-acceleration-jagged-frontier/"
+        }
+      ]
+    },
+    {
+      "id": "swe-cowork",
+      "paper_id": "2611.20218",
+      "title": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
+      "institution": "TokenWave AI",
+      "first_author": "Xinping Lei",
+      "institution_source": "https://arxiv.org/html/2611.20218v1",
+      "publication_date": "2026-11-15",
+      "added_date": "2026-11-21",
+      "updated_date": "2026-11-21",
+      "type": "预印本（arXiv v1，未评审）",
+      "publication_kind": "paper",
+      "category": "coding-agents",
+      "tags": [
+        "benchmark",
+        "requirements-engineering",
+        "agent-evaluation",
+        "repository-level"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.20218",
+      "summary": "在模拟软件组织中分散需求，让编码智能体澄清、实现并用可执行测试验证完整交付。",
+      "caveat": "101个真实仓库衍生任务、11个模型系统；两套领先系统的新需求测试通过率约63%，整单通过率低于8%。完整需求提升两套系统的分项通过率约16个百分点，整单率在该实验中不变。组织由模型模拟，运行框架不同，详细行为归因只覆盖一套系统；未独立复跑。",
+      "reading_scope": "阅读arXiv v1正文的组织构造、评分、对照、结果与交接诊断，核对表2–3、附录A/C及H的追踪口径，并核对作者发布的评测代码与数据集页面；未运行实验。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.20218"
+        },
+        {
+          "kind": "code",
+          "label": "Code",
+          "url": "https://github.com/TokenWave-AI/swe-cowork-bench"
+        },
+        {
+          "kind": "artifacts",
+          "label": "Artifacts",
+          "url": "https://huggingface.co/datasets/Tokenwave-AI/swe-cowork"
         }
       ]
     }
