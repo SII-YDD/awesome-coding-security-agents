@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-21",
+  "last_updated": "2026-11-22",
   "entries": [
     {
       "id": "reviewbench",
@@ -3835,6 +3835,102 @@
           "kind": "artifacts",
           "label": "Artifacts",
           "url": "https://huggingface.co/datasets/Tokenwave-AI/swe-cowork"
+        }
+      ]
+    },
+    {
+      "id": "metrics-in-the-loop",
+      "paper_id": "2611.23817",
+      "title": "Metrics-in-the-Loop: Complexity Feedback Reshapes Agent-Written Code",
+      "institution": "Nera Software",
+      "first_author": "Nicolas Chapados",
+      "institution_source": "https://arxiv.org/pdf/2611.23817",
+      "publication_date": "2026-11-18",
+      "added_date": "2026-11-22",
+      "updated_date": "2026-11-22",
+      "type": "预印本（arXiv v1，未核实同行评审）",
+      "publication_kind": "paper",
+      "category": "software-engineering",
+      "tags": [
+        "code-quality",
+        "maintainability",
+        "inference-time-feedback",
+        "complexity"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.23817",
+      "summary": "在智能体每轮改动后反馈函数复杂度和未覆盖行，促使它在继续编码前调整结构。",
+      "caveat": "四模型在 Commit0 与 SlopCodeBench 上的复杂度集中度下降，SWE-EVO 证据较弱；分模型隐藏测试区间均含零，SlopCodeBench 联合分析提示可能降低正确率。拆分函数可改善指标，长期可维护性未验证。",
+      "reading_scope": "阅读 §2–4、表1 与附录 A/B 的分组、失败样本排除和结构审计，核对 PDF 首页作者署名；未确认 SlapKit 公开实现或独立复跑。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.23817"
+        }
+      ]
+    },
+    {
+      "id": "done-but-still-working",
+      "paper_id": "2611.22901",
+      "title": "Done, But Still Working: Anytime Evaluation of When Coding Agents Should Stop",
+      "institution": "Huawei",
+      "first_author": "Zerui Yang",
+      "institution_source": "https://arxiv.org/pdf/2611.22901",
+      "publication_date": "2026-11-17",
+      "added_date": "2026-11-22",
+      "updated_date": "2026-11-22",
+      "type": "预印本（arXiv v1，未核实同行评审）",
+      "publication_kind": "paper",
+      "category": "coding-agents",
+      "tags": [
+        "agent-evaluation",
+        "early-stopping",
+        "inference-cost",
+        "software-repair"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.22901",
+      "summary": "回放编码智能体的中间补丁，用隐藏测试和累计推理成本比较何时停止更划算。",
+      "caveat": "在预注册的386次新运行中，同一补丁两次自测通过即停止使推理成本下降22.8%，解决率点估计下降1个百分点，未证明2个百分点阈值下的非劣效。结果依赖测试可见性与补丁定义，成本不含沙箱和实际耗时。",
+      "reading_scope": "阅读 §2–4、§7、预注册结果表2及附录 R/T 的补丁口径和官方评分核对说明，检查 arXiv 首页署名；未确认作者公开运行轨迹或独立复跑。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.22901"
+        }
+      ]
+    },
+    {
+      "id": "coding-agents-unit-test-transpilation",
+      "paper_id": "2611.21797",
+      "title": "Can Coding Agents Write and Transpile Unit Tests?",
+      "institution": "Code Metal",
+      "first_author": "Gil Pasternak",
+      "institution_source": "https://arxiv.org/html/2611.21797v1",
+      "publication_date": "2026-11-16",
+      "added_date": "2026-11-22",
+      "updated_date": "2026-11-22",
+      "type": "预印本（arXiv v1，未核实同行评审）",
+      "publication_kind": "paper",
+      "category": "software-engineering",
+      "tags": [
+        "unit-testing",
+        "test-generation",
+        "test-transpilation",
+        "mutation-testing"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.21797",
+      "summary": "用跨语言开源项目比较智能体生成单测的检错能力，并检查迁移测试能否保留原始行为。",
+      "caveat": "生成实验覆盖240个开源项目，迁移为50个 C++ 到 Rust 项目；生成测试优势随仓库规模减弱，迁移后行覆盖和变异分数低于源套件。工具与各自模型绑定，不能单独归因于模型或运行框架。",
+      "reading_scope": "阅读 §2–5、§7、表1–2、轨迹分析与附录 G 来源记录，核对作者的代码与数据发布说明；完整发布包尚未核实，未独立复跑。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.21797"
         }
       ]
     }

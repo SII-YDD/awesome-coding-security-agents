@@ -7,14 +7,14 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-96-6366f1?style=flat-square" alt="Papers and blogs: 96"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--21-14b8a6?style=flat-square" alt="Updated: 2026-11-21"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-99-6366f1?style=flat-square" alt="Papers and blogs: 99"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--22-14b8a6?style=flat-square" alt="Updated: 2026-11-22"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>24 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>25 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>25 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>27 entries</sub></td>
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>15 entries</sub></td>
@@ -30,14 +30,15 @@
 <h2 align="center">每日新增 · Daily Updates</h2>
 
 <p align="center">
-  <a href="updates/2026-11-21.md"><b>2026-11-21</b></a> &nbsp;·&nbsp; 2 新增
+  <a href="updates/2026-11-22.md"><b>2026-11-22</b></a> &nbsp;·&nbsp; 3 新增
 </p>
 
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
-    <tr><td align="center" valign="middle"><b>TokenWave AI</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.20218">SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations</a></b><br><br>在模拟软件组织中分散需求，让编码智能体澄清、实现并用可执行测试验证完整交付。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.20218">Paper</a><br><a href="https://github.com/TokenWave-AI/swe-cowork-bench">Code</a><br><a href="https://huggingface.co/datasets/Tokenwave-AI/swe-cowork">Artifacts</a></td></tr>
-    <tr><td align="center" valign="middle"><b>OpenAI</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://openai.com/index/research-acceleration-jagged-frontier/">Research acceleration: The jagged frontier</a></b><br><br>用内部工作记录、问卷与访谈衡量编码智能体在不同研发任务中的自主完成率。</td><td align="center" valign="middle"><a href="https://openai.com/index/research-acceleration-jagged-frontier/">Blog</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Huawei</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.22901">Done, But Still Working: Anytime Evaluation of When Coding Agents Should Stop</a></b><br><br>回放编码智能体的中间补丁，用隐藏测试和累计推理成本比较何时停止更划算。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.22901">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Code Metal</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.21797">Can Coding Agents Write and Transpile Unit Tests?</a></b><br><br>用跨语言开源项目比较智能体生成单测的检错能力，并检查迁移测试能否保留原始行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.21797">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Nera Software</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.23817">Metrics-in-the-Loop: Complexity Feedback Reshapes Agent-Written Code</a></b><br><br>在智能体每轮改动后反馈函数复杂度和未覆盖行，促使它在继续编码前调整结构。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.23817">Paper</a></td></tr>
   </tbody>
 </table>
 
@@ -49,6 +50,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-17</code><br><sub>Huawei</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.22901" title="Done, But Still Working: Anytime Evaluation of When Coding Agents Should Stop">Done, But Still Working: Anytime Evaluation of When Coding Agents Should Stop</a></b><br><br>回放编码智能体的中间补丁，用隐藏测试和累计推理成本比较何时停止更划算。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.22901">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-15</code><br><sub>TokenWave AI</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.20218" title="SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations">SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations</a></b><br><br>在模拟软件组织中分散需求，让编码智能体澄清、实现并用可执行测试验证完整交付。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.20218">Paper</a><br><a href="https://github.com/TokenWave-AI/swe-cowork-bench">Code</a><br><a href="https://huggingface.co/datasets/Tokenwave-AI/swe-cowork">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-06</code><br><sub>Duke University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.09798" title="Test-Time Compute Scales Better with Parallel Agent Teams">Test-Time Compute Scales Better with Parallel Agent Teams</a></b><br><br>将总推理预算拆成多个共享发现的小型智能体团队，并通过验证器在团队间择优。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.09798">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-04</code><br><sub>CMU</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06841" title="ServerBench: How can your coding agents design specialized LLM serving systems?">ServerBench: How can your coding agents design specialized LLM serving systems?</a></b><br><br>用保留会话依赖的工作负载衡量编程智能体构建推理服务和选择并发的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06841">Paper</a><br><a href="https://github.com/Infini-AI-Lab/Server-Bench">Code</a><br><a href="https://infini-ai-lab.github.io/Server-Bench/">Blog</a></td></tr>
@@ -85,6 +87,8 @@
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
     <tr><td align="center" valign="middle"><code>2026-11-18</code><br><sub>OpenAI</sub></td><td align="center" valign="middle"><b><a href="https://openai.com/index/research-acceleration-jagged-frontier/" title="Research acceleration: The jagged frontier">Research acceleration: The jagged frontier</a></b><br><br>用内部工作记录、问卷与访谈衡量编码智能体在不同研发任务中的自主完成率。</td><td align="center" valign="middle"><a href="https://openai.com/index/research-acceleration-jagged-frontier/">Blog</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-11-18</code><br><sub>Nera Software</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.23817" title="Metrics-in-the-Loop: Complexity Feedback Reshapes Agent-Written Code">Metrics-in-the-Loop: Complexity Feedback Reshapes Agent-Written Code</a></b><br><br>在智能体每轮改动后反馈函数复杂度和未覆盖行，促使它在继续编码前调整结构。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.23817">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-11-16</code><br><sub>Code Metal</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.21797" title="Can Coding Agents Write and Transpile Unit Tests?">Can Coding Agents Write and Transpile Unit Tests?</a></b><br><br>用跨语言开源项目比较智能体生成单测的检错能力，并检查迁移测试能否保留原始行为。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.21797">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-05</code><br><sub>中山大学</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.07442" title="Req2Rust: A Requirements-Guided Agent Harness for Project-Level C++-to-Rust Migration">Req2Rust: A Requirements-Guided Agent Harness for Project-Level C++-to-Rust Migration</a></b><br><br>从多文件C++项目提取可追溯的行为约束，再用编译与语义反馈迭代生成Rust项目。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.07442">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-05</code><br><sub>York University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.07286" title="How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering">How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering</a></b><br><br>将五种仓库地图做成可按需查询的工具，比较它们对定位、修复、测试与安全补丁的影响。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.07286">Paper</a><br><a href="https://github.com/MelikaSepidband/How-Should-Agents-See-Code">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-04</code><br><sub>NTU Singapore</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.06294" title="A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code">A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code</a></b><br><br>用真实漏洞构建功能与攻击双重评测，检验仓库检索是否为生成代码提供了必要的安全约束。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.06294">Paper</a></td></tr>
