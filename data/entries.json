@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-22",
+  "last_updated": "2026-11-23",
   "entries": [
     {
       "id": "reviewbench",
@@ -3931,6 +3931,102 @@
           "kind": "paper",
           "label": "Paper",
           "url": "https://arxiv.org/abs/2611.21797"
+        }
+      ]
+    },
+    {
+      "id": "unfaithful-coding-agent-work-reports",
+      "paper_id": "2611.25760",
+      "title": "Characterizing and Detecting Unfaithful Work Reports by Coding Agents",
+      "institution": "Peking University",
+      "first_author": "Wenhao Yang",
+      "institution_source": "https://arxiv.org/html/2611.25760v1",
+      "publication_date": "2026-11-19",
+      "added_date": "2026-11-23",
+      "updated_date": "2026-11-23",
+      "type": "预印本（arXiv v1，未核实同行评审）",
+      "publication_kind": "paper",
+      "category": "agent-security",
+      "tags": [
+        "report-faithfulness",
+        "agent-oversight",
+        "audit-trails",
+        "empirical-study"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.25760",
+      "summary": "把编码智能体的交付声明与工具轨迹逐条对照，识别超出证据支持范围的陈述。",
+      "caveat": "435 份抽样报告中 162 份含至少一项不实或越界声明；2,356 项可判定声明上宏平均 F1 为 93.06%，提示基线为 80.42%。样本来自 SWE-chat，不能外推到整个语料或所有智能体；检测器依赖报告前轨迹。",
+      "reading_scope": "核对 arXiv v1 §3、§4–7、§8–9、表3–4和数据可用性；打开 SWE-chat 上游入口；作者所列 Figshare 文件本轮不可读取，未独立复跑。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.25760"
+        }
+      ]
+    },
+    {
+      "id": "held-while-waiting-agent-sessions",
+      "paper_id": "2611.26480",
+      "title": "Held While Waiting: What LLM Agent Sessions Reserve on Serverless and Agent Runtimes",
+      "institution": "AWS",
+      "first_author": "Mekhala Hithyshini Sreenivasa",
+      "institution_source": "https://arxiv.org/html/2611.26480v1",
+      "publication_date": "2026-11-19",
+      "added_date": "2026-11-23",
+      "updated_date": "2026-11-23",
+      "type": "预印本（arXiv v1，未核实同行评审）",
+      "publication_kind": "paper",
+      "category": "software-engineering",
+      "tags": [
+        "agent-runtimes",
+        "serverless",
+        "session-lifecycle",
+        "performance"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.26480",
+      "summary": "把模型等待时间和框架计算拆开计量，估算隔离会话对执行环境与并发配额的占用。",
+      "caveat": "零售基准记录384次会话、3,549个热步骤；模型等待中位数约2.7秒，部署框架CPU以区间估算。默认超时与显式关闭的28倍差异及共享时的59倍差异来自模拟，不能当作运营成本或隔离安全性的实测结论。作者为AWS员工，以个人账号独立完成。",
+      "reading_scope": "阅读 arXiv v1 §3–9，核对生产部署样本、传输模拟、配额模型、共享模拟及作者利益披露；未核实可运行工件，未复跑。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.26480"
+        }
+      ]
+    },
+    {
+      "id": "buggymle",
+      "paper_id": "2611.25088",
+      "title": "BuggyMLE: Scaling Machine Learning Engineering Difficulty with Bug Injection",
+      "institution": "Google Research",
+      "first_author": "John Wu",
+      "institution_source": "https://arxiv.org/html/2611.25088v1",
+      "publication_date": "2026-11-18",
+      "added_date": "2026-11-23",
+      "updated_date": "2026-11-23",
+      "type": "预印本（arXiv v1，未核实同行评审）",
+      "publication_kind": "paper",
+      "category": "coding-agents",
+      "tags": [
+        "ml-engineering",
+        "debugging",
+        "benchmark",
+        "curriculum-learning"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.25088",
+      "summary": "向可运行的机器学习仓库加入受控缺陷，并用执行指标和逐缺陷核验评测修复。",
+      "caveat": "88 项评测由22个基础仓库分四档派生；作者报告最佳整单修复率从95.5%降至9.1%。合成缺陷、模型裁判、回合预算限制外推；CCI拟合只基于八个基准均值，从零实现迁移结果并不一致。",
+      "reading_scope": "阅读 arXiv v1 §3–6、表2、图8和附录 E.3 的裁判说明，核对一作署名及首次提交时间；尚未核实作者专用代码和完整数据包，未独立复跑。",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.25088"
         }
       ]
     }
