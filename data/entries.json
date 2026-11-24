@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-23",
+  "last_updated": "2026-11-24",
   "entries": [
     {
       "id": "reviewbench",
@@ -4027,6 +4027,106 @@
           "kind": "paper",
           "label": "Paper",
           "url": "https://arxiv.org/abs/2611.25088"
+        }
+      ]
+    },
+    {
+      "added_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "evidence_status": "author-reported",
+      "type": "预印本（arXiv v1，未核实同行评审）",
+      "publication_kind": "paper",
+      "id": "splitbench-privilege-separation",
+      "paper_id": "2611.27860",
+      "title": "Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks",
+      "institution": "University of Padua",
+      "first_author": "Nathan Nour Houlamy",
+      "institution_source": "https://arxiv.org/html/2611.27860v1",
+      "publication_date": "2026-11-20",
+      "category": "agent-security",
+      "tags": [
+        "evaluation-integrity",
+        "privilege-separation",
+        "coding-agents",
+        "benchmarking"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.27860",
+      "summary": "将候选代码的运行环境与保存标准答案的判分服务分开，保护编码智能体评测的完整性。",
+      "caveat": "202项中180项可迁移；在两套评分器均完成判分的1,374次对照中，1,356次判决一致。结果限于所测任务，部分回归测试沿用原评分，隔离不能提高上游测试对真实需求的覆盖。按API标价估算的迁移成本不含协调与额外返工。",
+      "reading_scope": "阅读 arXiv v1 §III–VI 的信任边界、架构、迁移与评分一致性、局限，并核对 Open Science 声明；未确认公开完整版工件，未独立复跑。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.27860"
+        }
+      ]
+    },
+    {
+      "added_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "evidence_status": "author-reported",
+      "type": "预印本（arXiv v1，未核实同行评审）",
+      "publication_kind": "paper",
+      "id": "tether-verified-stateful-policy-engine",
+      "paper_id": "2611.25599",
+      "title": "Tether: Verified Stateful Policy Engine for System-Level Monitoring of Agents",
+      "institution": "Google DeepMind",
+      "first_author": "Meghana Aparna Sistla",
+      "institution_source": "https://arxiv.org/pdf/2611.25599",
+      "publication_date": "2026-11-19",
+      "category": "agent-security",
+      "tags": [
+        "runtime-monitoring",
+        "information-flow",
+        "sandboxing",
+        "lean-4"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.25599",
+      "summary": "在临时隔离环境观察系统副作用，由 Lean 4 中的有状态策略决定是否放行。",
+      "caveat": "可完整观察及建模的离线子集覆盖344条对抗和1,590条良性轨迹；拦截344条对抗轨迹，误拦74条良性轨迹。形式化结论依赖动作抽象和可信底座；外部状态、语义风险及追踪开销限制部署外推。",
+      "reading_scope": "核对PDF首页署名、arXiv v1 §2–4架构与动作语义、§6的回放纳入规则及表2、§7局限与§9后续；未核实作者实现或独立复跑。",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.25599"
+        }
+      ]
+    },
+    {
+      "added_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "evidence_status": "author-reported",
+      "id": "metr-q4-2026-capability-measurement",
+      "title": "AI R&D-relevant model capabilities are improving rapidly and are getting harder to measure",
+      "institution": "METR",
+      "first_author": "Megan Kinniment",
+      "institution_source": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+      "publication_date": "2026-11-20",
+      "type": "机构研究报告（未见同行评审）",
+      "publication_kind": "blog",
+      "category": "software-engineering",
+      "tags": [
+        "agent-evaluation",
+        "human-baseline",
+        "long-horizon",
+        "benchmark-methodology"
+      ],
+      "canonical_url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+      "summary": "用多档成绩与人类用时配对评测长任务，比较易验证任务和需要判断的研发工作。",
+      "caveat": "新增36项中34项设定成绩—用时点；其中仅3项采用成功招募的人类基线，其余31项用研究员估计。合并任务集的时域趋势依赖样本与估计；公开模型综合能力指数未显示清晰的总体加速。不能把时域理解为智能体实际运行时间。",
+      "reading_scope": "核对METR官方更新的署名与日期、§2–5的评分及趋势、附录A/B/C/F中人类基线和成本估计，并打开图7与图12官方数据；未重算原始结果。",
+      "links": [
+        {
+          "kind": "blog",
+          "label": "Blog",
+          "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+        },
+        {
+          "kind": "artifacts",
+          "label": "Figure 12 data",
+          "url": "https://metr.org/assets/images/q4-2026-capability-update/e401db69f8d499a7.json"
         }
       ]
     }
