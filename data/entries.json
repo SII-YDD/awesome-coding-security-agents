@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-24",
+  "last_updated": "2026-11-25",
   "entries": [
     {
       "id": "reviewbench",
@@ -4127,6 +4127,104 @@
           "kind": "artifacts",
           "label": "Figure 12 data",
           "url": "https://metr.org/assets/images/q4-2026-capability-update/e401db69f8d499a7.json"
+        }
+      ]
+    },
+    {
+      "id": "forecast-cause-chain-diagnoses",
+      "paper_id": "2611.30574",
+      "title": "Improving Repair Agents with Cause-Chain Diagnoses",
+      "institution": "CISPA Helmholtz Center for Information Security",
+      "first_author": "Marius Smytzek",
+      "category": "software-engineering",
+      "tags": [
+        "program-repair",
+        "debugging",
+        "execution-traces"
+      ],
+      "summary": "比较通过与失败测试的执行轨迹，把分支、取值和数据流差异整理为诊断链，再交给现有修复智能体。",
+      "caveat": "300 个有可复现测试的 Python 任务；诊断生成中位耗时 40 分钟，跨语言和不稳定测试场景仍待验证。",
+      "reading_scope": "arXiv v1 方法、主实验表 4、消融实验、效率与威胁章节，以及作者代码仓库",
+      "institution_source": "https://arxiv.org/html/2611.30574v1",
+      "publication_date": "2026-11-23",
+      "added_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "type": "arXiv 预印本",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2611.30574",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "label": "arXiv v1",
+          "url": "https://arxiv.org/abs/2611.30574",
+          "kind": "paper"
+        },
+        {
+          "label": "FORECAST 作者代码",
+          "url": "https://github.com/smythi93/forecast",
+          "kind": "code"
+        }
+      ]
+    },
+    {
+      "id": "repoclean",
+      "paper_id": "2611.30350",
+      "title": "RepoClean: Evaluating Coding Agents on Repository-Level Obsolete Code Cleanup",
+      "institution": "Chongqing University",
+      "first_author": "Hongyixuan Yuan",
+      "category": "software-engineering",
+      "tags": [
+        "code-maintenance",
+        "benchmark",
+        "regression-testing"
+      ],
+      "summary": "将历史上已删除的代码重新加入 34 个 Python 仓库的新版快照，衡量智能体恢复测试和删除废弃代码的能力。",
+      "caveat": "200 个任务只覆盖会使现有测试失败的回插代码；全量测试通过率与参考删除行覆盖率分别计分。",
+      "reading_scope": "arXiv v1 数据构造、计分方法、主实验与任务指令消融",
+      "institution_source": "https://arxiv.org/html/2611.30350v1",
+      "publication_date": "2026-11-23",
+      "added_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "type": "arXiv 预印本",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2611.30350",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "label": "arXiv v1",
+          "url": "https://arxiv.org/abs/2611.30350",
+          "kind": "paper"
+        }
+      ]
+    },
+    {
+      "id": "database-agent-blast-radius",
+      "paper_id": "2611.30483",
+      "title": "When an AI agent makes a mistake in a database, what decides the damage?",
+      "institution": "LibreDB Studio",
+      "first_author": "Abdullah Kaya",
+      "category": "agent-security",
+      "tags": [
+        "least-privilege",
+        "databases",
+        "recovery"
+      ],
+      "summary": "在受控数据库中比较最小权限和原生备份恢复，用预置标记数据的存留衡量错误对任务范围外数据的影响。",
+      "caveat": "权限效果随数据库和计分对象变化；基础恢复演练没有备份后新增的合法写入，生产数据恢复仍需单独演练。",
+      "reading_scope": "arXiv v1 作者信息、权限与恢复设置、受控恢复结果、表 5 与局限性",
+      "institution_source": "https://arxiv.org/html/2611.30483v1",
+      "publication_date": "2026-11-23",
+      "added_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "type": "arXiv 预印本",
+      "publication_kind": "paper",
+      "canonical_url": "https://arxiv.org/abs/2611.30483",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "label": "arXiv v1",
+          "url": "https://arxiv.org/abs/2611.30483",
+          "kind": "paper"
         }
       ]
     }
