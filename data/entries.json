@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-25",
+  "last_updated": "2026-11-26",
   "entries": [
     {
       "id": "reviewbench",
@@ -4227,6 +4227,113 @@
           "kind": "paper"
         }
       ]
+    },
+    {
+      "id": "anthropic-messages-api-rust-migration",
+      "title": "Migrating our Messages API to Rust",
+      "institution": "Anthropic",
+      "first_author": "Lance Martin",
+      "category": "software-engineering",
+      "tags": [
+        "migration",
+        "differential-testing",
+        "production-verification"
+      ],
+      "canonical_url": "https://www.anthropic.com/research/migrating-api-to-rust",
+      "institution_source": "https://www.anthropic.com/research/migrating-api-to-rust",
+      "publication_date": "2026-11-25",
+      "type": "官方工程案例",
+      "publication_kind": "blog",
+      "summary": "将生产请求用于 Python 与 Rust 的影子比对，并以差异信号驱动修复智能体推进 API 迁移。",
+      "caveat": "单个生产迁移案例，流量采样口径随阶段变化；CPU、内存和首词元延迟采用不同统计范围。",
+      "reading_scope": "官方博客全文，生产影子验证、三层验证流程、作者与图 6、15、16",
+      "links": [
+        {
+          "label": "官方工程博客",
+          "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+          "kind": "blog"
+        }
+      ],
+      "added_date": "2026-11-26",
+      "updated_date": "2026-11-26",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "agent-recovery-gone-wrong",
+      "paper_id": "2611.31554",
+      "title": "Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls",
+      "institution": "AVIV Group",
+      "first_author": "Artem Trofimov",
+      "category": "agent-security",
+      "tags": [
+        "tool-use",
+        "failure-recovery",
+        "side-effects"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.31554",
+      "institution_source": "https://arxiv.org/html/2611.31554v1",
+      "publication_date": "2026-11-23",
+      "type": "arXiv 预印本",
+      "publication_kind": "paper",
+      "summary": "回放 AppWorld 中途失败的智能体任务，以数据库快照衡量恢复期间的重复写入和其他状态损害。",
+      "caveat": "加权比例针对已确认的部分执行候选；少数配置样本占比高，操作身份策略来自小规模试验与离线反事实。",
+      "reading_scope": "arXiv v1 抽样和状态回放、表 I–IV、恢复设计和局限，作者标注与脚本仓库",
+      "links": [
+        {
+          "label": "arXiv 论文",
+          "url": "https://arxiv.org/abs/2611.31554",
+          "kind": "paper"
+        },
+        {
+          "label": "作者标注与回放材料",
+          "url": "https://github.com/flame-stream/agent-recovery-harm",
+          "kind": "artifacts"
+        }
+      ],
+      "added_date": "2026-11-26",
+      "updated_date": "2026-11-26",
+      "evidence_status": "author-reported"
+    },
+    {
+      "id": "computewise",
+      "paper_id": "2611.31027",
+      "title": "ComputeWise: Measuring and Fixing GPU Waste by AI Research Agents",
+      "institution": "Salesforce AI Research",
+      "first_author": "Egor Pakhomov",
+      "category": "coding-agents",
+      "tags": [
+        "research-agents",
+        "gpu-scheduling",
+        "benchmark"
+      ],
+      "canonical_url": "https://arxiv.org/abs/2611.31027",
+      "institution_source": "https://arxiv.org/html/2611.31027v1",
+      "publication_date": "2026-11-23",
+      "type": "arXiv 预印本",
+      "publication_kind": "paper",
+      "summary": "用真实训练记录回放评估研究智能体的 GPU 使用，并将证据规划与作业调度交给不同模块。",
+      "caveat": "九个任务保留了已知浪费案例并用于调优；额外时延以模拟比较日程为分母，实际集群收益仍待验证。",
+      "reading_scope": "arXiv v1 任务筛选、回放实现、表 3–5、成本和局限、作者代码与实验数据说明",
+      "links": [
+        {
+          "label": "arXiv 论文",
+          "url": "https://arxiv.org/abs/2611.31027",
+          "kind": "paper"
+        },
+        {
+          "label": "模拟、基准与调度插件",
+          "url": "https://github.com/SalesforceAIResearch/computewise",
+          "kind": "code"
+        },
+        {
+          "label": "逐次运行指标",
+          "url": "https://huggingface.co/datasets/Salesforce/computewise",
+          "kind": "artifacts"
+        }
+      ],
+      "added_date": "2026-11-26",
+      "updated_date": "2026-11-26",
+      "evidence_status": "author-reported"
     }
   ]
 }

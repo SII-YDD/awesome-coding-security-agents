@@ -7,18 +7,18 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-108-6366f1?style=flat-square" alt="Papers and blogs: 108"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--25-14b8a6?style=flat-square" alt="Updated: 2026-11-25"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-111-6366f1?style=flat-square" alt="Papers and blogs: 111"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--26-14b8a6?style=flat-square" alt="Updated: 2026-11-26"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
-    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>26 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>31 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>27 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>32 entries</sub></td>
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>15 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>26 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#agent-security"><b>04 · Agent Security</b></a><br><sub>27 entries</sub></td>
   </tr>
   <tr>
     <td colspan="2" width="100%" align="center" valign="middle"><a href="#formal-verification"><b>05 · Formal Verification</b></a><br><sub>10 entries</sub></td>
@@ -30,15 +30,15 @@
 <h2 align="center">每日新增 · Daily Updates</h2>
 
 <p align="center">
-  <a href="updates/2026-11-25.md"><b>2026-11-25</b></a> &nbsp;·&nbsp; 3 新增
+  <a href="updates/2026-11-26.md"><b>2026-11-26</b></a> &nbsp;·&nbsp; 3 新增
 </p>
 
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
-    <tr><td align="center" valign="middle"><b>CISPA Helmholtz Center for Information Security</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.30574">Improving Repair Agents with Cause-Chain Diagnoses</a></b><br><br>比较通过与失败测试的执行轨迹，把分支、取值和数据流差异整理为诊断链，再交给现有修复智能体。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.30574">Paper</a><br><a href="https://github.com/smythi93/forecast">Code</a></td></tr>
-    <tr><td align="center" valign="middle"><b>Chongqing University</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.30350">RepoClean: Evaluating Coding Agents on Repository-Level Obsolete Code Cleanup</a></b><br><br>将历史上已删除的代码重新加入 34 个 Python 仓库的新版快照，衡量智能体恢复测试和删除废弃代码的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.30350">Paper</a></td></tr>
-    <tr><td align="center" valign="middle"><b>LibreDB Studio</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.30483">When an AI agent makes a mistake in a database, what decides the damage?</a></b><br><br>在受控数据库中比较最小权限和原生备份恢复，用预置标记数据的存留衡量错误对任务范围外数据的影响。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.30483">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Salesforce AI Research</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.31027">ComputeWise: Measuring and Fixing GPU Waste by AI Research Agents</a></b><br><br>用真实训练记录回放评估研究智能体的 GPU 使用，并将证据规划与作业调度交给不同模块。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.31027">Paper</a><br><a href="https://github.com/SalesforceAIResearch/computewise">Code</a><br><a href="https://huggingface.co/datasets/Salesforce/computewise">Artifacts</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Anthropic</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/migrating-api-to-rust">Migrating our Messages API to Rust</a></b><br><br>将生产请求用于 Python 与 Rust 的影子比对，并以差异信号驱动修复智能体推进 API 迁移。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/migrating-api-to-rust">Blog</a></td></tr>
+    <tr><td align="center" valign="middle"><b>AVIV Group</b><br><br><sub>Agent Security</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.31554">Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls</a></b><br><br>回放 AppWorld 中途失败的智能体任务，以数据库快照衡量恢复期间的重复写入和其他状态损害。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.31554">Paper</a><br><a href="https://github.com/flame-stream/agent-recovery-harm">Artifacts</a></td></tr>
   </tbody>
 </table>
 
@@ -50,6 +50,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-23</code><br><sub>Salesforce AI Research</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.31027" title="ComputeWise: Measuring and Fixing GPU Waste by AI Research Agents">ComputeWise: Measuring and Fixing GPU Waste by AI Research Agents</a></b><br><br>用真实训练记录回放评估研究智能体的 GPU 使用，并将证据规划与作业调度交给不同模块。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.31027">Paper</a><br><a href="https://github.com/SalesforceAIResearch/computewise">Code</a><br><a href="https://huggingface.co/datasets/Salesforce/computewise">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-18</code><br><sub>Google Research</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.25088" title="BuggyMLE: Scaling Machine Learning Engineering Difficulty with Bug Injection">BuggyMLE: Scaling Machine Learning Engineering Difficulty with Bug Injection</a></b><br><br>向可运行的机器学习仓库加入受控缺陷，并用执行指标和逐缺陷核验评测修复。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.25088">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-17</code><br><sub>Huawei</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.22901" title="Done, But Still Working: Anytime Evaluation of When Coding Agents Should Stop">Done, But Still Working: Anytime Evaluation of When Coding Agents Should Stop</a></b><br><br>回放编码智能体的中间补丁，用隐藏测试和累计推理成本比较何时停止更划算。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.22901">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-15</code><br><sub>TokenWave AI</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.20218" title="SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations">SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations</a></b><br><br>在模拟软件组织中分散需求，让编码智能体澄清、实现并用可执行测试验证完整交付。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.20218">Paper</a><br><a href="https://github.com/TokenWave-AI/swe-cowork-bench">Code</a><br><a href="https://huggingface.co/datasets/Tokenwave-AI/swe-cowork">Artifacts</a></td></tr>
@@ -87,6 +88,7 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-25</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/migrating-api-to-rust" title="Migrating our Messages API to Rust">Migrating our Messages API to Rust</a></b><br><br>将生产请求用于 Python 与 Rust 的影子比对，并以差异信号驱动修复智能体推进 API 迁移。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/migrating-api-to-rust">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-23</code><br><sub>Chongqing University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.30350" title="RepoClean: Evaluating Coding Agents on Repository-Level Obsolete Code Cleanup">RepoClean: Evaluating Coding Agents on Repository-Level Obsolete Code Cleanup</a></b><br><br>将历史上已删除的代码重新加入 34 个 Python 仓库的新版快照，衡量智能体恢复测试和删除废弃代码的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.30350">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-23</code><br><sub>CISPA Helmholtz Center for Information Security</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.30574" title="Improving Repair Agents with Cause-Chain Diagnoses">Improving Repair Agents with Cause-Chain Diagnoses</a></b><br><br>比较通过与失败测试的执行轨迹，把分支、取值和数据流差异整理为诊断链，再交给现有修复智能体。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.30574">Paper</a><br><a href="https://github.com/smythi93/forecast">Code</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-20</code><br><sub>METR</sub></td><td align="center" valign="middle"><b><a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" title="AI R&amp;D-relevant model capabilities are improving rapidly and are getting harder to measure">AI R&amp;D-relevant model capabilities are improving rapidly and are getting harder to measure</a></b><br><br>用多档成绩与人类用时配对评测长任务，比较易验证任务和需要判断的研发工作。</td><td align="center" valign="middle"><a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/">Blog</a><br><a href="https://metr.org/assets/images/q4-2026-capability-update/e401db69f8d499a7.json">Artifacts</a></td></tr>
@@ -156,6 +158,7 @@
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
     <tr><td align="center" valign="middle"><code>2026-11-23</code><br><sub>LibreDB Studio</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.30483" title="When an AI agent makes a mistake in a database, what decides the damage?">When an AI agent makes a mistake in a database, what decides the damage?</a></b><br><br>在受控数据库中比较最小权限和原生备份恢复，用预置标记数据的存留衡量错误对任务范围外数据的影响。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.30483">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-11-23</code><br><sub>AVIV Group</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.31554" title="Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls">Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls</a></b><br><br>回放 AppWorld 中途失败的智能体任务，以数据库快照衡量恢复期间的重复写入和其他状态损害。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.31554">Paper</a><br><a href="https://github.com/flame-stream/agent-recovery-harm">Artifacts</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-20</code><br><sub>University of Padua</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.27860" title="Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks">Who Grades the Agent? Privilege Separation for Coding-Agent Benchmarks</a></b><br><br>将候选代码的运行环境与保存标准答案的判分服务分开，保护编码智能体评测的完整性。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.27860">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-19</code><br><sub>Google DeepMind</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.25599" title="Tether: Verified Stateful Policy Engine for System-Level Monitoring of Agents">Tether: Verified Stateful Policy Engine for System-Level Monitoring of Agents</a></b><br><br>在临时隔离环境观察系统副作用，由 Lean 4 中的有状态策略决定是否放行。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.25599">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-19</code><br><sub>Peking University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.25760" title="Characterizing and Detecting Unfaithful Work Reports by Coding Agents">Characterizing and Detecting Unfaithful Work Reports by Coding Agents</a></b><br><br>把编码智能体的交付声明与工具轨迹逐条对照，识别超出证据支持范围的陈述。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.25760">Paper</a></td></tr>
