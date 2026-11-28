@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-27",
+  "last_updated": "2026-11-28",
   "entries": [
     {
       "id": "reviewbench",
@@ -4425,6 +4425,104 @@
           "kind": "paper",
           "label": "arXiv 论文",
           "url": "https://arxiv.org/abs/2611.33314"
+        }
+      ]
+    },
+    {
+      "id": "reforge-rtl-repair",
+      "paper_id": "2611.33748",
+      "title": "REFORGE: LLM-Assisted RTL Bug Repair with Structured Context and Verification Feedback",
+      "institution": "University of Kansas",
+      "first_author": "Tanvir Hossain",
+      "publication_date": "2026-11-25",
+      "category": "software-engineering",
+      "tags": [
+        "rtl",
+        "program-repair",
+        "verification"
+      ],
+      "summary": "用硬件结构与验证反馈引导 RTL 修复，并为每个候选保留测试、行为保持和实现成本证据。",
+      "caveat": "CirFix 引导配置消耗更多新处理 token；有界验证、扫描与综合结果取决于属性、参考设计和工具可用性。",
+      "reading_scope": "arXiv v1 作者署名、生成与分阶段验收、表 III、图 3、资源开销与局限",
+      "canonical_url": "https://arxiv.org/abs/2611.33748",
+      "institution_source": "https://arxiv.org/html/2611.33748v1",
+      "added_date": "2026-11-28",
+      "updated_date": "2026-11-28",
+      "type": "arXiv 作者版（作者注明 DATE 2027 已接收）",
+      "publication_kind": "paper",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "arXiv 论文",
+          "url": "https://arxiv.org/abs/2611.33748"
+        }
+      ]
+    },
+    {
+      "id": "smartlens-ide-change-attribution",
+      "paper_id": "2611.34377",
+      "title": "SmartLens: Turning AI Agent Changes into Learning, Review, and Risk Signals in the IDE",
+      "institution": "Independent Researcher",
+      "first_author": "Vahid Etemadi",
+      "publication_date": "2026-11-25",
+      "category": "software-engineering",
+      "tags": [
+        "code-review",
+        "change-attribution",
+        "ide"
+      ],
+      "summary": "结合 IDE 事件、智能体编辑日志与 Git 历史归因变更，生成学习线索、待审顺序及风险热点。",
+      "caveat": "12 个脚本化场景和少量 Java/Kotlin 仓库；近期改动基线表现各半，代理归因存在误判，尚无人因验证。",
+      "reading_scope": "arXiv v1 归因设计、表 II–IV、局限与公开插件仓库 README",
+      "canonical_url": "https://arxiv.org/abs/2611.34377",
+      "institution_source": "https://arxiv.org/html/2611.34377v1",
+      "added_date": "2026-11-28",
+      "updated_date": "2026-11-28",
+      "type": "arXiv 预印本",
+      "publication_kind": "paper",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "arXiv 论文",
+          "url": "https://arxiv.org/abs/2611.34377"
+        },
+        {
+          "kind": "code",
+          "label": "作者 IntelliJ 插件源代码",
+          "url": "https://github.com/vahidetemadi/smartlens"
+        }
+      ]
+    },
+    {
+      "id": "ghostapi-v-migration",
+      "paper_id": "2611.33396",
+      "title": "GhostAPI-V: Evaluating Audited Diagnostics for Internal API Migration Repair",
+      "institution": "Georgia Tech",
+      "first_author": "Jingtao Zhang",
+      "publication_date": "2026-11-24",
+      "category": "software-engineering",
+      "tags": [
+        "migration",
+        "program-repair",
+        "contracts"
+      ],
+      "summary": "把内部 API 新旧版本的迁移义务整理成人工审阅的双向契约，生成修订诊断并以隐藏测试验收。",
+      "caveat": "48 个经筛选的 Python 迁移；人工解释、契约文字与检查器效果未完全拆分，禁用规则的额外增益对统计方法敏感。",
+      "reading_scope": "arXiv v1 PDF 的任务隔离、五组配对修订、隐藏行为验收、统计敏感性与局限",
+      "canonical_url": "https://arxiv.org/abs/2611.33396",
+      "institution_source": "https://arxiv.org/pdf/2611.33396v1",
+      "added_date": "2026-11-28",
+      "updated_date": "2026-11-28",
+      "type": "arXiv 预印本",
+      "publication_kind": "paper",
+      "evidence_status": "author-reported",
+      "links": [
+        {
+          "kind": "paper",
+          "label": "arXiv 论文",
+          "url": "https://arxiv.org/abs/2611.33396"
         }
       ]
     }

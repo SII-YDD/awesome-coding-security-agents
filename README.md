@@ -7,14 +7,14 @@
 
 <p align="center">
   <a href="https://github.com/sindresorhus/awesome"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-114-6366f1?style=flat-square" alt="Papers and blogs: 114"></a>
-  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--27-14b8a6?style=flat-square" alt="Updated: 2026-11-27"></a>
+  <a href="data/entries.json"><img src="https://img.shields.io/badge/papers_%26_blogs-117-6366f1?style=flat-square" alt="Papers and blogs: 117"></a>
+  <a href="updates/"><img src="https://img.shields.io/badge/updated-2026--11--28-14b8a6?style=flat-square" alt="Updated: 2026-11-28"></a>
 </p>
 
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#coding-agents"><b>01 · Coding Agents</b></a><br><sub>28 entries</sub></td>
-    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>34 entries</sub></td>
+    <td width="50%" align="center" valign="middle"><a href="#software-engineering"><b>02 · AI Software Engineering</b></a><br><sub>37 entries</sub></td>
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle"><a href="#vulnerability-discovery"><b>03 · Vulnerability Discovery</b></a><br><sub>15 entries</sub></td>
@@ -30,15 +30,15 @@
 <h2 align="center">每日新增 · Daily Updates</h2>
 
 <p align="center">
-  <a href="updates/2026-11-27.md"><b>2026-11-27</b></a> &nbsp;·&nbsp; 3 新增
+  <a href="updates/2026-11-28.md"><b>2026-11-28</b></a> &nbsp;·&nbsp; 3 新增
 </p>
 
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Org · Topic</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
-    <tr><td align="center" valign="middle"><b>TU Delft</b><br><br><sub>Coding Agents</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.34617">Evaluating More with Less: Black-Box Test Selection for AI Agents</a></b><br><br>从题面与元数据挑选评测子集，分别估计智能体整体成功率和提高有限预算下的失败发现率。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.34617">Paper</a></td></tr>
-    <tr><td align="center" valign="middle"><b>Microsoft</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.33314">Building a Unified Inline Code Editing Model for GitHub Copilot</a></b><br><br>用带位置锚点的差异补丁统一光标补全、邻近编辑和远处修改，并配合编辑器缓存重复利用建议。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.33314">Paper</a></td></tr>
-    <tr><td align="center" valign="middle"><b>Microsoft</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.34875">How Much Do Coding Agents Over-Edit, and Why? An Empirical Study of Unneeded Edits in Repository-Level Agent Patches</a></b><br><br>逐块撤销编码智能体补丁并重跑任务测试，同时追溯每处改动由哪一步引入。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.34875">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Georgia Tech</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.33396">GhostAPI-V: Evaluating Audited Diagnostics for Internal API Migration Repair</a></b><br><br>把内部 API 新旧版本的迁移义务整理成人工审阅的双向契约，生成修订诊断并以隐藏测试验收。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.33396">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>University of Kansas</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.33748">REFORGE: LLM-Assisted RTL Bug Repair with Structured Context and Verification Feedback</a></b><br><br>用硬件结构与验证反馈引导 RTL 修复，并为每个候选保留测试、行为保持和实现成本证据。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.33748">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><b>Independent Researcher</b><br><br><sub>AI Software Engineering</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.34377">SmartLens: Turning AI Agent Changes into Learning, Review, and Risk Signals in the IDE</a></b><br><br>结合 IDE 事件、智能体编辑日志与 Git 历史归因变更，生成学习线索、待审顺序及风险热点。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.34377">Paper</a><br><a href="https://github.com/vahidetemadi/smartlens">Code</a></td></tr>
   </tbody>
 </table>
 
@@ -89,8 +89,11 @@
 <table align="center" width="100%">
   <thead><tr><th width="17%" align="center">Date · Org</th><th width="68%" align="center">Research</th><th width="15%" align="center">Resources</th></tr></thead>
   <tbody>
+    <tr><td align="center" valign="middle"><code>2026-11-25</code><br><sub>Independent Researcher</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.34377" title="SmartLens: Turning AI Agent Changes into Learning, Review, and Risk Signals in the IDE">SmartLens: Turning AI Agent Changes into Learning, Review, and Risk Signals in the IDE</a></b><br><br>结合 IDE 事件、智能体编辑日志与 Git 历史归因变更，生成学习线索、待审顺序及风险热点。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.34377">Paper</a><br><a href="https://github.com/vahidetemadi/smartlens">Code</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-11-25</code><br><sub>University of Kansas</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.33748" title="REFORGE: LLM-Assisted RTL Bug Repair with Structured Context and Verification Feedback">REFORGE: LLM-Assisted RTL Bug Repair with Structured Context and Verification Feedback</a></b><br><br>用硬件结构与验证反馈引导 RTL 修复，并为每个候选保留测试、行为保持和实现成本证据。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.33748">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-25</code><br><sub>Anthropic</sub></td><td align="center" valign="middle"><b><a href="https://www.anthropic.com/research/migrating-api-to-rust" title="Migrating our Messages API to Rust">Migrating our Messages API to Rust</a></b><br><br>将生产请求用于 Python 与 Rust 的影子比对，并以差异信号驱动修复智能体推进 API 迁移。</td><td align="center" valign="middle"><a href="https://www.anthropic.com/research/migrating-api-to-rust">Blog</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-25</code><br><sub>Microsoft</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.34875" title="How Much Do Coding Agents Over-Edit, and Why? An Empirical Study of Unneeded Edits in Repository-Level Agent Patches">How Much Do Coding Agents Over-Edit, and Why? An Empirical Study of Unneeded Edits in Repository-Level Agent Patches</a></b><br><br>逐块撤销编码智能体补丁并重跑任务测试，同时追溯每处改动由哪一步引入。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.34875">Paper</a></td></tr>
+    <tr><td align="center" valign="middle"><code>2026-11-24</code><br><sub>Georgia Tech</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.33396" title="GhostAPI-V: Evaluating Audited Diagnostics for Internal API Migration Repair">GhostAPI-V: Evaluating Audited Diagnostics for Internal API Migration Repair</a></b><br><br>把内部 API 新旧版本的迁移义务整理成人工审阅的双向契约，生成修订诊断并以隐藏测试验收。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.33396">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-24</code><br><sub>Microsoft</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.33314" title="Building a Unified Inline Code Editing Model for GitHub Copilot">Building a Unified Inline Code Editing Model for GitHub Copilot</a></b><br><br>用带位置锚点的差异补丁统一光标补全、邻近编辑和远处修改，并配合编辑器缓存重复利用建议。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.33314">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-23</code><br><sub>Chongqing University</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.30350" title="RepoClean: Evaluating Coding Agents on Repository-Level Obsolete Code Cleanup">RepoClean: Evaluating Coding Agents on Repository-Level Obsolete Code Cleanup</a></b><br><br>将历史上已删除的代码重新加入 34 个 Python 仓库的新版快照，衡量智能体恢复测试和删除废弃代码的能力。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.30350">Paper</a></td></tr>
     <tr><td align="center" valign="middle"><code>2026-11-23</code><br><sub>CISPA Helmholtz Center for Information Security</sub></td><td align="center" valign="middle"><b><a href="https://arxiv.org/abs/2611.30574" title="Improving Repair Agents with Cause-Chain Diagnoses">Improving Repair Agents with Cause-Chain Diagnoses</a></b><br><br>比较通过与失败测试的执行轨迹，把分支、取值和数据流差异整理为诊断链，再交给现有修复智能体。</td><td align="center" valign="middle"><a href="https://arxiv.org/abs/2611.30574">Paper</a><br><a href="https://github.com/smythi93/forecast">Code</a></td></tr>
